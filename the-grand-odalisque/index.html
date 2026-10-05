@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大宫女 · La Grande Odalisque — 一条没有尽头的脊背</title>
+<meta name="description" content="安格尔《大宫女》(1814) 动态赏析：东方主义的幻梦、被嘲笑的脊柱，与线条的至上。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#16110b;--ink2:#1f160d;--panel:#2b2013;--line:rgba(216,178,106,.28);--gold:#d8b06a;--gold-soft:#ecd4a0;--water:#9fae93;--rose:#cf9a86;--paper:#f2ead8;--muted:#b3a892;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/o-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.66) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(216,176,106,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#16110b 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;color:var(--gold);font-size:14px;margin-bottom:14px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+<style id="artGateCSS">#artGate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(6,5,4,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:24px;opacity:1;transition:opacity .4s ease,visibility .4s}#artGate.hide{opacity:0;visibility:hidden;pointer-events:none}.ag-box{max-width:480px;width:100%;border:1px solid rgba(216,178,106,.4);border-radius:14px;background:linear-gradient(180deg,#16110b,#0e0a06);padding:30px 30px 26px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}.ag-mark{font-family:var(--serif-en,Georgia),serif;letter-spacing:.4em;text-indent:.4em;font-size:11px;color:var(--gold,#d6b070);opacity:.85;text-transform:uppercase}.ag-title{font-size:24px;letter-spacing:.06em;color:var(--gold-soft,#f0e2c0);margin:14px 0 16px;font-family:var(--serif-cn,serif)}.ag-body{color:#d7d2c2;font-size:14.5px;line-height:2;margin:0 0 14px;text-align:left}.ag-body strong{color:var(--gold-soft,#f0e2c2);font-weight:600}.ag-note{color:var(--muted,#a2b2a4);font-size:12.5px;line-height:1.8;margin:0 0 22px;text-align:left;opacity:.85}.ag-btns{display:flex;gap:12px;justify-content:center}.ag-enter,.ag-back{padding:11px 22px;border-radius:999px;font-size:14px;letter-spacing:.08em;cursor:pointer;font-family:var(--serif-cn,serif);transition:all .25s}.ag-enter{background:var(--gold,#d6b070);color:#15110b;border:1px solid var(--gold,#d6b070)}.ag-enter:hover{filter:brightness(1.08)}.ag-back{background:transparent;color:var(--gold-soft,#f0e2c2);border:1px solid rgba(216,178,106,.45)}.ag-back:hover{background:rgba(216,178,106,.12)}body.ag-lock{overflow:hidden}</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="大宫女 · La Grande Odalisque — 一条没有尽头的脊背">
+<meta property="og:image" content="../covers/the-grand-odalisque.webp">
+<meta property="og:description" content="安格尔《大宫女》(1814) 动态赏析：东方主义的幻梦、被嘲笑的脊柱，与线条的至上。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="大宫女 · La Grande Odalisque — 一条没有尽头的脊背">
+<meta name="twitter:image" content="../covers/the-grand-odalisque.webp">
+<meta name="twitter:description" content="安格尔《大宫女》(1814) 动态赏析：东方主义的幻梦、被嘲笑的脊柱，与线条的至上。">
+</head>
+<body><div id="artGate" role="dialog" aria-modal="true" aria-label="艺术欣赏提示">
+  <div class="ag-box">
+    <div class="ag-mark">Art Appreciation Notice</div>
+    <h2 class="ag-title">《大宫女》</h2>
+    <p class="ag-body">本页面展示的画作包含 <strong>艺术人体 / 裸体</strong> 内容。所录作品均为美术馆级公有领域馆藏，仅作艺术欣赏与学习之用，不含任何低俗或违规意图。</p>
+    <p class="ag-note">若您未满 18 周岁，或对此类内容感到不适，请点击「返回画廊」。点击「进入欣赏」即表示您已知悉上述说明，并同意仅作艺术欣赏之用。</p>
+    <div class="ag-btns">
+      <button type="button" class="ag-enter" id="agEnter">进入欣赏</button>
+      <button type="button" class="ag-back" id="agBack">返回画廊</button>
+    </div>
+  </div>
+</div>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">JEAN-AUGUSTE-DOMINIQUE INGRES · 1814</div>
+    <h1 class="title" id="titleCh">大宫女</h1>
+    <div class="hero-en">LA GRANDE ODALISQUE</div>
+    <div class="hero-meta"><span class="chip">布面油画</span><span class="chip">88.9 × 162.6 cm</span><span class="chip">卢浮宫藏</span><span class="chip">新古典主义</span></div>
+  </div>
+  <div class="scroll-cue">走进这间幽暗的寝宫</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">一切始自<em>一条过长的脊背</em></h2>
+    <p class="lead reveal">1814 年，34 岁的安格尔在罗马画下一具横陈的裸身。她头戴土耳其头巾、手执孔雀羽扇，回眸望向画外。可当这幅画九年后回到巴黎，批评家们几乎笑出了声——因为这条优美的脊背，根本不可能长在任何人身上。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>她被称为「宫女」（odalisque），是伊斯兰后宫里的侍妾。但安格尔从未来到过东方：画里的一切，都是一个西方人关于「异域寝宫」的想象。</p><p>1819 年沙龙上，这幅画遭到猛烈嘲笑。人们说画中没有骨头、没有肌肉，只有「一条没有尽头的脊背」——解剖学在这里彻底让位于一条理想的曲线。</p><p>两百年后，这条曲线成了安格尔的勋章。我们这一页，就沿着脊背、回眸与那支长烟斗，重新看一遍这场关于「美」与「真实」的争执。</p>
+      <p class="src">—— 据 1819 年沙龙评论与后世研究转述</p>
+      <p class="end reveal">安格尔画下的，是一个宁愿背叛解剖学、也要成全线条的梦。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>宫女</em>的秘密</h2>
+    <p class="lead reveal">画中几乎没有一个细节经得起尺子与解剖图的推敲——而这恰恰是安格尔最固执的地方。点击光点，看看这条脊背、这双小脚，与那支长烟斗，各自藏着什么。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/o-main.webp" alt="大宫女 · La Grande Odalisque — 一条没有尽头的脊背" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画中细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一幅画的<em>三个年份</em></h2>
+    <p class="lead reveal">从那不勒斯王后的委托，到罗马画室的完成，再到巴黎沙龙的嘲笑——这幅画的命运，被三个年份切成了三段。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1813 · 那不勒斯</p><h3>受命于一位王后</h3><p>委托来自卡罗琳·缪拉（Caroline Murat）——拿破仑的妹妹、那不勒斯王后。她为装点宫殿而订购这幅「东方宫女」，安格尔其时正以法国罗马大奖得主的身份居留在罗马。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1814 · 罗马画室</p><h3>在 Villa Medici 落笔</h3><p>画作于罗马的法国学院（ Villa Medici ）画室完成。此时的安格尔是达维德的弟子，满脑子拉斐尔与古代雕刻；卧姿则明显承自威尼斯画派的「横卧维纳斯」传统。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1819 · 巴黎沙龙</p><h3>被嘲笑，后被加冕</h3><p>五年后送展巴黎沙龙，因解剖「失真」遭猛烈讥讽；直到十九世纪末声誉才翻转，1899 年入藏卢浮宫，与《大宫女》之名一同成为新古典—浪漫转折的标志。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画布上的<em>三件确凿之事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/o-back.webp" alt="不是画错了，是故意画「错」了" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>不是画错了，是故意画「错」了</h3><p>其一 · 多出的椎骨。2004 年《皇家医学会杂志》一篇短文以戏谑口吻指出，要让画中躯体物理成立，脊柱需<span class="hl">多出约三节椎骨</span>，左臂偏长、骨盆错位——这是学界最爱引用的一个「解剖玩笑」，点名了安格尔对线条的偏执。</p><p>其二 · 从未东行的东方主义。安格尔一生未踏足奥斯曼帝国；头巾、羽扇、长烟斗与「宫女」身份，皆来自欧洲的版画与旅行文学。<span class="hl">这是幻想，不是民族志</span>。</p><p>其三 · 沙龙的翻案。1819 年批评家讥其「没有骨头、没有肌肉」；然而德拉克洛瓦与后世现代主义画家却奉安格尔的线为圭臬，评价在百年间彻底逆转。</p><p class="note">※「三节椎骨」出自 2004 年 JRSM 短文的估算，属广为流传的学术趣谈而非精密测量；头巾羽扇等物为东方主义视觉符号，非写实记录。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一份<em>被拉伸</em>的清单</h2>
+    <p class="lead reveal">把这幅画拆开看，几乎每件「道具」都在替同一个念头服务：美可以大于真实。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/o-head.webp" alt="头巾与宝石" loading="lazy" decoding="async"></div><div class="fb"><h4>头巾与宝石</h4><div class="fy">SIGNIFIER · 东方的符号</div><p>白色 turban 与顶端羽饰，是「宫女」最醒目的东方标签。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-arm.webp" alt="羽扇与长烟斗" loading="lazy" decoding="async"></div><div class="fb"><h4>羽扇与长烟斗</h4><div class="fy">PROPS · 后宫的道具</div><p>孔雀羽扇与 chibouk，成套出现的异域奢华符号。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-back.webp" alt="延长的脊背" loading="lazy" decoding="async"></div><div class="fb"><h4>延长的脊背</h4><div class="fy">LINE · 线条的至上</div><p>一条被拉长的脊背，新古典「线至上」的极端宣言。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-hips.webp" alt="多出的椎骨" loading="lazy" decoding="async"></div><div class="fb"><h4>多出的椎骨</h4><div class="fy">ANATOMY · 解剖的玩笑</div><p>腰胯的错位，让医学家也忍不住写上一篇短文。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-feet.webp" alt="小小的脚" loading="lazy" decoding="async"></div><div class="fb"><h4>小小的脚</h4><div class="fy">MANNERISM · 矫饰主义回声</div><p>纤巧的小脚，遥遥呼应帕尔米贾尼诺的《长颈圣母》。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-sheet.webp" alt="白褥与软榻" loading="lazy" decoding="async"></div><div class="fb"><h4>白褥与软榻</h4><div class="fy">STAGE · 横卧维纳斯</div><p>卧榻把她接进长达五百年的「横卧维纳斯」谱系。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-curtain.webp" alt="左侧帷幕" loading="lazy" decoding="async"></div><div class="fb"><h4>左侧帷幕</h4><div class="fy">CHIAROSCURO · 以暗衬亮</div><p>一道暗布，把最亮的肌肤托成被聚光照亮的主体。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/o-face.webp" alt="回眸的眼" loading="lazy" decoding="async"></div><div class="fb"><h4>回眸的眼</h4><div class="fy">GAZE · 情绪的中心</div><p>越过肩膀的对视，是全画最私密也最主动的一刻。</p></div></div></div>
+    <div class="flora-note reveal">安格尔日后又画了《宫女与女奴》(1839)、《土耳其浴室》(1862) 等，把同一类「东方躯体」反复重写——大宫女只是这场长篇想象的扉页。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">NEOCLASSICISM · 语境</div>
+    <h2 class="reveal">什么是<em>安格尔式的</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>线，而非色</h4><p>作为达维德的学生，安格尔把新古典主义推到极端：轮廓线高于一切，色彩与光影退居其次。他留下名言「素描是艺术的诚实」——可大宫女却用一条不诚实的线，反过来定义了「美」。</p></div><div class="prb-item reveal"><h4>东方主义</h4><p>画里的「东方」并非实地观察，而是十九世纪欧洲对奥斯曼后宫的集体幻想。这类图像后来被萨义德《东方学》纳入批判：它再现的，是观看者的欲望，而非被观看者的真实。</p></div><div class="prb-item reveal"><h4>1819 的嘲笑与翻案</h4><p>沙龙批评者以解剖学为刀，讥讽其失真；可时间站到了安格尔这边。当「写实」不再是唯一标准，那条延长的线反而成了超越时代的优雅。</p></div><div class="prb-item reveal"><h4>一条线的谱系</h4><p>从威尼斯「横卧维纳斯」到安格尔的宫女，再到马蒂斯、毕加索对安格尔线条的景仰——这条光滑、克制、近乎冷酷的轮廓，串起了现代艺术对「古典之线」的再发现。</p></div></div>
+    <div class="prb-quote reveal">素描是艺术的诚实——可我宁愿让一条线，比一具身体更优雅。<small>—— 安格尔（Jean-Auguste-Dominique Ingres，据英译转译与后世概括）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">一条脊背的<em>两百年</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1813</span><p>受那不勒斯王后卡罗琳·缪拉委托，为装饰宫殿而画；安格尔时在罗马。</p></div><div class="legacy-item reveal"><span class="yr">1814</span><p>于罗马法国学院画室完成，承「横卧维纳斯」之脉，又注入东方主义想象。</p></div><div class="legacy-item reveal"><span class="yr">1819</span><p>巴黎沙龙展出，因解剖「失真」遭猛烈嘲笑，声誉跌入谷底。</p></div><div class="legacy-item reveal"><span class="yr">1899</span><p>由卢浮宫收藏，评价逆转，被奉为新古典—浪漫主义转折的杰作。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>与《宫女与女奴》《土耳其浴室》一道，成为东方主义绘画与现代线条崇拜的共同源头。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 安格尔《大宫女》（公有领域）<br>内容整理自公开艺术史资料 · 史实细节以主流研究为准 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 18.0, "y": 12.0, "no": "I", "t": "头巾与宝石 · 东方的标记", "img": "assets/o-head.webp", "txt": "她头顶缠着一方白色头巾，顶端缀有宝石与羽饰（aigrette）。这是安格尔给「宫女」贴上的东方标签：在当时的欧洲想象里，土耳其后宫的女子总是裹着 turban、衔着长烟斗。值得指出的是，安格尔从未来到过奥斯曼帝国，这方头巾与宝石并非任何民族的真实服饰，而是一枚西方制造的「异域符号」。它让观者一眼认出「这是东方的女人」，却也暴露了这幅画本质是幻想而非记录。头巾的冷白与肌肤的暖色相互衬托，成为全画第一处明暗的较量。"}, {"x": 23.0, "y": 22.0, "no": "II", "t": "回眸的脸 · 与画外的对视", "img": "assets/o-face.webp", "txt": "她侧卧着，头却扭转过来，目光越过肩膀望向画外的我们。这是全画最私密、也最主动的一刻：裸身的主体并非被动陈列，而是回身与观者交互换眼神。安格尔把头部画得格外小巧，与拉长的躯体形成悬殊比例，正是这种「不对劲」造就了梦境般的疏离感。脸上的神情近乎无表情——既不是邀请，也不是拒绝，只是一种恒久的凝视。后世把这种「回眸」视为安格尔式情色的核心：欲望被收束在克制、冷静的轮廓线里，不泛滥，却更持久。"}, {"x": 36.0, "y": 50.0, "no": "III", "t": "延长的脊背 · 签名式的曲线", "img": "assets/o-back.webp", "txt": "从右肩一路滑向臀部的，是一条被刻意拉长的脊背曲线——它是这幅画真正的「主角」。安格尔用一条连续、光滑、几乎不带起伏的线，把肩膀、腰与胯串成一段优雅的滑梯。批评家嘲笑它「没有骨头」，但安格尔关心的本就不是骨骼，而是线条自身的悦目。他曾反复宣称「素描是艺术的诚实」，可在这幅画里，诚实让位于「la belle ligne」（美的线条）：宁可扭曲自然，也要让线流畅到底。这条脊背因此成为新古典主义「线至上」信念最极端的宣言。"}, {"x": 22.0, "y": 38.0, "no": "IV", "t": "抬起的手臂 · 孔雀扇与长烟斗", "img": "assets/o-arm.webp", "txt": "她的右臂弯折、支撑着上半身，手中握着两件东方物事：一支细长的土耳其烟斗（chibouk），与一柄孔雀羽毛扇。烟斗纤长的杆子与身体的延长线彼此呼应，把「异域」轻轻递到观者眼前。孔雀羽扇则是另一种奢华的符号——在欧洲的东方主义视觉语汇里，羽扇、头巾、烟斗总是成套出现，用来标记「后宫」的慵懒与富丽。这些道具没有一件来自安格尔的实地观察，它们来自版画、旅行文学与集体想象。正因如此，手臂与道具不是风俗记录，而是搭起这场幻梦的脚手架。"}, {"x": 6.0, "y": 25.0, "no": "V", "t": "左侧的帷幕 · 舞台的暗框", "img": "assets/o-curtain.webp", "txt": "画面左缘垂落着一道深色的厚重帷幕，把人物从背景里「托」了出来。它是学院派最常用的舞台装置：用一块暗布制造纵深，让亮部的躯体像被聚光灯照亮。安格尔此处几乎把帷幕画成纯色的阴影，不交代它属于哪间屋子、哪座宫殿——因为它本就不属于任何真实的房间。帷幕的意义只在构成：用最深的暗，去换肌肤最亮的暖。这种「以暗衬亮」的处理，后来在无数肖像与人体画里被反复沿用，是古典画室里最基本的修辞之一。"}, {"x": 16.0, "y": 80.0, "no": "VI", "t": "身下的白褥与软榻 · 横陈的舞台", "img": "assets/o-sheet.webp", "txt": "宫女斜倚在一张铺着象牙白褥的软榻上，暖棕色的榻体只在边缘露脸。这张床，是把她接进「横卧维纳斯」千年谱系的关键：从乔尔乔内的《沉睡的维纳斯》到提香的《乌尔比诺的维纳斯》，裸女卧榻是西方绘画最古老的母题之一。安格尔把它搬进「东方」的布景，让熟悉的情色与陌生的帷幕并置。白褥的柔光包裹着躯体，使裸体既「可被观看」又「不必尴尬」——床褥是一道体面的缓冲。说到底，这方白褥与软榻，就是这场白日梦的床架。"}, {"x": 50.0, "y": 70.0, "no": "VII", "t": "腰肌与多出的椎骨 · 解剖的玩笑", "img": "assets/o-hips.webp", "txt": "腰胯的转折处，是整幅画最「不科学」的地带。2004 年，《皇家医学会杂志》（JRSM）一篇广为流传的短文以玩笑口吻估算：若要让画中躯体在物理上成立，她的脊柱大概要多出约三节椎骨，左臂也长了一截，骨盆与躯干的连接更是错位。这并非安格尔画错了，而是他主动选择：为了那条他想要的、无休止延长的线，解剖的代价可以照付。所谓「多出三节椎骨」，于是从医学玩笑变成了艺术史名句——它精准地命名了安格尔那种「为线条牺牲身体」的胆量。"}, {"x": 70.0, "y": 72.0, "no": "VIII", "t": "修长的双腿 · 被拉长的身体", "img": "assets/o-legs.webp", "txt": "躯体自腰胯向右下方延伸，双腿被画得格外修长、平滑，几乎没有肌肉的起伏。安格尔把整具身体当成一件可以被拉伸的乐器：哪里需要更长，就悄悄拉长哪里，好让轮廓始终保持他偏爱的优雅比例。这种整体的「 elongation（延长）」并非源于观察，而源于一种理想——一种比真人更安静、更匀称、更「画意」的身体。腿部的处理因此和脊背是同一句话的两种读法：当线条成为最高法则，身体的真实便退居其次。"}, {"x": 92.0, "y": 86.0, "no": "IX", "t": "小小的脚 · 矫饰主义的回声", "img": "assets/o-feet.webp", "txt": "画幅最右端，是一双被画得格外小巧、纤细的脚。小脚并非安格尔的发明，而是对矫饰主义（Mannerism）的遥远回声：帕尔米贾尼诺在《长颈圣母》里就故意把手脚画得纤巧修长，以追求一种不食人间烟火的优雅。安格尔把这份「过长、过小」的趣味收进新古典的躯壳，使大宫女站在两个时代的交界——一边是拉斐尔式的均衡，一边是现代人偏爱的变形与张力。小脚因此是一处隐秘的注脚：古典的皮囊下，跳动着矫饰主义的心脏。"}, {"x": 72.0, "y": 26.0, "no": "X", "t": "幽暗的背景 · 未完成的东方", "img": "assets/o-backdrop.webp", "txt": "人物右上方是一大片不辨所指的幽暗，没有窗、没有墙、没有可辨认的室内。这片空，正是「东方」在这幅画里的真实面貌：它不是某个具体的国度，而是一团被西方投射上去的阴影。安格尔不需要画清房间，因为观者要的只是「异域的昏暗」这一感觉。空白因此是一种诚实——它坦白承认这场寝宫之梦并无实景可循。两百年后，当我们在画里寻找真实的土耳其，找到的仍是欧洲自己的倒影。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(236,212,160,", "rgba(216,176,106,", "rgba(159,174,147,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="odalisque" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">后宫之夜 · 肖邦《夜曲》Op.15 No.1</div>
+    <div class="bgm-sub">钢琴独奏 · 肖邦 Nocturne in F, Op.15 No.1 · CC0 录音</div>
+    <div class="bgm-why">安格尔在1814年的巴黎画室里，用一条比真实更长的脊柱，把「慵懒」画成了讲究。肖邦的夜曲也应和着这种曲线：舒缓的歌唱，偶尔浮起一点装饰性的花音，温润而不使劲。暖的皮肤、冷的影、柔润的明暗，都收进那句旋律里。它不急促，也不戏剧，只是慵懒地升起——和画中那种异域而克制的身体，同一呼吸。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Chopin《Nocturne Op.15 No.1 in F major》(piano) · CC0 1.0 · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/0019k9424Rp7dJ?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Nocturne No. 4 in F Major, Op. 15 No. 1<span>李云迪</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+<script>
+
+(function(){
+var g=document.getElementById('artGate');
+if(!g)return;
+document.body.classList.add('ag-lock');
+function enter(){g.classList.add('hide');document.body.classList.remove('ag-lock');}
+function back(){window.location.href='../index.html';}
+document.getElementById('agEnter').addEventListener('click',enter);
+document.getElementById('agBack').addEventListener('click',back);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){back();}});
+})();
+</script>
+
+</body>
+</html>

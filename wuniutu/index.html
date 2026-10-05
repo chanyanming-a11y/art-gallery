@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五牛图 · Five Oxen — 五头牛，站成一座唐朝</title>
+<meta name="description" content="韩滉《五牛图》(唐) 动态赏析：一位宰相画牛，如何把『农』画成了国之根本，又画出了中国动物画的源头。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+
+  :root{
+    --ink:#0f0c08;
+    --ink2:#16120c;
+    --panel:#1e1810;
+    --line:rgba(216,178,106,.28);
+    --gold:#c9a24a;
+    --gold-soft:#e7d2a0;
+    --water:#6f8f86;
+    --rose:#b8745f;
+    --paper:#f2ead8;
+    --muted:#b3a690;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/main.webp") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.9) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(201,162,74,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0f0c08 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== BGM 配乐组件 ===== */
+  #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;
+    background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:999px;color:var(--paper);
+    font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)}
+  /* —— skiper25 音乐开关（点击播放/暂停，波形律动）—— */
+  .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;
+    padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;
+    transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}
+  .bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave{display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;
+    background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i{opacity:1}
+  /* —— 「灵感配乐」文字：说明面板的唯一开关（收起=浅 / 展开=深）—— */
+  .bgm-txt{border:0;background:transparent;cursor:pointer;
+    color:var(--paper);opacity:.6;
+    font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;
+    transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt{color:var(--gold);opacity:1}
+  .bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);
+    width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;
+    background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);
+    pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);
+    box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  /* 面板仅由文字点击（.open）控制 —— 不再 hover 自动展开 */
+  #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}
+  .bgm-row{display:flex;align-items:center;gap:8px}
+  .bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;
+    font-family:var(--serif-en)}
+  .bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;
+    padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;
+    border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;
+    height:12px;border-radius:50%;background:var(--gold);cursor:pointer;
+    box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;
+    border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  @media (max-width:640px){#bgm{left:14px;bottom:14px}
+    .bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}
+  /* ===== /BGM 配乐组件 ===== */
+
+  </style>
+<style>
+
+  /* ===== QQ音乐 配乐引用 ===== */
+  .bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;
+    text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover{color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}
+
+  </style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="五牛图 · Five Oxen — 五头牛，站成一座唐朝">
+<meta property="og:image" content="../covers/wuniutu.webp">
+<meta property="og:description" content="韩滉《五牛图》(唐) 动态赏析：一位宰相画牛，如何把『农』画成了国之根本，又画出了中国动物画的源头。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="五牛图 · Five Oxen — 五头牛，站成一座唐朝">
+<meta name="twitter:image" content="../covers/wuniutu.webp">
+<meta name="twitter:description" content="韩滉《五牛图》(唐) 动态赏析：一位宰相画牛，如何把『农』画成了国之根本，又画出了中国动物画的源头。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">韩滉 · 唐 · 约 8 世纪</div>
+    <h1 class="title" id="titleCh">五牛图</h1>
+    <div class="hero-en">FIVE OXEN</div>
+    <div class="hero-meta"><span class="chip">纸本设色</span><span class="chip">纵 20.8 × 横 139.8 cm</span><span class="chip">北京故宫博物院藏</span><span class="chip">中国十大传世名画之一</span></div>
+  </div>
+  <div class="scroll-cue">看唐朝的五头牛</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">一位<em>宰相</em>，画了五头牛</h2>
+    <p class="lead reveal">韩滉身居宰相，却画了五头最平常的牛。没有神话，没有山水，只有牛——在中国画里，把『农』抬到这个高度，他是第一人。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>韩滉，字太冲，唐德宗朝宰相，封晋国公。他政事之余作画，尤工田家风俗与农畜，《五牛图》是其唯一传世孤本。</p><p>全卷画五头牛，一字横列，各具姿态：有俯首觅食、有正面相向、有缓步回望。设色淡雅，以白描骨法立其形，再施赭黄。</p><p>画牛即画农，画农即画国本。在中晚唐藩镇割据、民生维艰之际，五头牛像是一种沉默的宣言：天下之本，在田与牛。</p>
+      <p class="src">—— 据画史与著录通行叙述</p>
+      <p class="end reveal">他画的不是牛，是一个宰相，对脚下这片土地的敬意。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE SCROLL · 画中细节</div>
+    <h2 class="reveal">点开<em>五牛</em>的六个瞬间</h2>
+    <p class="lead reveal">从引首到回望：每一处，都是唐人笔下的一头牛。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/main.webp" alt="五牛图 · Five Oxen — 五头牛，站成一座唐朝" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一幅画的<em>一千二百年</em></h2>
+    <p class="lead reveal">一张薄纸，从唐德宗的案头，走到了今天的故宫——它几乎是中国动物画的『活化石』。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 8 世纪 · 长安</p><h3>宰相的田家笔</h3><p>韩滉以宰相之身作田家风俗，画牛画村，开后世『风俗画』一端。五牛一字排开，是他对农畜最沉静的礼赞。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">宋 · 入内府</p><h3>徽宗亲自题签</h3><p>此卷入宣和内府，宋徽宗题『唐韩滉五牛图』于卷首——一件孤本，就此被帝王认证。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">近代 · 归故宫</p><h3>孤本终得安放</h3><p>历经流离，20 世纪归北京故宫博物院，定为国宝，成为现存最早纸本动物画之一。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE SCROLL · 幕后</div>
+    <h2 class="reveal">一张<em>薄纸</em>的幸存</h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/main.webp" alt="三件有据可查的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>三件有据可查的事</h3><p><span class="hl">它是现存最早的纸本画之一</span>。唐代作画多重绢本，此卷以纸本设色传世，纸寿千年仍能面世，近乎奇迹。</p><p><span class="hl">宋徽宗亲题卷首</span>。卷首『唐韩滉五牛图』瘦金体题签（相传为徽宗），使作者与画名早早锁定，少有争议。</p><p><span class="hl">曾遭盗卖，终回故宫</span>。清末民初此卷一度流出，经收藏家与各方努力购回，入藏北京故宫，成为镇馆国宝之一。</p><p class="note">※ 『纸本早期孤本』『徽宗题签』『回流故宫』为画史通行叙述；具体回流细节诸家记载略异。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 五牛图鉴</div>
+    <h2 class="reveal">把<em>农</em>画成国本</h2>
+    <p class="lead reveal">从引首到留白：长卷用八段，看尽五头牛的形与神。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c1.webp" alt="其一·引首" loading="lazy" decoding="async"></div><div class="fb"><h4>其一·引首</h4><div class="fy">ONE · 觅食</div><p>最前一头低头觅食，颈背弧线一笔勾出，是唐人少有的从容。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c13.webp" alt="其二·络头" loading="lazy" decoding="async"></div><div class="fb"><h4>其二·络头</h4><div class="fy">TWO · 红饰</div><p>佩红络头的一头最被注视，髻蹄毛色层层交代。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c25.webp" alt="其三·趋步" loading="lazy" decoding="async"></div><div class="fb"><h4>其三·趋步</h4><div class="fy">THREE · 行进</div><p>居中者缓步前行，五牛列成一队沉默的仪仗。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c37.webp" alt="其四·正面" loading="lazy" decoding="async"></div><div class="fb"><h4>其四·正面</h4><div class="fy">FOUR · 对视</div><p>正面相向的一头直视观者，唯一的正面最见神采。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c49.webp" alt="其五·回望" loading="lazy" decoding="async"></div><div class="fb"><h4>其五·回望</h4><div class="fy">FIVE · 回望</div><p>最后一头缓步回望，为长卷轻轻收势。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c61.webp" alt="列队之姿" loading="lazy" decoding="async"></div><div class="fb"><h4>列队之姿</h4><div class="fy">LINE · 章法</div><p>五牛横列如仪仗，把农耕郑重请进画里。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c73.webp" alt="白描设色" loading="lazy" decoding="async"></div><div class="fb"><h4>白描设色</h4><div class="fy">LINE · 骨法</div><p>淡设色施于白描之上，骨法用笔，简而不率。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wuniutu-c85.webp" alt="素纸留白" loading="lazy" decoding="async"></div><div class="fb"><h4>素纸留白</h4><div class="fy">BLANK · 焦点</div><p>不着背景，把所有目光交还给牛本身。</p></div></div></div>
+    <div class="flora-note reveal">以上八图沿卷展开，对应五牛的姿态、设色与留白章法；韩滉以骨法用笔立形，淡设色施于白描，简而不率。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">什么是<em>风俗画</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>从神佛到田家</h4><p>唐以前绘画多写神佛、帝王、贵族；韩滉把田家农畜请入卷中，是绘画题材『向下』的一步，也为后世风俗画开了先声。</p></div><div class="prb-item reveal"><h4>骨法用笔</h4><p>五牛以白描立骨、淡色敷面，线条沉稳有力。谢赫『六法』中的『骨法用笔』，在此被一头头老牛说得分明。</p></div><div class="prb-item reveal"><h4>牛与国本</h4><p>牛是农耕文明的心脏。在藩镇割据、民生多艰的中晚唐，画牛亦是劝农——艺术的笔，从不忘脚下的土地。</p></div><div class="prb-item reveal"><h4>孤本与传承</h4><p>作为现存最早纸本动物画之一，它上承唐人写实、下启宋元畜兽画，是观察早期中国画的『活化石』。</p></div></div>
+    <div class="prb-quote reveal">（韩滉）性好鼓琴，雅有体格，……田家风俗，人物水牛，曲尽其妙。<small>—— 画史著录对韩滉的通行评价（意译）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">尾声 · 一张长卷的时间线</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 8 世纪</span><p>韩滉于唐德宗朝绘成《五牛图》，纸本设色，纵 20.8 厘米、横约 139.8 厘米。</p></div><div class="legacy-item reveal"><span class="yr">宋</span><p>入宣和内府，徽宗题签；后为历代收藏家递藏，著录不绝。</p></div><div class="legacy-item reveal"><span class="yr">清末民初</span><p>一度流出宫外，经多方努力购回，入藏北京故宫博物院。</p></div><div class="legacy-item reveal"><span class="yr">20 世纪</span><p>定为国宝级文物，与《清明上河图》等同列中国十大传世名画。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>作为现存最早纸本动物画之一，它仍是研究唐代写实与早期纸本设色的第一手标本。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片来源：Wikimedia Commons，韩滉《五牛图》（唐，纸本设色，公有领域）。本页仅供艺术赏析用途。史实分层：确定事实直接陈述；回流细节等属画史通行叙述，均已标注。
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 20.0, "y": 27.5, "no": "I", "t": "其一·引首", "img": "assets/wuniutu-I.webp", "txt": "最前的一头牛低头觅食，颈背的弧线被一笔笔勾出。韩滉不画筋骨嶙峋，只画牛的温厚——这是唐人笔下少有的从容。"}, {"x": 60.0, "y": 26.0, "no": "II", "t": "其二·络头", "img": "assets/wuniutu-II.webp", "txt": "第二头牛佩红络头、白壮，是五牛中最被注视的一头。细节的髻、蹄、毛色层层交代，足见画家对农畜的熟稔。"}, {"x": 0.0, "y": 77.5, "no": "III", "t": "其三·趋步", "img": "assets/wuniutu-III.webp", "txt": "居中的牛缓步前行，目光平视。五牛排成一列，像一支沉默的仪仗，把『农耕』这件大事，郑重地请进了画里。"}, {"x": 40.0, "y": 76.0, "no": "IV", "t": "其四·正面", "img": "assets/wuniutu-IV.webp", "txt": "一头牛正面相向，直视观者，最具神采。中国画里动物多作侧面，这唯一的正面，让整卷忽然有了『对视』的温度。"}, {"x": 80.0, "y": 77.5, "no": "V", "t": "其五·收束", "img": "assets/wuniutu-V.webp", "txt": "最后的一头牛缓步回望，为长卷轻轻收势。五头牛首尾相顾，似走未走，留一段余韵在纸外。"}, {"x": 0.0, "y": 92.0, "no": "VI", "t": "素纸留白", "img": "assets/wuniutu-VI.webp", "txt": "五牛立于几乎空白的背景之上，不着一草一木。韩滉以『无背景』突出主体，也把观者的目光，全部交还给牛本身。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(201,162,74,", "rgba(184,116,95,", "rgba(231,210,160,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="wuniutu" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">古琴《佩兰》</div>
+    <div class="bgm-sub">Guqin · Peilan</div>
+    <div class="bgm-why">《佩兰》是一首以香草为心的古琴曲，写幽谷里一丛兰草，不争春风，不媚行人，只是自顾自地开着，把一身清芬留给懂得的人。韩滉画《五牛图》，画的也是这般“不张扬的好”——五头老牛，或行或卧，皮毛温厚，眼神老实，是田埂上最平常也最可靠的伙伴。琴到泛音处，音粒颗颗清圆，像牛背上沾着的草籽与露水；画的设色也朴素得很，没有金碧，只有土黄与墨。它不写兰的香，也不写牛的力，只写一种“稳”：稳稳地活、稳稳地劳作、稳稳地把自己该做的事做好，和画里那五头不慌不忙的牛，同一种敦厚。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">古琴《佩兰》· 演奏 李家祥 · 公有领域录音（CC0）· 音源 Wikimedia Commons</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/001y8vU23VrACU?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">佩兰<span>李家祥</span></a></div>
+  </div>
+</div>
+
+<script>
+  /* ===== BGM 配乐组件 ===== */
+  (function(){
+    var wrap=document.getElementById('bgm'); if(!wrap) return;
+    var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+        vol=document.getElementById('bgmVol');
+    var bars=wrap.querySelectorAll('.bgm-wave i');
+    var LS='bgm-off-'+ (wrap.dataset.key||'page');
+    var audio=new Audio('assets/bgm.mp3');
+    audio.loop=true; audio.preload='auto';
+    var target=0.55, timer=null, autoArmed=false, waveTimer=null;
+
+    function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+    setVol(target);
+
+    /* skiper25 波形律动：播放时每 100ms 随机跳动（4–14px），暂停时归位 4px */
+    function wave(on){
+      if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+      if(on){
+        var jig=function(){ for(var i=0;i<bars.length;i++){
+          bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+        jig(); waveTimer=setInterval(jig,100);
+      } else {
+        for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+      }
+    }
+    wave(false);
+
+    function fade(to,ms){
+      if(timer) clearInterval(timer);
+      var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+      timer=setInterval(function(){
+        i++;
+        setVol(from+(to-from)*(i/steps));
+        if(i>=steps){ clearInterval(timer); timer=null;
+          if(to===0){ audio.pause(); } }
+      },40);
+    }
+
+    function mark(on){
+      wrap.classList.toggle('on',on);
+      if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+      if(txt) txt.textContent='灵感配乐';
+      wave(on);
+    }
+
+    function play(){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+          try{ localStorage.removeItem(LS); }catch(e){}
+        }).catch(function(){ mark(false); }); }
+      else { mark(true); fade(target,1200); }
+    }
+    function stop(){
+      fade(0,800); mark(false);
+      try{ localStorage.setItem(LS,'1'); }catch(e){}
+    }
+    function toggle(){ audio.paused ? play() : stop(); }
+
+    /* skiper25 波形按钮 → 播放/暂停 */
+    if(playBtn) playBtn.addEventListener('click',function(e){
+      e.stopPropagation(); toggle(); });
+    /* 「灵感配乐」文字 → 说明面板的唯一开关（单击切换） */
+    function panel(open){
+      wrap.classList.toggle('open',open);
+      if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+    }
+    if(txt) txt.addEventListener('click',function(e){
+      e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+    /* 点击面板外部 / 按 Esc 关闭 */
+    document.addEventListener('click',function(e){
+      if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+        if(txt) txt.focus(); } });
+    vol.addEventListener('input',function(){
+      target=Math.max(0,Math.min(1,this.value/100));
+      if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+    });
+    vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+    // 自动播放：未被浏览器策略阻止则直接开始；否则等首次交互
+    var off=false; try{ off=localStorage.getItem(LS)==='1'; }catch(e){}
+    if(!off){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200); })
+        .catch(function(){ autoArmed=true; }); }
+      if(!autoArmed && !p){ mark(true); fade(target,1200); }
+      if(autoArmed){
+        var kick=function(){ play(); document.removeEventListener('pointerdown',kick);
+          document.removeEventListener('keydown',kick);
+          document.removeEventListener('wheel',kick);
+          document.removeEventListener('touchstart',kick); };
+        document.addEventListener('pointerdown',kick,{once:true});
+        document.addEventListener('keydown',kick,{once:true});
+        document.addEventListener('wheel',kick,{once:true,passive:true});
+        document.addEventListener('touchstart',kick,{once:true});
+      }
+    }
+    // 切到后台时暂停，回到前台恢复（仅在用户开启过的情况下）
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+      else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+    });
+  })();
+
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.back-home');
+  if(b){
+    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+    window.addEventListener('scroll', upd, {passive:true}); upd();
+  }
+})();
+</script>
+</body>
+</html>

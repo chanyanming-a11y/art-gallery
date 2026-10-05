@@ -1,0 +1,26 @@
+# ===== OS / editor junk =====
+.DS_Store
+Thumbs.db
+.AppleDouble
+.AppleDB
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# ===== local env / secrets (never commit) =====
+.env
+.env.*
+*.local
+
+# ===== logs =====
+*.log
+npm-debug.log*
+
+# ===== Python caches (if any tooling added later) =====
+__pycache__/
+*.pyc

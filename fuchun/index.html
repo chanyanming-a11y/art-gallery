@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富春山居图 · Dwelling in the Fuchun Mountains — 一卷山，住了六百年</title>
+<meta name="description" content="黄公望《富春山居图》(元，1350 年前后) 动态赏析：披麻皴里的江南、焚画逢生的传奇，与一段隔海相望的合璧。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+
+  :root{
+    --ink:#0d0b08;
+    --ink2:#15110c;
+    --panel:#1f1810;
+    --line:rgba(216,178,106,.28);
+    --gold:#c9a24a;
+    --gold-soft:#e7d2a0;
+    --water:#6f8f86;
+    --rose:#b8745f;
+    --paper:#f2ead8;
+    --muted:#a89c86;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/main.webp") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.92) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(201,162,74,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0d0b08 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== BGM 配乐组件 ===== */
+  #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;
+    background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:999px;color:var(--paper);
+    font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)}
+  /* —— skiper25 音乐开关（点击播放/暂停，波形律动）—— */
+  .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;
+    padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;
+    transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}
+  .bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave{display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;
+    background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i{opacity:1}
+  /* —— 「灵感配乐」文字：说明面板的唯一开关（收起=浅 / 展开=深）—— */
+  .bgm-txt{border:0;background:transparent;cursor:pointer;
+    color:var(--paper);opacity:.6;
+    font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;
+    transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt{color:var(--gold);opacity:1}
+  .bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);
+    width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;
+    background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);
+    pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);
+    box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  /* 面板仅由文字点击（.open）控制 —— 不再 hover 自动展开 */
+  #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}
+  .bgm-row{display:flex;align-items:center;gap:8px}
+  .bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;
+    font-family:var(--serif-en)}
+  .bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;
+    padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;
+    border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;
+    height:12px;border-radius:50%;background:var(--gold);cursor:pointer;
+    box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;
+    border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  @media (max-width:640px){#bgm{left:14px;bottom:14px}
+    .bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}
+  /* ===== /BGM 配乐组件 ===== */
+
+  </style>
+<style>
+
+  /* ===== QQ音乐 配乐引用 ===== */
+  .bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;
+    text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover{color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}
+
+  </style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="富春山居图 · Dwelling in the Fuchun Mountains — 一卷山，住了六百年">
+<meta property="og:image" content="../covers/fuchun.webp">
+<meta property="og:description" content="黄公望《富春山居图》(元，1350 年前后) 动态赏析：披麻皴里的江南、焚画逢生的传奇，与一段隔海相望的合璧。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="富春山居图 · Dwelling in the Fuchun Mountains — 一卷山，住了六百年">
+<meta name="twitter:image" content="../covers/fuchun.webp">
+<meta name="twitter:description" content="黄公望《富春山居图》(元，1350 年前后) 动态赏析：披麻皴里的江南、焚画逢生的传奇，与一段隔海相望的合璧。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">黄公望 · 元 · 约 1350</div>
+    <h1 class="title" id="titleCh">富春山居图</h1>
+    <div class="hero-en">DWELLING IN THE FUCHUN MOUNTAINS</div>
+    <div class="hero-meta"><span class="chip">纸本水墨</span><span class="chip">纵 33 × 横约 700 cm（无用师卷）</span><span class="chip">浙江省博物馆 / 台北故宫</span><span class="chip">中国十大传世名画之一</span></div>
+  </div>
+  <div class="scroll-cue">走入六百年前的江南</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">八十岁，他<em>才动笔</em></h2>
+    <p class="lead reveal">1350 年前后，年过八旬的黄公望在富春江畔落墨。他没有画亭台楼阁，也没有画人物事件，只把一条江、几座山，画了数年——这是中国文人山水最从容的一次『慢』。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>黄公望本名陆坚，出继黄氏，号大痴道人。他做过小官，身陷囹圄，半生蹉跎，五十岁后才真正潜心书画。</p><p>《富春山居图》是他晚年的倾力之作：以富春江两岸初秋景色为蓝本，峰峦旷野、渔舟村舍，皆以淡赭与水墨写就，长逾六米。</p><p>此卷曾历火殉、曾断为两段、曾隔海分藏，六百年间几度生死——一幅画，就这样活成了一段传奇。</p>
+      <p class="src">—— 据卷后题跋与画史通行叙述</p>
+      <p class="end reveal">他画的不是某一座山，而是中国人心里那片永远回得去的江南。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE SCROLL · 画中细节</div>
+    <h2 class="reveal">点开<em>富春</em>的十个角落</h2>
+    <p class="lead reveal">从卷首坡脚到卷尾远水：每一处，都是黄公望笔下的一个慢镜头。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/main.webp" alt="富春山居图 · Dwelling in the Fuchun Mountains — 一卷山，住了六百年" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一卷画的<em>六百年</em></h2>
+    <p class="lead reveal">从一位八旬老人的江畔独坐，到 2011 年两岸合璧——它的命运，比画中烟云更跌宕。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 1350 · 富春江畔</p><h3>八十始画，数年乃成</h3><p>黄公望晚年隐于富春江边，观山看水、积累稿本，以数年之功写成此卷，赠予同门师弟无用师，嘱其『早晚得暇，当为着笔』。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1650 · 火殉逢生</p><h3>一把火，烧出两段</h3><p>明末收藏家吴问卿临死前欲以此卷陪葬，焚画祭奠；其侄从火中抢出，画已烧断，从此分为前后两段——前段称《剩山图》，后段称《无用师卷》。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">2011 · 合璧</p><h3>隔海相望，终得一聚</h3><p>《剩山图》藏于浙江省博物馆，《无用师卷》藏于台北故宫。2011 年，两段于台北故宫合展，离首度分离已逾三百六十年。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE SCROLL · 幕后</div>
+    <h2 class="reveal">烧断的，<em>和不肯断的</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/main.webp" alt="三件有据可查的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>三件有据可查的事</h3><p><span class="hl">作者确为黄公望</span>。卷后有黄公望至正十年（1350）自题长跋，明言此卷『阅三四载未得完备』，并赠无用师——作者与创作年代由此锁定，少有异议。</p><p><span class="hl">它真的差点被烧掉</span>。清初吴问卿爱此卷成癖，临终命焚以为殉；火起之际，其侄吴静庵急从火中夺出，画已燎断成两截，成为画史上最惊险的一次『死里逃生』。</p><p><span class="hl">乾隆也曾看走眼</span>。乾隆得一无用师卷摹本（子明卷），先入为主定为真迹，屡屡题跋；真迹无用师卷入宫后反被标为『赝品』，得以免遭御笔题满——错认竟成了一种保护。</p><p class="note">※ 『子明卷早于无用师卷入宫、乾隆先认摹本为真』为画史通行公案；两段分藏与 2011 合璧为确凿史实。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 长卷图鉴</div>
+    <h2 class="reveal">把<em>留白</em>读成水</h2>
+    <p class="lead reveal">从卷首的坡脚到卷尾的远岫：长卷用八段，走完一条江的清晨到薄暮。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c3.webp" alt="起手坡脚" loading="lazy" decoding="async"></div><div class="fb"><h4>起手坡脚</h4><div class="fy">OPENING · 卷首</div><p>卷首以低缓坡脚与疏树起势，不急于展山，先把观者引进一片湿润的江南。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c15.webp" alt="疏林烟树" loading="lazy" decoding="async"></div><div class="fb"><h4>疏林烟树</h4><div class="fy">GROVES · 中景</div><p>淡墨点厾的林木在江雾里若聚若散，是富春最耐读的呼吸之处。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c28.webp" alt="江流宛转" loading="lazy" decoding="async"></div><div class="fb"><h4>江流宛转</h4><div class="fy">RIVER · 留白</div><p>大片江面以留白处理，沙渚与浅滩勾出水的走向，余韵尽在有无之间。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c43.webp" alt="主峰积染" loading="lazy" decoding="async"></div><div class="fb"><h4>主峰积染</h4><div class="fy">PEAK · 披麻皴</div><p>层叠主峰以披麻皴积染而成，笔笔交叠却不见堆砌，苍润之气由此而生。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c57.webp" alt="山居村舍" loading="lazy" decoding="async"></div><div class="fb"><h4>山居村舍</h4><div class="fy">DWELLING · 可居</div><p>茅亭村舍临水而设，是长卷里唯一安稳的人间烟火，亦是『可游可居』的落点。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c70.webp" alt="林际小径" loading="lazy" decoding="async"></div><div class="fb"><h4>林际小径</h4><div class="fy">PATH · 幽深</div><p>主峰之后的小径隐入林际，把视线引向不可穷尽的深处，山于是活了。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c81.webp" alt="远岫层叠" loading="lazy" decoding="async"></div><div class="fb"><h4>远岫层叠</h4><div class="fy">DISTANT · 退晕</div><p>卷尾远峰以淡墨层层退晕，墨色将尽未尽，正是晨雾初散时的山色。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fuchun-c92.webp" alt="洲渚收束" loading="lazy" decoding="async"></div><div class="fb"><h4>洲渚收束</h4><div class="fy">ISLET · 尾声</div><p>洲渚林木与远水相接，长卷缓缓收束，把未尽之意交付天际。</p></div></div></div>
+    <div class="flora-note reveal">以上八图沿卷展开，对应富春江从起手、中景、主峰到收束的推进；黄公望以『计白当黑』之法治水，留白处正是江水与烟岚。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">什么是<em>文人山水</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>逸笔草草，不求形似</h4><p>元代文人画以书法入画、以写代描，重在『写意』而非『写形』。《富春山居图》的披麻皴与淡赭，正是这种『逸笔草草而意态自足』的巅峰。</p></div><div class="prb-item reveal"><h4>披麻皴与积染</h4><p>黄公望以中锋长线条层层交叠（披麻皴）表现江南土山的松软肌理，再以淡墨多次积染，山石于是有了温润的厚度与空气感。</p></div><div class="prb-item reveal"><h4>散点透视与『走看』</h4><p>长卷不固定视点，观者须边展边看、边走边读；山水的纵深与时间是并置的——富春江因此被拉成一条可以步入的旅程。</p></div><div class="prb-item reveal"><h4>火殉、断卷与合璧</h4><p>一幅画的残缺与重聚，使它超越了艺术本身，成为民族记忆的隐喻；2011 年的合展，让『山水合璧』有了最具体的注脚。</p></div></div>
+    <div class="prb-quote reveal">仆归富春山居，无用师偕往，暇日于南楼援笔写成此卷。<small>—— 黄公望《富春山居图》自题（至正十年，意译节录）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">尾声 · 一张长卷的时间线</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1350</span><p>黄公望于富春江畔绘成此卷，纸本水墨，长逾六米，并自题长跋赠无用师。</p></div><div class="legacy-item reveal"><span class="yr">1650 前后</span><p>吴问卿火殉，卷焚为两段，分称《剩山图》与《无用师卷》。</p></div><div class="legacy-item reveal"><span class="yr">清乾隆朝</span><p>无用师卷入宫，却被先入为主的乾隆定为『赝品』免遭题满；真迹逃过一劫。</p></div><div class="legacy-item reveal"><span class="yr">20 世纪</span><p>《剩山图》归浙江省博物馆，《无用师卷》归台北故宫，隔海分藏近一甲子。</p></div><div class="legacy-item reveal"><span class="yr">2011</span><p>两段于台北故宫合璧展出，距分离已三百六十余年，一时传为文化盛事。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片来源：Wikimedia Commons，黄公望《富春山居图》（公有领域）。本页仅供艺术赏析用途。史实分层：确定事实直接陈述；子明卷公案、合璧细节等属画史通行叙述，均已标注。
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 12.0, "y": 72.0, "no": "I", "t": "坡岸与江脚", "img": "assets/fuchun-I.webp", "txt": "近景的坡石伸入江中，几株疏树临水而立。黄公望不画惊涛，只画水边一线缓坡——中国山水最爱的，正是这种『可游可居』的寻常角落。"}, {"x": 24.0, "y": 46.0, "no": "II", "t": "疏林丛树", "img": "assets/fuchun-II.webp", "txt": "中景的林木以淡墨点厾而成，疏朗处见空明。富春之妙，不在繁密，而在『少少许胜多多许』：几棵树，便撑起一整片江南的湿润。"}, {"x": 34.0, "y": 28.0, "no": "III", "t": "远山一抹", "img": "assets/fuchun-III.webp", "txt": "画面高处只留一抹极淡的远山，与天空的几近留白相接。这种『计白当黑』的远岫，是长卷拉开纵深的第一口气。"}, {"x": 45.0, "y": 62.0, "no": "IV", "t": "江面与沙渚", "img": "assets/fuchun-IV.webp", "txt": "中段江面大片留白，仅以沙渚与浅滩暗示水的存在。留白不是空无，而是把『水』交给观者去想——这是文人山水最从容的修辞。"}, {"x": 55.0, "y": 36.0, "no": "V", "t": "主山峦", "img": "assets/fuchun-V.webp", "txt": "画面的视觉重心是一座层叠起伏的主峰，以披麻皴层层积染。黄公望晚年笔力沉厚，山不险怪，却自有一段苍润之气。"}, {"x": 64.0, "y": 74.0, "no": "VI", "t": "茅亭与村舍", "img": "assets/fuchun-VI.webp", "txt": "山脚临水处有茅亭数间、村舍点点，是人迹可至之处。长卷至此，山与人终于相望——可游，亦可居。"}, {"x": 73.0, "y": 52.0, "no": "VII", "t": "山间路径", "img": "assets/fuchun-VII.webp", "txt": "主峰之后，一条若隐若现的小径没入林际。观者的视线被轻轻引向深处，却始终到不了尽头——山水因此『走』了起来。"}, {"x": 82.0, "y": 30.0, "no": "VIII", "t": "远峰层叠", "img": "assets/fuchun-VIII.webp", "txt": "卷尾的远峰愈淡愈远，墨色退到几乎只剩轮廓。从浓到淡的过渡，正是富春江晨雾初散时，山色次第显隐的真实秩序。"}, {"x": 89.0, "y": 66.0, "no": "IX", "t": "洲渚林木", "img": "assets/fuchun-IX.webp", "txt": "近水的洲渚上林木低伏，与对岸遥相呼应。点景的小树以横点排布，远看如苔痕，近看才有笔笔的分量。"}, {"x": 95.0, "y": 82.0, "no": "X", "t": "江尾远水", "img": "assets/fuchun-X.webp", "txt": "长卷收束于一片愈远愈淡的江水。黄公望没有画『结束』，只把视线交给天际——余下的，留给六百余年的读画人。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(201,162,74,", "rgba(231,210,160,", "rgba(111,143,134,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="fuchun" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">古琴《醉渔唱晚》</div>
+    <div class="bgm-sub">Guqin · Zuiyu Changwan</div>
+    <div class="bgm-why">《醉渔唱晚》是晚明传谱的古琴小品，写一位渔父趁着酒意摇橹归棹，把整条江都唱成了自己的家。黄公望画《富春山居》时，也正是在这条江边结庐隐居，看山看水看了七八年，把人世间的忙乱都还给了云烟。琴声里那几声不慌不忙的拨弦，像极了他笔下疏朗的皴笔——不争不抢，只是把日子过得慢下来。它不写渔父的醉，也不写江山的远，只写一个“退”字：退到山水里去，退到琴声里去，和画里那座无人打扰的富春山，同一种呼吸。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">古琴《醉渔唱晚》· 演奏 龚一 · 公有领域录音（CC0）· 音源 Wikimedia Commons</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/001W9RzU1lcTic?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">醉渔唱晚<span>龚一</span></a></div>
+  </div>
+</div>
+
+<script>
+  /* ===== BGM 配乐组件 ===== */
+  (function(){
+    var wrap=document.getElementById('bgm'); if(!wrap) return;
+    var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+        vol=document.getElementById('bgmVol');
+    var bars=wrap.querySelectorAll('.bgm-wave i');
+    var LS='bgm-off-'+ (wrap.dataset.key||'page');
+    var audio=new Audio('assets/bgm.mp3');
+    audio.loop=true; audio.preload='auto';
+    var target=0.55, timer=null, autoArmed=false, waveTimer=null;
+
+    function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+    setVol(target);
+
+    /* skiper25 波形律动：播放时每 100ms 随机跳动（4–14px），暂停时归位 4px */
+    function wave(on){
+      if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+      if(on){
+        var jig=function(){ for(var i=0;i<bars.length;i++){
+          bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+        jig(); waveTimer=setInterval(jig,100);
+      } else {
+        for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+      }
+    }
+    wave(false);
+
+    function fade(to,ms){
+      if(timer) clearInterval(timer);
+      var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+      timer=setInterval(function(){
+        i++;
+        setVol(from+(to-from)*(i/steps));
+        if(i>=steps){ clearInterval(timer); timer=null;
+          if(to===0){ audio.pause(); } }
+      },40);
+    }
+
+    function mark(on){
+      wrap.classList.toggle('on',on);
+      if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+      if(txt) txt.textContent='灵感配乐';
+      wave(on);
+    }
+
+    function play(){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+          try{ localStorage.removeItem(LS); }catch(e){}
+        }).catch(function(){ mark(false); }); }
+      else { mark(true); fade(target,1200); }
+    }
+    function stop(){
+      fade(0,800); mark(false);
+      try{ localStorage.setItem(LS,'1'); }catch(e){}
+    }
+    function toggle(){ audio.paused ? play() : stop(); }
+
+    /* skiper25 波形按钮 → 播放/暂停 */
+    if(playBtn) playBtn.addEventListener('click',function(e){
+      e.stopPropagation(); toggle(); });
+    /* 「灵感配乐」文字 → 说明面板的唯一开关（单击切换） */
+    function panel(open){
+      wrap.classList.toggle('open',open);
+      if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+    }
+    if(txt) txt.addEventListener('click',function(e){
+      e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+    /* 点击面板外部 / 按 Esc 关闭 */
+    document.addEventListener('click',function(e){
+      if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+        if(txt) txt.focus(); } });
+    vol.addEventListener('input',function(){
+      target=Math.max(0,Math.min(1,this.value/100));
+      if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+    });
+    vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+    // 自动播放：未被浏览器策略阻止则直接开始；否则等首次交互
+    var off=false; try{ off=localStorage.getItem(LS)==='1'; }catch(e){}
+    if(!off){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200); })
+        .catch(function(){ autoArmed=true; }); }
+      if(!autoArmed && !p){ mark(true); fade(target,1200); }
+      if(autoArmed){
+        var kick=function(){ play(); document.removeEventListener('pointerdown',kick);
+          document.removeEventListener('keydown',kick);
+          document.removeEventListener('wheel',kick);
+          document.removeEventListener('touchstart',kick); };
+        document.addEventListener('pointerdown',kick,{once:true});
+        document.addEventListener('keydown',kick,{once:true});
+        document.addEventListener('wheel',kick,{once:true,passive:true});
+        document.addEventListener('touchstart',kick,{once:true});
+      }
+    }
+    // 切到后台时暂停，回到前台恢复（仅在用户开启过的情况下）
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+      else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+    });
+  })();
+
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.back-home');
+  if(b){
+    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+    window.addEventListener('scroll', upd, {passive:true}); upd();
+  }
+})();
+</script>
+</body>
+</html>

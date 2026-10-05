@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千里江山图 · A Thousand Li of Rivers and Mountains — 十八岁的青绿江山</title>
+<meta name="description" content="王希孟《千里江山图》(北宋，约 1113) 动态赏析：一人、一年、一卷，与一种叫『青绿』的奢侈颜色。">
+<style>
+  /* ===== 灵感配乐 ===== */
+  #bgm {position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn {display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover {border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn {border-color:var(--gold);color:var(--gold-soft)}
+  .bgm-play {display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible {padding:7px 13px;outline:none}
+  .bgm-play:focus-visible {box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave {display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i {display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i {opacity:1}
+  .bgm-txt {border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible {color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt {color:var(--gold);opacity:1}
+  .bgm-panel {position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  #bgm.open .bgm-panel {opacity:1;transform:none;pointer-events:auto}
+  .bgm-row {display:flex;align-items:center;gap:8px}
+  .bgm-t {font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub {font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}
+  .bgm-why {font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol {display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span {font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range] {-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb {-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb {width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr {font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  .bgm-qq {margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h {font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song {display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover {color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span {color:var(--muted);font-size:11px;margin-left:6px}
+
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+
+  :root{
+    --ink:#0a0f0e;
+    --ink2:#101a18;
+    --panel:#14211d;
+    --line:rgba(216,178,106,.28);
+    --gold:#c9a24a;
+    --gold-soft:#e3d6a6;
+    --water:#3f8f86;
+    --rose:#b56a55;
+    --paper:#f2ead8;
+    --muted:#9fb0a6;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/main.webp") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.9) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(63,143,134,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0a0f0e 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="千里江山图 · A Thousand Li of Rivers and Mountains — 十八岁的青绿江山">
+<meta property="og:image" content="../covers/qianli.webp">
+<meta property="og:description" content="王希孟《千里江山图》(北宋，约 1113) 动态赏析：一人、一年、一卷，与一种叫『青绿』的奢侈颜色。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="千里江山图 · A Thousand Li of Rivers and Mountains — 十八岁的青绿江山">
+<meta name="twitter:image" content="../covers/qianli.webp">
+<meta name="twitter:description" content="王希孟《千里江山图》(北宋，约 1113) 动态赏析：一人、一年、一卷，与一种叫『青绿』的奢侈颜色。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">王希孟 · 北宋 · 约 1113</div>
+    <h1 class="title" id="titleCh">千里江山图</h1>
+    <div class="hero-en">A THOUSAND LI OF RIVERS AND MOUNTAINS</div>
+    <div class="hero-meta"><span class="chip">绢本青绿设色</span><span class="chip">纵 51.5 × 横 1191.5 cm</span><span class="chip">北京故宫博物院藏</span><span class="chip">中国十大传世名画之一</span></div>
+  </div>
+  <div class="scroll-cue">随一位十八岁少年看山</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">十八岁，<em>他画完了一座江山</em></h2>
+    <p class="lead reveal">关于这幅近十二米长卷的作者，史料只有寥寥数语：王希孟，北宋徽宗朝的画学生，约十八岁画成此卷，此后便从历史中消失。一幅画，几乎是一个人的全部。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>王希孟曾入徽宗主持的画学，得徽宗亲授笔法。政和三年（1113）前后，他以一卷青绿山水惊动宫廷——这便是《千里江山图》。</p><p>全卷以石青、石绿两种矿物颜料层层罩染，色泽灿烂如初；间以赭石打底、墨线勾勒，是唐代『二李』青绿传统在北宋的巅峰回响。</p><p>画成之后，王希孟便再无记载，年仅二十余岁便辞世。一幅十二米的江山，几乎耗尽了他短暂的一生。</p>
+      <p class="src">—— 据卷后蔡京题跋与画史通行叙述</p>
+      <p class="end reveal">他用一种最『重』的颜色，留下了最轻、也最恒久的少年之气。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE SCROLL · 画中细节</div>
+    <h2 class="reveal">点开<em>千里江山</em>的十二个角落</h2>
+    <p class="lead reveal">从起手江村到收束远岫：每一处，都是少年笔下的一抹青绿。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/main.webp" alt="千里江山图 · A Thousand Li of Rivers and Mountains — 十八岁的青绿江山" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一卷画的<em>一人一年</em></h2>
+    <p class="lead reveal">一个少年、一年光景、一卷十一米的长绢——它几乎是『天才』这个词最具体的形状。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 1113 · 汴京 画学</p><h3>徽宗的少年画生</h3><p>王希孟入徽宗画学，得皇帝亲授。在帝王亲自调教的天才班里，他是最被寄望的一个——十七八岁，已能驾驭巨幅。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1113 · 一卷写成</p><h3>十一米青绿，一次倾尽</h3><p>他以半年左右绘成此卷，石青石绿层层积染，气势连贯如一气呵成；完成后进呈御前，徽宗赐予权臣蔡京。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">此后 · 人间再无希孟</p><h3>少年夭逝，仅留此卷</h3><p>画成不久，王希孟便英年早逝，史料再无只字。一幅《千里江山图》，几乎成了他留给世界的全部回声。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE SCROLL · 幕后</div>
+    <h2 class="reveal">一种叫<em>青绿</em>的奢侈</h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/main.webp" alt="三件有据可查的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>三件有据可查的事</h3><p><span class="hl">石青石绿，贵比黄金</span>。两种颜料取自蓝铜矿与孔雀石，研磨极细、层层罩染方能璀璨；在北宋，这意味着一笔下去，便是真金白银的消耗。</p><p><span class="hl">它曾被宋徽宗赐给蔡京</span>。卷后蔡京题跋记其来历，使作者与年代得以确认；蔡京虽为权相，却因这段题字成了此卷流传的见证。</p><p><span class="hl">八百余年颜色如新</span>。矿物颜料稳定不褪，使今天的我们仍能见到近千年前那一抹灼灼青绿——这是绢本设色罕见的长寿。</p><p class="note">※ 王希孟生卒年与『十八岁画成』多据蔡京跋与后世题咏推知，细节略有出入；青绿颜料之珍贵为共识。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 长卷图鉴</div>
+    <h2 class="reveal">把<em>青绿</em>铺成千里</h2>
+    <p class="lead reveal">从江村到远岫：长卷用八段，走完一座江山的晨与暮。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/qianli-c2.webp" alt="起手江村" loading="lazy" decoding="async"></div><div class="fb"><h4>起手江村</h4><div class="fy">VILLAGES · 开端</div><p>长卷以平缓江村起势，先把人烟放进青绿山水，再引向后面的千岩万壑。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c15.webp" alt="近景峰峦" loading="lazy" decoding="async"></div><div class="fb"><h4>近景峰峦</h4><div class="fy">FOOTHILLS · 青绿</div><p>低伏峰峦以石青石绿罩染，是北宋青绿山水的典型骨架。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c28.webp" alt="主峰拔起" loading="lazy" decoding="async"></div><div class="fb"><h4>主峰拔起</h4><div class="fy">PEAK · 积染</div><p>中段主峰以浓重石青层层积染，少年笔力在此尽显。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c41.webp" alt="山间村落" loading="lazy" decoding="async"></div><div class="fb"><h4>山间村落</h4><div class="fy">HAMLET · 界画</div><p>峰峦环抱的村落以纤细墨线界画而成，与山体松紧相生。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c54.webp" alt="江河交汇" loading="lazy" decoding="async"></div><div class="fb"><h4>江河交汇</h4><div class="fy">WATERS · 留白</div><p>江流分合，水口以留白写就，千里奔流收于一方绢素。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c68.webp" alt="水村渔隐" loading="lazy" decoding="async"></div><div class="fb"><h4>水村渔隐</h4><div class="fy">FISHING · 人居</div><p>近水村墟与渔舍再现，长卷首尾皆落于人烟。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c82.webp" alt="洲渚林木" loading="lazy" decoding="async"></div><div class="fb"><h4>洲渚林木</h4><div class="fy">ISLETS · 横点</div><p>洲渚林木以横点洒落，是长卷最安静的收束之笔。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/qianli-c94.webp" alt="远岫收束" loading="lazy" decoding="async"></div><div class="fb"><h4>远岫收束</h4><div class="fy">DISTANT · 淡青</div><p>最后一道远岫以淡青收笔，与起手江村遥相呼应。</p></div></div></div>
+    <div class="flora-note reveal">以上八图沿卷展开，对应《千里江山图》起手、主峰、水口到收束的推进；石青为峰、石绿为坡，是整卷的设色语法。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">什么是<em>青绿山水</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>唐人法度，宋人气象</h4><p>青绿山水始于隋代展子虔，盛于唐代李思训、李昭道（『二李』）。王希孟以北宋的体量感重述此法，把宫廷的富丽推向极致。</p></div><div class="prb-item reveal"><h4>石青石绿的物理</h4><p>蓝铜矿呈石青、孔雀石呈石绿，皆为天然矿物。研磨愈细、罩染愈厚，色泽愈见温润厚重——这是化学与笔法的双重工艺。</p></div><div class="prb-item reveal"><h4>散点长卷的『走看』</h4><p>近十二米的横卷须边展边读，视点随江山推移而不固定；青绿在其上分段设色，使『千里』得以在一段段观看中徐徐展开。</p></div><div class="prb-item reveal"><h4>少年与天才的隐喻</h4><p>王希孟的早慧与早逝，使此卷自带传奇；它常被当作『天才』的注脚，也提醒人：有些作品，本就是为一个瞬间而存在的。</p></div></div>
+    <div class="prb-quote reveal">上嘉之，因以赐臣京，谓天下士在作之而已。<small>—— 蔡京《千里江山图》题跋（节录，意译）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">尾声 · 一张长卷的时间线</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1113</span><p>王希孟于北宋徽宗朝绘成此卷，绢本青绿设色，纵 51.5 厘米、横约 1191.5 厘米，后赐蔡京。</p></div><div class="legacy-item reveal"><span class="yr">宋以后</span><p>历经南宋、元、明内府与私家递藏，清代入内府，编入《石渠宝笈》。</p></div><div class="legacy-item reveal"><span class="yr">近代</span><p>清宫旧藏辗转归北京故宫博物院，与《清明上河图》等同列镇院名迹。</p></div><div class="legacy-item reveal"><span class="yr">2017</span><p>故宫『千里江山——历代青绿山水画展』引发观展热潮，此卷罕见展出，一票难求。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>作为现存青绿山水的巅峰，它持续以『少年之笔、千年之色』惊动每一个走近的人。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片来源：Wikimedia Commons，王希孟《千里江山图》（北宋，绢本青绿设色，公有领域）。本页仅供艺术赏析用途。史实分层：确定事实直接陈述；王希孟生卒、『十八岁画成』等属通行推知，均已标注。
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 42.0, "y": 8.67, "no": "I", "t": "起手江村", "img": "assets/qianli-I.webp", "txt": "长卷自一片平缓的江岸起笔：村舍、渡口、疏林，青绿设色里先埋下人间烟火，再引你走向后文的千岩万壑。"}, {"x": 84.0, "y": 5.67, "no": "II", "t": "近景峰峦", "img": "assets/qianli-II.webp", "txt": "低伏的青绿峰峦以石青石绿层层罩染，山头如结，正是『二李』青绿法度在北宋的一次集大成。"}, {"x": 38.0, "y": 25.83, "no": "III", "t": "江面渔村", "img": "assets/qianli-III.webp", "txt": "水面以留白与淡赭写出，渔村、舟楫点缀其间。王希孟不画空山，而画『有人住的山』——这是宋人山水最亲切的一面。"}, {"x": 86.0, "y": 21.67, "no": "IV", "t": "主峰拔起", "img": "assets/qianli-IV.webp", "txt": "画卷中段，一座主峰拔地参天，以浓重的石青积染，与周遭的石绿形成冷暖交响。十八岁的笔力，在此毫不遮掩。"}, {"x": 40.0, "y": 43.67, "no": "V", "t": "山间村落", "img": "assets/qianli-V.webp", "txt": "峰峦环抱处，村落与寺观隐现。界画般的屋宇以纤细墨线勾出，与厚重的青绿山体形成一松一紧的呼吸。"}, {"x": 82.0, "y": 40.0, "no": "VI", "t": "长桥卧波", "img": "assets/qianli-VI.webp", "txt": "一道木桥横跨江面，把两岸的山与人轻轻系住。长桥是宋人山水里常见的『渡』的意象，也是观者视线的歇脚处。"}, {"x": 36.0, "y": 59.17, "no": "VII", "t": "江河交汇", "img": "assets/qianli-VII.webp", "txt": "江流在此分合，水口以留白与淡赭交代去向。千里之远的江河，被收进一方绢素，却仍见奔流之势。"}, {"x": 78.0, "y": 55.0, "no": "VIII", "t": "远峰列岫", "img": "assets/qianli-VIII.webp", "txt": "画幅后段，远峰一列列退向天际，石色愈淡愈冷。从近到远、从浓到淡，正是江南山色在晨霭里的真实秩序。"}, {"x": 38.0, "y": 76.33, "no": "IX", "t": "水村渔隐", "img": "assets/qianli-IX.webp", "txt": "近水的村墟与渔舍再现，与卷首呼应。全卷首尾皆是人居，把『千里』最终落回人烟。"}, {"x": 92.0, "y": 73.67, "no": "X", "t": "洲渚林木", "img": "assets/qianli-X.webp", "txt": "洲渚上林木低伏、水鸟栖止，是长卷里最安静的角落。点景小树以横点积成，远看如苔痕洒落江畔。"}, {"x": 46.0, "y": 91.67, "no": "XI", "t": "收束江面", "img": "assets/qianli-XI.webp", "txt": "长卷临近尾声，江面再度开阔，远山几成剪影。王希孟没有画『终局』，只把千里江山交还给天际的淡青。"}, {"x": 82.0, "y": 89.0, "no": "XII", "t": "远岫一抹", "img": "assets/qianli-XII.webp", "txt": "最后一道远岫以极淡的石绿收笔，与起手的江村遥相呼应——一卷之始与一卷之终，都被同一片青绿轻轻拢住。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(63,143,134,", "rgba(201,162,74,", "rgba(227,214,166,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.back-home');
+  if(b){
+    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+    window.addEventListener('scroll', upd, {passive:true}); upd();
+  }
+})();
+</script>
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="qianli" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">古琴《平沙落雁》</div>
+    <div class="bgm-sub">Guqin · Pingsha Luoyan</div>
+    <div class="bgm-why">十二世纪北宋末年的少年王希孟，十八岁便以一卷《千里江山图》把锦绣河山凝进石青石绿的矿物辉光里；这一段的配乐取古琴《平沙落雁》——不喧哗，也不萧瑟，只是让泛音像画中那道蜿蜒的江水，从近岸的汀渚一路铺向远天的群峰。它不急于诉说，也不肯沉静到底，只是在壮阔里藏着一丝温润，和画里那片青绿在光下流转的气息，原是同一种浩荡。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">古琴《平沙落雁》· 演奏 管平湖 · 公有领域录音（CC0）· 音源 Wikimedia Commons</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/003DuQ6P4feFtz?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">平沙落雁<span>管平湖</span></a></div>
+  </div>
+</div>
+
+<script>
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+</script>
+</body>
+</html>

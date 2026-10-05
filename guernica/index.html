@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格尔尼卡 · Guernica — 一张黑白灰的嘶喊</title>
+<meta name="description" content="毕加索《格尔尼卡》(1937) 动态赏析：十个光点、两盏灯、一朵小花、八张多拉·玛尔的照片——反战艺术最著名的一面墙，与它同年诞生的西班牙战歌。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#0d0d0f;--ink2:#131316;--panel:#1a1a1e;--line:rgba(216,178,106,.28);--gold:#c9c2b0;--gold-soft:#efeadd;--water:#8f8f95;--rose:#a03a30;--paper:#f2ead8;--muted:#98948c;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/guernica-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.40) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(200,200,205,.045) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0d0d0f 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="格尔尼卡 · Guernica — 一张黑白灰的嘶喊">
+<meta property="og:image" content="../covers/guernica.webp">
+<meta property="og:description" content="毕加索《格尔尼卡》(1937) 动态赏析：十个光点、两盏灯、一朵小花、八张多拉·玛尔的照片——反战艺术最著名的一面墙，与它同年诞生的西班牙战歌。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="格尔尼卡 · Guernica — 一张黑白灰的嘶喊">
+<meta name="twitter:image" content="../covers/guernica.webp">
+<meta name="twitter:description" content="毕加索《格尔尼卡》(1937) 动态赏析：十个光点、两盏灯、一朵小花、八张多拉·玛尔的照片——反战艺术最著名的一面墙，与它同年诞生的西班牙战歌。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">PABLO PICASSO · 1937</div>
+    <h1 class="title" id="titleCh">格尔尼卡</h1>
+    <div class="hero-en">GUERNICA</div>
+    <div class="hero-meta"><span class="chip">布面油画 · 仅用黑灰白三色</span><span class="chip">349 × 776 cm</span><span class="chip">马德里 · 雷纳·索菲娅国家艺术中心博物馆</span><span class="chip">1937 · 巴黎世界博览会西班牙馆</span></div>
+  </div>
+  <div class="scroll-cue">从左到右走进这幅画：牛、母亲、灯眼、马、断剑、烛火与火场</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">1937年4月26日，<em>集市日的下午</em></h2>
+    <p class="lead reveal">西班牙巴斯克小镇格尔尼卡，一个再普通不过的星期一——人们在集市上做买卖，直到轰炸机的影子盖过屋顶。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>下午四点半开始，德国「秃鹰军团」与意大利航空军团的飞机对这座无设防的小镇轮番轰炸、扫射，持续了约三个小时；镇中心的建筑烧了三天。遇害人数至今没有定论：巴斯克政府当年统计逾一千六百人，后世多数研究认为在一百五十至三百人之间——历史在数字上撕开了一道缝。当时毕加索人在巴黎，几天后从报纸上读到报道；5月1日，他画下了第一张草图。</p><p>这并不是一份「画战争」的委托。巴黎世界博览会西班牙馆的壁画订单早在轰炸之前就已敲定，题材原本可以平淡无奇。是格尔尼卡的新闻让毕加索把整个订单让给了这座小镇：他彻底放弃了色彩，全画只用黑、灰、白三色——据记载，有人问他为什么，他回答：这就是报纸照片的颜色（此说流传甚广，出处存疑）。他在这幅三米五高、七米八宽的画布上工作了约六周。</p><p>所以这一页不打算给你一个「看懂了」的答案——连毕加索本人都拒绝充当说明书：「公牛就是公牛，马就是马」（据英译转译，他另一些场合又给出相反的解释）。让我们按他的排布从左往右走一遍：牛、母亲、灯眼、马、断剑、烛火、坠楼的人、举臂的人、着火的人。注意两件事：全画没有天空，也没有一条地面线。</p>
+      <p class="src">—— 巴勃罗·毕加索，1945 年答美国记者耶罗姆·塞克勒（据英译转译）</p>
+      <p class="end reveal">在本页左下角，可以点亮一支与这幅画同龄的战歌。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这面墙</em>的十个秘密</h2>
+    <p class="lead reveal">从左到右读：哭声越来越高，光源越来越假，而废墟正中央握着一朵小花。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/guernica-main.webp" alt="格尔尼卡 · Guernica — 一张黑白灰的嘶喊" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片为低分辨率转载，作品著作权仍在保护期内</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">从一份平淡的订单，<em>到一面黑色的墙</em></h2>
+    <p class="lead reveal">它六周画成，巡回世界四十四年，回家时已是全球反战的图腾。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1937 年 1 月 · 巴黎</p><h3>一份迟迟不动笔的委托</h3><p>西班牙共和国政府为同年夏天巴黎世界博览会的西班牙馆向毕加索订下壁画（展馆由建筑师何塞普·路易斯·塞特设计）。毕加索长期拖着不动笔，年初只交出了一组讽刺佛朗哥的版画《佛朗哥的梦与谎言》。据他本人后来说，到 4 月底他「已经开始怀疑这幅画能不能画成」——直到 4 月 26 日格尔尼卡的新闻见报。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1937.5.1 → 6 月初 · 六个星期</p><h3>多拉·玛尔相机里的八种《格尔尼卡》</h3><p>5 月 1 日第一张草图落笔，此后约六周，毕加索在画布上反复推倒重来。摄影师多拉·玛尔——他的伴侣与合作者——用相机记录了画布的八个状态，让今天的人能逐帧看到这幅画的诞生：马的方案、举灯手臂的位置、母亲的泪痕都在中途被推翻。这也是艺术史上第一幅「带着自己的纪录片出生」的大画。6 月初完成，随即运往世博会。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1937.7 → 1981 → 1992</p><h3>四十四年的流浪与归国</h3><p>1937 年 7 月，画在巴黎世博会西班牙馆首次公展，对面是考尔德为纪念阿尔马登水银矿工人做的《水银喷泉》。战后，毕加索把它托付给纽约现代艺术博物馆（MoMA），条件是西班牙恢复公共自由与民主之后才能回国——它因此在世界各地巡回多年。1981 年 10 月 25 日，画家百年诞辰之日，画终于运抵马德里；1992 年起藏于雷纳·索菲娅国家艺术中心博物馆的专厅。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画布外的<em>三件真事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/gu-candle.webp" alt="关于这幅画，史料确认过的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>关于这幅画，史料确认过的事</h3><p>真事一 · 它是第一幅「带着纪录片出生」的名画。多拉·玛尔在六个星期里拍下画布的八个阶段，今天在雷纳·索菲娅的展厅里就能逐帧观看这幅画的生长：最初的方案里没有电灯之眼，马头一度朝向另一边，举烛的女人位置改过不止一次。画布上的每一次反悔都有底片为证——这在大画史上几乎绝无仅有。</p><p>真事二 · 毕加索拒绝当这幅画的说明书。1945 年他对美国记者耶罗姆·塞克勒解释过：马代表人民，公牛曾被他一次说成「暴力与黑暗」，两天后他又去信更正；而「公牛就是公牛」这句同样出自他口。同一个符号，艺术家本人给出过互相矛盾的说法——他后来干脆说：画就是画，是一幅「有意为之的 Propaganda 作品」之外的东西。这层「拒绝说明」，后来成了现代艺术最著名的姿态之一。</p><p>真事三 · 它差点没能回家，回家后也不再旅行。毕加索的遗愿是：西班牙恢复公共自由与民主制度之前，画留在 MoMA。1981 年归国时，这幅脆弱的大画被装进特制框架吊运；1974 年它在 MoMA 曾被人喷红漆抗议（事后清除了损伤），此后修复团队明确表示不宜长途巡展——格尔尼卡镇多次申请借展，馆方均以保存条件为由婉拒。今天它被钉死在马德里的专厅里，成为一座「不再移动的纪念碑」。</p><p class="note">※ 遇害人数、德军军官问答轶事、「颜色＝报纸照片」等说法存在不同版本或学术争议；引文据英译转译，措辞或因译本而异。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一座<em>没有出口</em>的剧场</h2>
+    <p class="lead reveal">把画面拆开看：每个人物都在喊，只有公牛在看，只有花在开。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/gu-bull.webp" alt="公牛" loading="lazy" decoding="async"></div><div class="fb"><h4>公牛</h4><div class="fy">THE BULL · 沉默的见证者</div><p>全画唯一不喊的角色。暴力与黑暗？西班牙本身？毕加索的私化身？——他两种说法都给过。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-mother.webp" alt="抱死婴的母亲" loading="lazy" decoding="async"></div><div class="fb"><h4>抱死婴的母亲</h4><div class="fy">THE MOTHER · 反写的圣怜子图</div><p>头颅折断般后仰，舌头是尖刺，眼泪是一根根线。没有神来接住遗体。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-eye.webp" alt="电灯之眼" loading="lazy" decoding="async"></div><div class="fb"><h4>电灯之眼</h4><div class="fy">THE LAMP-EYE · 假的太阳</div><p>灯泡做瞳孔，光线做睫毛。白昼被换成冷光灯，所有惊呼都朝它排列。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-horse.webp" alt="嘶鸣的马" loading="lazy" decoding="async"></div><div class="fb"><h4>嘶鸣的马</h4><div class="fy">THE HORSE · 被刺穿的人民</div><p>毕加索亲口认可的一处解读：「马代表人民。」躯干上还留着报纸的网点。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-soldier.webp" alt="倒地的战士" loading="lazy" decoding="async"></div><div class="fb"><h4>倒地的战士</h4><div class="fy">THE SOLDIER · 死亡里的清醒</div><p>头盔还在，眼睛睁着，身躯断成几何碎片，掌心带着钉痕般的印记。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-sword.webp" alt="断剑与小花" loading="lazy" decoding="async"></div><div class="fb"><h4>断剑与小花</h4><div class="fy">THE FLOWER · 全画唯一的希望</div><p>断剑握在死者手里，剑柄上开出一朵小花——毕加索把它画得只有这么大。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-candle.webp" alt="举烛的女人" loading="lazy" decoding="async"></div><div class="fb"><h4>举烛的女人</h4><div class="fy">THE CANDLE · 人手举着的光</div><p>从窗口探进半身，与电灯之眼一冷一暖。全画唯一的闭眼者。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/gu-burning.webp" alt="着火的女人" loading="lazy" decoding="async"></div><div class="fb"><h4>着火的女人</h4><div class="fy">THE FLAMES · 尽头的呼喊</div><p>被嵌进棺椁般的窗框，火焰的锯齿吞掉半个身体——喊声在这里戛然而止。</p></div></div></div>
+    <div class="flora-note reveal">两盏灯、九张嘴、一朵花——这幅画的构图规则只有一条：所有动势都朝向中心，而中心没有出口。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">为什么它成了<em>反战的脸</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>一场「二战的彩排」</h4><p>格尔尼卡不是孤例：1930 年代的西班牙内战是欧洲法西斯势力的试验场，德国秃鹰军团与意大利航空军团直接参战，对平民城镇的无差别轰炸在此被系统化。四年后的鹿特丹、华沙、伦敦将逐一重演格尔尼卡的下午。毕加索画下的不只是一个小镇，而是预告了整个二十世纪中叶的战争形态——从这一刻起，战争的主要受害者变成了平民。</p></div><div class="prb-item reveal"><h4>为什么只有黑灰白</h4><p>全画没有任何颜色——这是毕加索刻意为之：新闻照片是黑白的，他要让这幅画「像报纸一样不可辩驳」。也有人补充另一层：此时他刚走出 1935 年前后的创作危机，黑白灰正是他私人神话（牛头怪、斗牛、哀悼）的既有语言。可以确定的是：色彩被他视为这幅画的敌人。为世博会展出时，据说还有参观者在画前喊过「给画上点颜色」——毕加索没有让步。</p></div><div class="prb-item reveal"><h4>戈雅的血统</h4><p>少年毕加索临摹过戈雅，四十年后他把戈雅的《1808年5月3日》接了过来：同样的平民、同样的行刑与屠杀、同样「把暴力画成新闻」的立场。马匹的嘶喊、举臂的姿势、灯火下的死难——「格尔尼卡」的字里行间全是《五月三日》的回声。艺术史常把这两幅画并列为西班牙绘画的两座反战纪念碑：戈雅画枪毙，毕加索画轰炸——从枪到炸弹，正好一步跨进二十世纪。</p></div><div class="prb-item reveal"><h4>从画布到全球符号</h4><p>1955 年起，一幅由纳尔逊·洛克菲勒委托织造的全尺寸挂毯复制品开始巡回展出，1985 年起悬挂在纽约联合国总部入口——各国政要在谈判前都会从它面前走过。2003 年 2 月，美国国务卿鲍威尔在挂毯前发言时，它被布帘遮住（联合国解释为「电视画面背景更中性」，媒体报道普遍称为「遮画事件」）。从世博会展馆到反战游行标语，《格尔尼卡》完成了它最矛盾的旅程：一幅拒绝说明的画，成了所有人都能读懂的画。</p></div></div>
+    <div class="prb-quote reveal">绘画不是用来装饰公寓的，它是进攻与防守的武器，对抗着敌人。<small>—— 毕加索 · 1945 年答塞克勒问（据英译转译，New Masses 刊载）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">从六个星期，<em>到一座不再移动的碑</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1937.1</span><p>西班牙共和国政府为巴黎世博会西班牙馆向毕加索订下壁画；毕加索迟迟未动笔。</p></div><div class="legacy-item reveal"><span class="yr">1937.4.26</span><p>格尔尼卡遭德意军团轰炸；数日后毕加索从报纸读到消息，5 月 1 日落第一张草图。</p></div><div class="legacy-item reveal"><span class="yr">1937.6-7</span><p>约六周画成；7 月在巴黎世博会西班牙馆首次公展，对面是考尔德的《水银喷泉》。</p></div><div class="legacy-item reveal"><span class="yr">1939-1981</span><p>依毕加索遗愿寄存纽约 MoMA 并巡回各地；西班牙民主化后，1981.10.25 画家百年诞辰归国。</p></div><div class="legacy-item reveal"><span class="yr">1992-今天</span><p>藏于马德里雷纳·索菲娅国家艺术中心博物馆专厅；联合国总部悬挂其全尺寸挂毯复制品。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：WikiArt 转载之博物馆摄影（低分辨率）·《格尔尼卡》著作权仍在保护期内（毕加索卒于 1973，© Succession Picasso / VEGAP, Madrid）· 仅供个人学习赏析，禁止商业使用<br>内容整理自公开艺术史资料与雷纳·索菲娅国家艺术中心博物馆公开信息 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 10.0, "y": 16.0, "no": "I", "t": "公牛 · 站在悲剧旁的沉默者", "img": "assets/gu-bull.webp", "txt": "最左边是全画最稳定的形象：公牛几乎不动地站在母亲上方，尾如火焰，眼似泪珠。它是解读分歧最大的符号——毕加索 1945 年对记者说公牛代表「暴力与黑暗」，隔了两天又写信更正；另一些场合他只说「公牛就是公牛」。艺术史家常把它接回毕加索的私人神话：从 1930 年代起，牛头怪弥诺陶洛斯就是他画中反复出现的自我化身——暴力、欲望与西班牙本身。"}, {"x": 12.0, "y": 40.0, "no": "II", "t": "抱死婴的母亲 · 仰天的哭喊", "img": "assets/gu-mother.webp", "txt": "公牛脚下，一位母亲抱着死去的孩子仰天哭喊：头颅向后折断般仰起，舌头像一柄尖刺，眼泪被画成一根根下坠的线条。她的姿态被普遍认为呼应「圣母怜子」（Pietà）图式——只是这一次，没有神来接住遗体。她的裙摆像帐篷一样把尸体罩住，那是全画唯一的「庇护所」，而它恰恰保护不了任何东西。"}, {"x": 35.0, "y": 5.0, "no": "III", "t": "电灯之眼 · 一只由灯泡组成的太阳", "img": "assets/gu-eye.webp", "txt": "画面顶端中央：一圈尖锐的光线里，睁着一只瞳孔是灯泡的眼睛。它取代了太阳的位置——白昼被换成了一盏冷光灯。解读至今分裂：有人读作监控之眼与「技术之恶」，有人读作炸弹的引信，也有人只把它当作唯一的舞台照明。可以确定的是构图功能：全画所有的惊呼与嘶喊，都朝着这只眼睛的方向排列。"}, {"x": 35.0, "y": 19.0, "no": "IV", "t": "嘶鸣的马 · 被刺穿的人民", "img": "assets/gu-horse.webp", "txt": "全画的戏剧中心：马头垂直扭向天空，嘴张到极限，牙齿与舌头像一把出鞘的剑；一根长矛刺进它的身体。毕加索 1945 年说得最直白的一次：「马代表人民。」它的躯干上还留着报纸一样的网点纹理——像死亡通知，也像新闻纸：这匹马是被「印刷」出来的一具身体。多拉·玛尔的照片显示，马头的位置与朝向，是六个星期里被反复推倒重来的部分。"}, {"x": 17.5, "y": 84.0, "no": "V", "t": "倒地的战士 · 被肢解的持剑者", "img": "assets/gu-soldier.webp", "txt": "画面底部中央躺着一个被肢解的士兵：头盔还在，眼睛却睁着——他在死亡里保持清醒，是全画最残忍的一笔。他的身躯断成数截，散落成几何碎片；一只断裂的手掌摊开，掌心带着钉痕般的印记，让人想起圣痕图式。从他的手里，还握着一样东西——向右看，那是下一个光点。"}, {"x": 51.5, "y": 74.0, "no": "VI", "t": "断剑与小花 · 废墟里唯一的花", "img": "assets/gu-sword.webp", "txt": "战士的手中握着一柄断成两截的剑——抵抗到最后的姿势；而剑柄处开出一朵小小的花，花茎清晰、五瓣舒展。它是全画唯一称得上「希望」的图形语言。解读依旧分歧：有人读作废墟中不可摧毁的生命，也有人读作一朵献在墓前的花。无论哪种读法，毕加索都把它画得极小——希望在这幅画里的比例，就只有这么大。"}, {"x": 46.0, "y": 29.0, "no": "VII", "t": "举烛的女人 · 探进来的另一盏灯", "img": "assets/gu-candle.webp", "txt": "右侧窗口探进半个身影：一个女人举着蜡烛伸长手臂，与顶端的电灯之眼构成全画仅有的两个光源——一只冷的、人造的、如假太阳；一只暖的、人手的、摇曳的。她探身的窗口紧挨着燃烧的建筑，主流解读认为她在「用真实的光检验灾难」，也有人读作真理的见证者。注意她的脸：与画中所有惊呼者不同，她闭着眼。"}, {"x": 58.0, "y": 46.0, "no": "VIII", "t": "坠楼的女人 · 从火里跳出来的人", "img": "assets/gu-falling.webp", "txt": "画面中右侧，一个女人从燃烧的楼上坠落（或奔出）：头颅向后仰起，双臂下垂，身体失去支点——多拉·玛尔的照片显示，这个人物最初被画成从窗口向外张望，后来才被毕加索改成坠落。她身后的门窗格架像一座牢笼，火焰的锯齿从画面底部咬上来。她是全画动势最大的人：整幅画的「下坠感」都由她承担。"}, {"x": 75.0, "y": 22.0, "no": "IX", "t": "举臂惊呼的女人 · 被火围住的人", "img": "assets/gu-arms.webp", "txt": "从着火的房间探出：双臂高举过头顶，嘴张成嘶喊。这个手势是艺术史的老图式——圣像画里「升天」与「祈祷」的手势——但在这幅画里，方向反了：双手举向的不是天空的拯救，而是逃离身后的火焰。有研究者把全画的嘴排成一条线：从左到右，嘴越张越大——这幅画是沿着「音量」构图的。"}, {"x": 92.0, "y": 28.0, "no": "X", "t": "着火的女人 · 画面尽头的呼喊", "img": "assets/gu-burning.webp", "txt": "最右端，火焰的锯齿吞掉了半个身体：这个女人双手向上，头颅后仰，整个人被嵌在一扇像棺椁一样的窗框里。她与左侧举烛的女人几乎构成镜像——一个把光送进来，一个被火吞出去。画面在这里戛然而止：七米八的宽度走到尽头，喊声没有答案。这也是这幅画的构图结论：暴力的空间是封闭的，没有出口。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(201,194,176,", "rgba(232,230,224,", "rgba(160,160,160,", "rgba(120,120,120,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+var modal=document.getElementById('modal');
+if(!modal) return;
+var orig=(typeof openModal==='function')?openModal:null;
+if(orig){ window.openModal=function(s,dot){orig(s,dot);var c=document.getElementById('modalClose');if(c&&c.focus)c.focus();}; }
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="guernica" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">无声的哀悼 · 肖邦《葬礼进行曲》</div>
+    <div class="bgm-sub">钢琴独奏 · Chopin《Sonata No.2》Op.35 — III. Marche funèbre · CC0 录音</div>
+    <div class="bgm-why">1937年的西班牙，把肖邦葬礼进行曲那种欧洲通用的哀悼，变成了现实。毕加索的《格尔尼卡》里没有炸弹，只有被撕碎的人和畜——正对应这种「不被允许哭喊」的哀悼。钢琴不施装饰：低音是一个接一个的送葬脚步，中段才升起一片集体的挽歌。它不嘶吼，也不粉饰，只是黑白灰地走着——和画里那种无声的痛，同一个被压低的房间。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Chopin《Piano Sonata No.2, Op.35 — III. Marche funèbre》· 公有领域曲作 · CC0 录音 · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/003UtC6c3nww4a?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">III. Marche funèbre<span>Martha Argerich</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+
+</body>
+</html>

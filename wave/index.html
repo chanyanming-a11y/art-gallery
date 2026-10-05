@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海浪 · La Vague — 一道没有边际、也没有神话的海</title>
+<meta name="description" content="库尔贝《海浪》（约 1869–1870）动态赏析：一道正在弯折的巨浪、被压低的海平线、厚堆的颜料，与写实主义如何把「自然」从意义的容器里解放出来。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#10171a;--ink2:#162126;--panel:#1d2a2f;--line:rgba(216,178,106,.28);--gold:#9fc0bd;--gold-soft:#dce8e2;--water:#5b7d86;--rose:#b89a6a;--paper:#f2ead8;--muted:#8fa0a0;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/wave-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.55) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(159,192,189,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#10171a 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="海浪 · La Vague — 一道没有边际、也没有神话的海">
+<meta property="og:image" content="../covers/wave.webp">
+<meta property="og:description" content="库尔贝《海浪》（约 1869–1870）动态赏析：一道正在弯折的巨浪、被压低的海平线、厚堆的颜料，与写实主义如何把「自然」从意义的容器里解放出来。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="海浪 · La Vague — 一道没有边际、也没有神话的海">
+<meta name="twitter:image" content="../covers/wave.webp">
+<meta name="twitter:description" content="库尔贝《海浪》（约 1869–1870）动态赏析：一道正在弯折的巨浪、被压低的海平线、厚堆的颜料，与写实主义如何把「自然」从意义的容器里解放出来。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">GUSTAVE COURBET · c. 1869</div>
+    <h1 class="title" id="titleCh">海浪</h1>
+    <div class="hero-en">THE WAVE · LA VAGUE</div>
+    <div class="hero-meta"><span class="chip">布面油画 · 约 1869</span><span class="chip">库尔贝海景系列之一</span><span class="chip">诺曼底埃特雷塔</span><span class="chip">多馆分藏（公有领域）</span></div>
+  </div>
+  <div class="scroll-cue">在点击任何光点之前，先听一听那道没有终点的浪声</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">他拒绝美化，<em>只画他看见的海</em></h2>
+    <p class="lead reveal">库尔贝说过：他从不画天使，因为他从没见过——这句话，同样适用于这片没有神话、只有物质的浪。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>《海浪》(La Vague) 是库尔贝在 1869–1870 年间、于诺曼底埃特雷塔（Étretat）海滨画下的一组海景共有的名字。画面里是一道正在弯折、即将砸落的巨浪：墨绿灰的水墙，顶端被风撕开一团白；没有船，没有人，也没有任何寓意。它被视为写实主义（Realism）在自然题材上的奠基之作——当同时代画家还在用海难与宁芙「提升」海景时，库尔贝让一片无名、无事的浪独自占据画布。</p><p>它特殊，也因为它是一组、而非一幅。库尔贝以同一个母题画了多个版本（爱丁堡苏格兰国立美术馆、里昂、奥赛、费城、温特图尔……），构图相近、细节互异，像科学家对同一个瞬间做变奏。本页所用为维基共享的公有领域扫描，不特指某一个藏本。这意味着你看的或许与你在某座美术馆见到的那张「同款」略有不同——这正是《海浪》的宿命。</p><p>所以这一页不替你下结论，只带你走近：点开画面上的 ✦ 光点，去看那道弯折的浪脊、落下的泡沫、沉重的水体、被压低的海平线，以及那些被颜料厚厚堆起的地方。留意一个事实——这里没有地平线的戏剧，也没有人，只有海在「做它自己」。</p>
+      <p class="src">—— 据库尔贝 1861 年《写实主义宣言》意旨转述（「我不会画我没见过的天使」）</p>
+      <p class="end reveal">在本页左下角，可以点亮一段与画同时代的法国海景音乐。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这片海</em>的十个秘密</h2>
+    <p class="lead reveal">从一道浪的脊背到一抹落下的泡沫：每一处都是库尔贝与「写实」的较量。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/wave-main.webp" alt="海浪 · La Vague — 一道没有边际、也没有神话的海" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">从埃特雷塔的浪，<em>到现代风景的开端</em></h2>
+    <p class="lead reveal">它诞生于一场与官方沙龙的决裂之后；一个世纪后，人们才看清它放出了什么。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1869–1870 · 诺曼底埃特雷塔</p><h3>在岸边，反复画同一道浪</h3><p>1869 至 1870 年间，库尔贝在诺曼底埃特雷塔（Étretat）的海滨画下一系列海景，其中反复出现同一道正在弯折的巨浪，《海浪》(La Vague) 因此成为一组而非一幅画——爱丁堡苏格兰国立美术馆、里昂、奥赛、费城、温特图尔等地各藏一个版本，尺幅与细节略有差异。他像科学家一样对着同一道浪做变奏，把「瞬间的海」拆开研究。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1855 → 1870 · 巴黎与写实主义之争</p><h3>从被沙龙拒绝，到自成一家</h3><p>库尔贝早在 1855 年便因作品被官方沙龙拒绝，索性在巴黎世博会旁自建「写实主义亭」(Pavillon du Réalisme) 展出并发布宣言，主张只画「亲眼所见」、拒绝理想化。十余年后，《海浪》把这套主张从人物与劳工，推向了「自然」本身——连风景也不再许诺意义，只呈示物质。他与官方趣味的对抗，贯穿了整个 1860 年代。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1900 → 今天 · 现代性的先声</p><h3>被印象派与表现主义接住</h3><p>库尔贝 1871 年因参与巴黎公社（摧毁旺多姆圆柱）入狱、后流亡瑞士并于 1877 年客死他乡；而他的海景在身后被重新发现。莫奈、毕沙罗等印象派从他对水光与厚涂的处理中受惠，梵高与表现主义则接过了「颜料即物质」的主张。《海浪》于是被追认为现代风景画——以及现代艺术「不解释、只呈现」态度——的一块基石。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画布外的<em>三件真事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/wv-impasto.webp" alt="关于这幅画，史料与画面确认过的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>关于这幅画，史料与画面确认过的事</h3><p>真事一 · 《海浪》是一组，不是一幅。库尔贝在 1869–1870 年以同一个母题画了多个版本，分藏爱丁堡、里昂、奥赛、费城、温特图尔等地；它们构图相近、细节互异。所以当你问「《海浪》在哪」时，答案其实是「在很多馆」。本页所用为维基共享的公有领域扫描，不特指某一藏本。</p><p>真事二 · 厚涂是被故意留下的。X 射线与肉眼都可见，浪脊与水面上的颜料是真正「堆」起来的（impasto），刀痕清晰。这不是未完成的草稿，而是库尔贝刻意的物质宣言——他要观者看见「画」这件事本身。修复记录显示这些厚涂历经一百五十年仍稳固。</p><p>真事三 · 海平线被刻意压低。与多数海景用清晰地平线引导纵深不同，库尔贝把海天交界线推高、并模糊处理，把视野锁在近处这道浪上。这一「去纵深」的处理，被后世读作写实主义对浪漫派「崇高风景」的有意反叛——画面证据清楚，无需推测。</p><p class="note">※ 各版本的归属与具体藏地、库尔贝在埃特雷塔的确切作画时序，以及其与印象派的亲缘关系多为公开艺术史通说或据文献转述；引文据库尔贝宣言意旨转述，措辞或因译本而异。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一场<em>物质与瞬间的较量</em></h2>
+    <p class="lead reveal">把画面拆开看：库尔贝把「怎么画海」变成了一场可以逐处审视的实验。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/wv-crest.webp" alt="浪脊" loading="lazy" decoding="async"></div><div class="fb"><h4>浪脊</h4><div class="fy">THE CREST · 正在弯折的巨浪</div><p>向右上方拱起的水墙与顶端被风撕开的白——写实主义面对自然最坦白的姿势。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-spray.webp" alt="泡沫" loading="lazy" decoding="async"></div><div class="fb"><h4>泡沫</h4><div class="fy">SPRAY · 落下的白</div><p>调色刀厚堆的铅白，让泡沫在画面上真的凸起来——油画才有的物质感。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-water_mass.webp" alt="水体" loading="lazy" decoding="async"></div><div class="fb"><h4>水体</h4><div class="fy">WATER · 绿色的沉重</div><p>墨绿灰的庞大水体，几乎不用纯蓝——英吉利海峡那种冷而浑浊的真实颜色。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-sea_swell.webp" alt="前海" loading="lazy" decoding="async"></div><div class="fb"><h4>前海</h4><div class="fy">SWELL · 没有终点的涌</div><p>浪退后仍在起伏的前海，已预告了印象派对水光的兴趣。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-sky.webp" alt="天空" loading="lazy" decoding="async"></div><div class="fb"><h4>天空</h4><div class="fy">SKY · 阴郁的灰</div><p>狭窄、半亮不亮、随时要下雨的诺曼底天色——气象记录式的真实。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-horizon.webp" alt="海平线" loading="lazy" decoding="async"></div><div class="fb"><h4>海平线</h4><div class="fy">HORIZON · 被压低的远方</div><p>暧昧过渡代替锐利分界，把目光锁回近处这道正在发生的浪。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-palette.webp" alt="色调" loading="lazy" decoding="async"></div><div class="fb"><h4>色调</h4><div class="fy">PALETTE · 去蓝的海</div><p>绿灰、油灰、墨绿与赭石；把海从「蓝色符号」里解放出来。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wv-impasto.webp" alt="笔触" loading="lazy" decoding="async"></div><div class="fb"><h4>笔触</h4><div class="fy">IMPASTO · 用颜料堆出的海</div><p>厚涂与刀痕把绘画的物质性推到前台——后来被梵高接了过去。</p></div></div></div>
+    <div class="flora-note reveal">浪脊、泡沫、被压低的地平线、堆起来的颜料——在这幅画里，每一次「不美化」都是一次对学院趣味的冒犯。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">为什么它放出了<em>现代的海</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>拒绝天使，也拒绝神话</h4><p>库尔贝的写实主义宣言里最著名的一句话是：他不会画天使，因为他从没见过。这句话的锋芒同样指向风景——《海浪》里没有女神的宁芙、没有寓意、没有海难英雄，只有一片无名的浪。把自然从「意义的容器」里解放出来，是现代风景画最关键的一步。</p></div><div class="prb-item reveal"><h4>物质先于美</h4><p>学院派教人用优雅的笔触去「美化」海；库尔贝反其道，用厚涂、用刀痕、用浑浊的绿灰去「砌」海。对他而言，海水首先是一种有重量、有温度的物质，而不是悦目的图案。这种把颜料本身当作被观看对象的做法，比塞尚还早一代人。</p></div><div class="prb-item reveal"><h4>埃特雷塔的那道浪</h4><p>诺曼底埃特雷塔的白色峭壁与怒海，是 19 世纪画家们的朝圣地（莫奈晚年也反复画它）。库尔贝在 1869–1870 年扎在这里反复画同一道浪，把一处具体的海岸变成了绘画的实验室。地点因此不只是背景，而是方法的来源。</p></div><div class="prb-item reveal"><h4>印象派接过的火种</h4><p>《海浪》完成后不久，莫奈、毕沙罗们就开始把海与光拆成碎笔；梵高则把厚涂推向燃烧般的强度。艺术史通常把现代风景的起点标在印象派，但库尔贝这道不起眼的浪，已经先把「不解释、只呈现」的态度递到了他们手里。</p></div></div>
+    <div class="prb-quote reveal">我不会画天使，因为我从没见过天使。<small>—— 古斯塔夫·库尔贝《写实主义宣言》(1861) 意旨（据英译/法文转述）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">从埃特雷塔的浪，<em>到现代风景的开端</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1869–1870</span><p>库尔贝于诺曼底埃特雷塔海滨，以同一道巨浪母题创作《海浪》(La Vague) 系列，油彩布面，多版本传世。</p></div><div class="legacy-item reveal"><span class="yr">1855</span><p>因作品被沙龙拒绝，库尔贝在巴黎世博会旁自建「写实主义亭」并发布宣言，主张只画亲眼所见。</p></div><div class="legacy-item reveal"><span class="yr">1871–1877</span><p>库尔贝因参与巴黎公社、摧毁旺多姆圆柱入狱，后流亡瑞士，1877 年客死异乡。</p></div><div class="legacy-item reveal"><span class="yr">1900 前后起</span><p>身后被重新发现；莫奈、毕沙罗、梵高与表现主义从其厚涂与水光处理中受惠。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>《海浪》系列分藏爱丁堡、里昂、奥赛、费城、温特图尔等地，被追认为现代风景画基石。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 古斯塔夫·库尔贝《海浪》(La Vague，约 1869–1870) 系列（公有领域）<br>内容整理自公开艺术史资料 · 仅为赏析用途（配乐为本地合成，非商业录音）
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 62.0, "y": 48.0, "no": "I", "t": "浪脊 · 正在弯折的巨浪", "img": "assets/wv-crest.webp", "txt": "画面的视觉中心，是一道正在弯折、即将砸落的巨浪的脊背。库尔贝没有把浪画成浪漫主义的「崇高」符号，而是画成一种有重量、有体积的物质：水的墙向右上方拱起，顶端是一团被风撕开的白。他反复在 1869–1870 年的多个版本里推敲同一道浪（爱丁堡、里昂、奥赛、费城……），说明这组《海浪》不是偶得的写生，而是对一个瞬间的系统研究。这道脊背，就是写实主义面对自然时最坦白的姿势：不修饰，也不解释。"}, {"x": 64.0, "y": 85.0, "no": "II", "t": "泡沫 · 落下的白色瀑布", "img": "assets/wv-spray.webp", "txt": "浪头砸下时，水被扯成千万颗白点，像一道正在散开的白色瀑布。库尔贝用调色刀把不透明的铅白厚厚地摞上去，让泡沫在画面上真的「凸」起来——这是油画才有的物质感。注意这些白不是纯白，而是带着灰绿与赭石的边缘：海水的泡沫本来就是脏的、混合的。他把「好看」让位给「真实」，于是泡沫既壮丽，又不浪漫。"}, {"x": 46.0, "y": 64.0, "no": "III", "t": "水体 · 绿色的沉重", "img": "assets/wv-water_mass.webp", "txt": "浪的下方，是一整块墨绿灰色的庞大水体，沉甸甸地压在画面下半部。库尔贝几乎不用纯蓝——他的海是绿、是灰、是黑的混合，像真实英吉利海峡（la Manche）那种冷而浑浊的水。这块颜色没有笔直的边界，全靠刷子与画刀的拖痕分出层次。它提醒你：在这幅画里，海不是背景，而是主角本身；所谓「风景」，被他重新定义成了「物」。"}, {"x": 38.0, "y": 90.0, "no": "IV", "t": "前海 · 没有终点的涌", "img": "assets/wv-sea_swell.webp", "txt": "画面最下方，是浪退去之后仍在起伏的前海，一片被搅碎、反着灰白光的涌。这里几乎没有清晰的形状，只有颜料的来回与光的闪动。库尔贝在埃特雷塔的海边长期观察，知道海从不在「一个瞬间」静止——他画的不是某一朵浪，而是浪与浪之间那永不停歇的、平庸却真实的流动。前海因此成了全画最「现代」的一处：已经预告了印象派对水光的兴趣。"}, {"x": 50.0, "y": 13.0, "no": "V", "t": "天空 · 阴郁的灰", "img": "assets/wv-sky.webp", "txt": "顶部是一条狭窄、阴郁的灰蓝色天空，没有霞光，也没有风暴的戏剧。库尔贝刻意把它压低、压平，让海占据绝大部分画面——自然在这里不是被仰望的，而是被平视的。这片灰不是浪漫派那种「烘托情绪」的天色，而是一份气象记录式的真实：诺曼底海岸那种永远半亮不亮、随时要下雨的光。天空越不动声色，海越显得庞大。"}, {"x": 50.0, "y": 37.0, "no": "VI", "t": "海平线 · 被压低的远方", "img": "assets/wv-horizon.webp", "txt": "海与天相接的那条线，被推到画面约三分之一以上、且处理得暧昧不清——没有锐利的几何分界，只有色温的过渡。库尔贝有意削弱了「远方」的纵深感：传统的海景会用一个清晰的地平线把你引向广阔，他却把远方压扁，迫使目光回到近处这道正在发生的浪上。这是写实主义对「崇高风景」的一次降维：不提供逃逸，只给此在。"}, {"x": 56.0, "y": 58.0, "no": "VII", "t": "色调 · 没有蓝色的蓝", "img": "assets/wv-palette.webp", "txt": "整幅画几乎没有一块干净的天空蓝或海蓝。库尔贝的调色板是绿灰、油灰、墨绿与赭石，蓝被压到最低。这种「去蓝化」不是技术局限，而是一种选择：他要的是英吉利海峡那种冷、浊、具体的颜色，而非地中海式的理想蓝。当印象派后来把海画成光的碎块时，库尔贝已经先把海从「蓝色符号」里解放了出来——这片色，是写实主义的底色。"}, {"x": 64.0, "y": 50.0, "no": "VIII", "t": "笔触 · 用颜料堆出的海", "img": "assets/wv-impasto.webp", "txt": "凑近看，海不是「画」出来的，而是被颜料「砌」出来的：厚涂（impasto）的笔痕与画刀的刮痕在浪脊与水面留下真实的凹凸，光打上去会有阴影。库尔贝把绘画的物质性推到前台——颜料本身就是被观看的对象。这一手后来被梵高、被表现主义接了过去；但在 1869 年，把「怎么画」摆在「画什么」同样重要的位置，本身就是对学院趣味的冒犯。"}, {"x": 16.0, "y": 70.0, "no": "IX", "t": "无人 · 纯粹的自然", "img": "assets/wv-nofig.webp", "txt": "画面里没有船，没有人，没有被救起的落难者，也没有寓意化的女神——只有海自己。这与库尔贝的写实主义宣言完全自洽：他拒绝画自己没见过的天使，也同样拒绝给自然套上神话的外衣。在同时代画家还在用海难、用宁芙来「提升」海景时，他让一片无名、无事的浪独自占据画布。这份「不解释」，正是现代风景画的开端。"}, {"x": 68.0, "y": 82.0, "no": "X", "t": "浪花 · 被定格的碎裂", "img": "assets/wv-foam.webp", "txt": "浪砸在礁石或自身上，碎成一蓬蓬白。库尔贝把这一瞬的「碎裂」当作画面的高潮来画：无数小白点彼此分离又连成片，是动，也是静。他反复画海浪，正是因为浪是「不可重复」的极致——每一次破碎都不同。把这一蓬碎裂从时间中拽出来、钉在画布上，是写实主义最骄傲也最谦卑的野心：我画不下整片海，但我可以画下它的一次呼吸。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(159,192,189,", "rgba(220,232,226,", "rgba(184,154,106,", "rgba(91,125,134,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+var modal=document.getElementById('modal');
+if(!modal) return;
+var orig=(typeof openModal==='function')?openModal:null;
+if(orig){ window.openModal=function(s,dot){orig(s,dot);var c=document.getElementById('modalClose');if(c&&c.focus)c.focus();}; }
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="wave" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">无人之海 · 拉威尔《海上孤舟》</div>
+    <div class="bgm-sub">钢琴独奏 · Ravel《Miroirs》— III. Une barque sur l'océan · CC BY-SA 3.0 录音</div>
+    <div class="bgm-why">库尔贝在埃特雷塔画下一片没有主角、没有神话的浪，「孤舟」也把海写成没有主角的涌流。拉威尔在同一个法国谱系里，一个在琴键上、一个在画布上，处理同样的水。密集的琶音、层叠的动荡，对应厚堆颜料的浪脊、溅起的沫，和那条被压得很低的水平线。它不喧嚣，也不空旷，只是不断地涌——和画里那种被海面压低的静，同一种重量。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Ravel《Miroirs — III. Une barque sur l'océan》· 录音 CC BY-SA 3.0 · 音源 Wikimedia Commons · 仅供赏析 · 本音频为改编版本（已做裁切与响度归一），依 CC BY-SA 同许可提供</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002Y1YeH0avlfl?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">III. Une barque sur l'océan<span>Alexandre Tharaud</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+
+</body>
+</html>

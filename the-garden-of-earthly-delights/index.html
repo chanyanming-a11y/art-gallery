@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人间乐园 · The Garden of Earthly Delights — 一场画了五百年的谜</title>
+<meta name="description" content="希罗尼穆斯·博斯《人间乐园》（约 1490–1510，马德里普拉多博物馆）动态赏析：三联画从伊甸园、人间乐园一路画到音乐地狱，它到底是一场享乐的赞歌，还是一则关于诱惑与惩罚的警告？">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#0d1017;--ink2:#141a20;--panel:#16202a;--line:rgba(216,178,106,.28);--gold:#c9a24a;--gold-soft:#e6d3a3;--water:#5a86a6;--rose:#c07a8a;--paper:#f2ead8;--muted:#93a08f;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/goe-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.62) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(201,162,74,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0d1017 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;color:var(--gold);font-size:14px;margin-bottom:14px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+<style id="artGateCSS">#artGate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(6,5,4,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:24px;opacity:1;transition:opacity .4s ease,visibility .4s}#artGate.hide{opacity:0;visibility:hidden;pointer-events:none}.ag-box{max-width:480px;width:100%;border:1px solid rgba(216,178,106,.4);border-radius:14px;background:linear-gradient(180deg,#16110b,#0e0a06);padding:30px 30px 26px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}.ag-mark{font-family:var(--serif-en,Georgia),serif;letter-spacing:.4em;text-indent:.4em;font-size:11px;color:var(--gold,#d6b070);opacity:.85;text-transform:uppercase}.ag-title{font-size:24px;letter-spacing:.06em;color:var(--gold-soft,#f0e2c0);margin:14px 0 16px;font-family:var(--serif-cn,serif)}.ag-body{color:#d7d2c2;font-size:14.5px;line-height:2;margin:0 0 14px;text-align:left}.ag-body strong{color:var(--gold-soft,#f0e2c2);font-weight:600}.ag-note{color:var(--muted,#a2b2a4);font-size:12.5px;line-height:1.8;margin:0 0 22px;text-align:left;opacity:.85}.ag-btns{display:flex;gap:12px;justify-content:center}.ag-enter,.ag-back{padding:11px 22px;border-radius:999px;font-size:14px;letter-spacing:.08em;cursor:pointer;font-family:var(--serif-cn,serif);transition:all .25s}.ag-enter{background:var(--gold,#d6b070);color:#15110b;border:1px solid var(--gold,#d6b070)}.ag-enter:hover{filter:brightness(1.08)}.ag-back{background:transparent;color:var(--gold-soft,#f0e2c2);border:1px solid rgba(216,178,106,.45)}.ag-back:hover{background:rgba(216,178,106,.12)}body.ag-lock{overflow:hidden}</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="人间乐园 · The Garden of Earthly Delights — 一场画了五百年的谜">
+<meta property="og:image" content="../covers/the-garden-of-earthly-delights.webp">
+<meta property="og:description" content="希罗尼穆斯·博斯《人间乐园》（约 1490–1510，马德里普拉多博物馆）动态赏析：三联画从伊甸园、人间乐园一路画到音乐地狱，它到底是一场享乐的赞歌，还是一则关于诱惑与惩罚的警告？">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="人间乐园 · The Garden of Earthly Delights — 一场画了五百年的谜">
+<meta name="twitter:image" content="../covers/the-garden-of-earthly-delights.webp">
+<meta name="twitter:description" content="希罗尼穆斯·博斯《人间乐园》（约 1490–1510，马德里普拉多博物馆）动态赏析：三联画从伊甸园、人间乐园一路画到音乐地狱，它到底是一场享乐的赞歌，还是一则关于诱惑与惩罚的警告？">
+</head>
+<body><div id="artGate" role="dialog" aria-modal="true" aria-label="艺术欣赏提示">
+  <div class="ag-box">
+    <div class="ag-mark">Art Appreciation Notice</div>
+    <h2 class="ag-title">《人间乐园》</h2>
+    <p class="ag-body">本页面展示的画作包含 <strong>艺术人体 / 裸体</strong> 内容。所录作品均为美术馆级公有领域馆藏，仅作艺术欣赏与学习之用，不含任何低俗或违规意图。</p>
+    <p class="ag-note">若您未满 18 周岁，或对此类内容感到不适，请点击「返回画廊」。点击「进入欣赏」即表示您已知悉上述说明，并同意仅作艺术欣赏之用。</p>
+    <div class="ag-btns">
+      <button type="button" class="ag-enter" id="agEnter">进入欣赏</button>
+      <button type="button" class="ag-back" id="agBack">返回画廊</button>
+    </div>
+  </div>
+</div>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">HIERONYMUS BOSCH · c.1490–1510</div>
+    <h1 class="title" id="titleCh">人间乐园</h1>
+    <div class="hero-en">THE GARDEN OF EARTHLY DELIGHTS</div>
+    <div class="hero-meta"><span class="chip">油彩·橡木板·三联画</span><span class="chip">约 220 × 389 cm（展开）</span><span class="chip">马德里普拉多博物馆藏</span><span class="chip">北方文艺复兴</span></div>
+  </div>
+  <div class="scroll-cue">看一眼，一场画了五百年的谜</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">三扇板，<em>三个世界</em></h2>
+    <p class="lead reveal">大约 1490 到 1510 年间，尼德兰画家博斯画下一组三联画：左扇是上帝把夏娃引见给亚当的伊甸园，中扇是成千上万裸身男女嬉游其中的「人间乐园」，右扇却是一座由乐器、刑具与怪物构成的黑暗地狱。它没有留下一句解释，五百年来却让无数人着迷、争论——这究竟是一场天真享乐的赞歌，还是一则关于诱惑与惩罚的警告？</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>画板平时是合拢的：外侧的两扇上，画着一颗悬浮在黑暗中的透明地球，正是《创世记》里「第三天」大地初生、尚无人类的样子。只有当观者把它打开，三个世界才依次展开——先伊甸，再乐园，最后地狱。这种「开合」本身就是一场仪式：你亲手打开了一扇通往命运的门。</p><p>最勾人的是中扇。成千上万的裸体男女在花园里嬉游、骑兽、采果、钻进玻璃球与贝壳，巨型的水果、鸟与鱼比人还大。它到底是人类堕落之前的纯真乐园，还是纵欲将招致惩罚的预演？学界至今两说：一派读作「警告」，一派读作「失落的美好」。博斯把答案藏了起来。</p><p>右扇则毫不含糊：暗夜里，一座乐器与刑具搭建的「音乐地狱」正在上演——被巨型鲁特琴压住的罪人、顶着大蛋壳的「树人」、远处燃烧的城市。博斯用他那个时代最熟悉的道德符号，把「罪与罚」画成了一场超现实的噩梦，也因此被二十世纪的超现实主义者奉为远祖。</p>
+      <p class="src">—— 据马德里普拉多博物馆（Museo del Prado）官方释读及主流艺术史研究（转译）</p>
+      <p class="end reveal">博斯没有告诉人们这花园是天堂还是陷阱——他只是一笔一笔，把你自己的欲望画了进去。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE TRIPTYCH · 画中细节</div>
+    <h2 class="reveal">点开<em>三扇板</em>里的秘密</h2>
+    <p class="lead reveal">从伊甸园的泉与兽，到乐园里的果、球与骑手，再到地狱里的城、树人与巨琴——三扇板各藏着不同的谜。点击光点，从世界的开端一路走到它的终局。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/goe-main.webp" alt="人间乐园 · The Garden of Earthly Delights — 一场画了五百年的谜" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画中细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一幅画<em>的三重身份</em></h2>
+    <p class="lead reveal">从十六世纪王室的奇珍，到「超现实主义远祖」，再到当代的欲望图像——同一组画，在不同的年代被读成了完全不同的东西。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 1490–1510 · 诞生</p><h3>博斯的象征世界</h3><p>博斯生活在尼德兰南部的斯海尔托亨博斯（'s-Hertogenbosch），生平资料极少。他把当时流行的谚语、道德剧与布道意象，画成充满怪物与怪象的图像迷宫——「人间乐园」是其中最宏大、最莫测的一组。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1593–1939 · 王室珍藏</p><h3>从埃斯科里亚尔到普拉多</h3><p>西班牙国王腓力二世钟爱博斯，1593 年前后此画被收入西班牙王室收藏，长期悬挂于埃斯科里亚尔修道院，历时三百余年；1939 年，它随博斯其余作品一同移入马德里的普拉多博物馆。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">20 世纪至今 · 无尽的解读</p><h3>超现实主义的远祖</h3><p>二十世纪的超现实主义者把博斯奉为远祖；此后女性主义、精神分析与图像学研究不断加入，反而让「这花园究竟是乐园还是陷阱」变得更难有定论——它成了一座永远解不完的谜。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE PANELS · 幕后</div>
+    <h2 class="reveal">画板上的<em>三件确凿之事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/boe-treeman.webp" alt="它为什么如此难解" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>它为什么如此难解</h3><p>其一 · 五扇板的结构。这是一组三联画：合拢时，外板上画着「创世第三日」的透明地球；打开后才是伊甸园、人间乐园与地狱三界。观看方式本身，就是一次从创世到终局的巡游。</p><p>其二 · 尺寸与材质。中央板约 220 × 195 厘米，两翼各约 220 × 97 厘米，展开近 3.9 米宽，绘于橡木板上。如此尺幅在当时极为罕见，足以让观者「走进去」。</p><p>其三 · 没有说明书的谜。博斯几乎没有留下关于此画的文字，画中也没有一句注释；「警告诱惑」是主流解读，但「纯真乐园/失落的美好」之说同样著名。答案从未被写死。</p><p class="note">※ 「腓力二世收藏与 1939 年入藏普拉多」「三联画与外侧创世地球」「中央板尺寸」均见于普拉多馆藏与艺术史记载；中扇「警告」与「乐园」两派解读并存，本页并列呈现。画中个别象征义（如猫头鹰、玻璃球）以主流图像学研究为参考，非唯一结论。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一份<em>乐园与地狱</em>的清单</h2>
+    <p class="lead reveal">把这三扇板拆开，每个元素都带着双重含义：它可以是天堂的家具，也可以是地狱的伏笔。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/boe-eden.webp" alt="上帝引夏娃见亚当" loading="lazy" decoding="async"></div><div class="fb"><h4>上帝引夏娃见亚当</h4><div class="fy">EDEN · 创世</div><p>红衣的上帝牵着夏娃走向亚当——第一桩婚姻，也是原罪的起点。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-fountain.webp" alt="生命之泉" loading="lazy" decoding="async"></div><div class="fb"><h4>生命之泉</h4><div class="fy">FOUNTAIN · 源头</div><p>粉色的塔楼既是教堂也是喷泉，清水流入池中，万兽围绕。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-animals.webp" alt="异域的走兽" loading="lazy" decoding="async"></div><div class="fb"><h4>异域的走兽</h4><div class="fy">BEASTS · 创世</div><p>长颈鹿、大象与虚构怪兽同处一园，乐园既像地球又像异星。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-bluefount.webp" alt="蓝色球状喷泉" loading="lazy" decoding="async"></div><div class="fb"><h4>蓝色球状喷泉</h4><div class="fy">FOUNTAIN · 中心</div><p>中扇的视觉中心，被解读为「欲望之泉」，人群绕它嬉闹。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-pool.webp" alt="中央水池" loading="lazy" decoding="async"></div><div class="fb"><h4>中央水池</h4><div class="fy">POOL · 暧昧</div><p>全画最密集的区域：嬉游，还是不知羞耻的沉溺？</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-fruit.webp" alt="巨型果实" loading="lazy" decoding="async"></div><div class="fb"><h4>巨型果实</h4><div class="fy">FRUIT · 超现实</div><p>比人还大的草莓与果子，甜蜜里透着不安。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-sphere.webp" alt="玻璃球中的恋人" loading="lazy" decoding="async"></div><div class="fb"><h4>玻璃球中的恋人</h4><div class="fy">SPHERE · 易碎</div><p>被玻璃球罩住的恋人——乐园像气泡一样，一触即破。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/boe-treeman.webp" alt="「树人」" loading="lazy" decoding="async"></div><div class="fb"><h4>「树人」</h4><div class="fy">TREE-MAN · 谜</div><p>蛋壳为躯干、树根为腿的怪影，是地狱里最著名的谜。</p></div></div></div>
+    <div class="flora-note reveal">博斯几乎不用文字，全靠图像说话——而他的图像又几乎都「双重含义」。正因如此，这组画在不同时代被读成了不同的东西：在十六世纪它是道德警示，在二十世纪它是超现实主义的先声，在今天它又成了关于欲望与图像的当代寓言。唯一不变的，是它从不把谜底交出来。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">什么是<em>博斯式</em>的？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>博斯与「博斯式」</h4><p>博斯（约 1450–1516）来自尼德兰的斯海尔托亨博斯，生平记载稀少。以他为名的「博斯式」图像——怪物、混合体、荒诞比例——影响了一代代画家。</p></div><div class="prb-item reveal"><h4>道德剧与谚语传统</h4><p>中世纪晚期流行道德剧、布道与谚语插图，常用夸张的怪物来警示罪与罚。博斯正是把这一整套「大众图像语汇」搬上了画板。</p></div><div class="prb-item reveal"><h4>西班牙王室的偏爱</h4><p>腓力二世是博斯的狂热收藏者，把《人间乐园》等作品收入王室，长期悬于埃斯科里亚尔；这段收藏史，也是此画得以完好留存的关键。</p></div><div class="prb-item reveal"><h4>从普拉多到超现实主义</h4><p>二十世纪，达利、恩斯特等超现实主义者公开推崇博斯；他也因此被不断「再发现」，成为跨越五百年的图像偶像。</p></div></div>
+    <div class="prb-quote reveal">他画下了一座花园，却拒绝告诉你它是天堂还是陷阱——于是每个走进来的人，都只能照见自己的欲望。<small>—— 据普拉多馆藏释读与艺术史通说（本页概括）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">一组画<em>的旅行</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1490–1510</span><p>博斯创作这组三联画（具体年代学界仍有分歧，通常定于 1490–1510 之间）。</p></div><div class="legacy-item reveal"><span class="yr">1517</span><p>首次见于文献记载——被列于拿骚的亨利的收藏清单之中。</p></div><div class="legacy-item reveal"><span class="yr">1593 前后</span><p>西班牙国王腓力二世将其收入王室收藏，长期悬挂于埃斯科里亚尔修道院。</p></div><div class="legacy-item reveal"><span class="yr">1939</span><p>在埃斯科里亚尔度过三百余年后，移入马德里普拉多博物馆，直至今日。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>成为普拉多最负盛名、也最被反复解读的作品之一，被视为超现实主义的远祖。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons（公有领域）· 原作藏于马德里普拉多博物馆<br>内容整理自公开艺术史资料 · 史实细节以主流研究为准 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 7.0, "y": 33.0, "no": "I", "t": "生命之泉 · 园中央的粉色塔", "img": "assets/boe-fountain.webp", "txt": "左扇正中的粉色哥特式塔楼，是「生命之泉（Fons vitae）」——既像教堂、又像喷泉，泉水向下流入水池。水中与岸边散布着各种走兽，暗示这是尚未被人类触碰的、完好的创世。它也常被读作中扇那座「喷泉」的前身。"}, {"x": 11.0, "y": 70.0, "no": "II", "t": "上帝引夏娃见亚当", "img": "assets/boe-eden.webp", "txt": "左扇下半部，红衣的上帝牵着夏娃的手，把她引向刚醒来的亚当。这是《创世记》里最温柔也最危险的一幕：人类的第一桩婚姻，也是原罪将要开始的地方。博斯把它画得安静、圆满，像暴风雨前的一刻。"}, {"x": 16.0, "y": 34.0, "no": "III", "t": "异域的走兽", "img": "assets/boe-animals.webp", "txt": "长颈鹿、大象、以及现实中并不存在的混合怪兽，在泉边草地间踱步。博斯把当时欧洲人只在游记里读到的「异域动物」，与想象中的怪物混在一起——这片乐园因此既像地球上的某处，又像另一个星球。"}, {"x": 50.0, "y": 24.0, "no": "IV", "t": "蓝色球状喷泉", "img": "assets/boe-bluefount.webp", "txt": "中扇正中偏上，一座蓝灰色的球形喷泉立在池中，水柱自球体中央升起。它是整座花园的视觉中心，也常被解读为「欲望之泉」——那些环绕水池、钻入水中的裸身男女，正围着它嬉闹不休。"}, {"x": 40.0, "y": 45.0, "no": "V", "t": "中央水池与环游的人群", "img": "assets/boe-pool.webp", "txt": "中扇中央，一座水池边挤满了裸身的男女，有人骑兽、有人相拥、有人绕池而行。这是全画最密集、也最暧昧的区域：它究竟是无忧的嬉游，还是「不知羞耻」的沉溺？博斯让你自己判断。"}, {"x": 24.0, "y": 61.0, "no": "VI", "t": "比人还大的果实", "img": "assets/boe-fruit.webp", "txt": "巨大的草莓、樱桃与不知名的果子散布园中，人们钻进果壳、扛着果子穿行。这种「超现实的比例」是博斯最标志性的手法：日常之物被放大到荒诞，乐园于是既是甜的，又隐约透着不安。"}, {"x": 70.0, "y": 68.0, "no": "VII", "t": "从树洞里探出的猫头鹰", "img": "assets/boe-bird.webp", "txt": "一只猫头鹰从树洞里直视着你。在博斯的图像语汇里，猫头鹰常象征异端、愚昧或暗中窥视的目光——它像一只「画中之眼」，替画家冷冷地注视着园中发生的一切。乐园的热闹里，忽然多了一道清醒的视线。"}, {"x": 32.0, "y": 83.0, "no": "VIII", "t": "玻璃球里的恋人", "img": "assets/boe-sphere.webp", "txt": "一对恋人被一层透明的玻璃球（或气泡）罩住，与外界隔绝。玻璃在博斯笔下常象征「易碎、短暂、虚幻」——这座乐园看似永恒，实则像肥皂泡一样一触即破。甜蜜与不祥，被画进了同一个球体里。"}, {"x": 44.0, "y": 83.0, "no": "IX", "t": "绕着池塘兜圈的骑手", "img": "assets/boe-riders.webp", "txt": "中扇下方，一群裸身骑手骑着马、鹿、骆驼等动物，绕着池子兜圈行进。这种「无目的、不停歇的循环」，被广泛解读为对「被欲望驱赶、周而复始」的隐喻——嬉闹的队伍，其实是在原地打转。"}, {"x": 90.0, "y": 9.0, "no": "X", "t": "燃烧的远景城市", "img": "assets/boe-city.webp", "txt": "右扇的地狱远景里，一片城市正在烈火中燃烧，火光把天边映成暗红。这与左扇的太平、中扇的嬉闹形成最刺目的对照：乐园的尽头，是焚城。博斯用一处远景，为整组三联画盖上了「后果」二字。"}, {"x": 86.0, "y": 38.0, "no": "XI", "t": "「树人」· 地狱里的怪影", "img": "assets/boe-treeman.webp", "txt": "地狱中最著名的形象之一：一具以破裂蛋壳为躯干、树干为腿、顶着托盘与巨禽的「树人」，下身架在小船上。它被读作自画像、被读作「炼金术之卵」、被读作堕落的灵魂——至今没有定论。它是这座地狱的标志，也是整幅画最著名的谜。"}, {"x": 87.0, "y": 62.0, "no": "XII", "t": "音乐地狱 · 用乐器行刑", "img": "assets/boe-hellmid.webp", "txt": "右扇中部，巨型鲁特琴、竖琴、风笛与鼓被当成了刑具：罪人被压在琴弦下、塞进乐器里受刑。在博斯看来，把耳朵献给享乐之音的人，来世要在这「音乐地狱」里偿还。这是全画最辛辣、也最著名的创意。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(201,162,74,", "rgba(90,134,166,", "rgba(192,122,138,", "rgba(147,160,143,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="goe" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">三界漫游 · 萨蒂《裸体歌舞》</div>
+    <div class="bgm-sub">钢琴独奏 · 萨蒂 Gymnopédie No.1 · Michael Laucke 演奏 · 公有领域录音</div>
+    <div class="bgm-why">博斯约1500年的三联画，把伊甸、乐园与地狱画在同一个园子里——甜美底下，始终压着一道暗影。萨蒂的《裸体歌舞》第一号也悬在同样的状态里：缓慢悬浮的和声，踟蹰的旋律，甜美中透着说不出的不安。它不惊吓，也不安抚，只是停不下来地荡着——和博斯那座诡谲的乐园，同一个不肯落地的梦。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Satie《Gymnopédie No.1》· 演奏 Michael Laucke · 公有领域 · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/0004rr3v219cZJ?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Gymnopédie No. 1<span>Pascal Rogé</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+<script>
+
+(function(){
+var g=document.getElementById('artGate');
+if(!g)return;
+document.body.classList.add('ag-lock');
+function enter(){g.classList.add('hide');document.body.classList.remove('ag-lock');}
+function back(){window.location.href='../index.html';}
+document.getElementById('agEnter').addEventListener('click',enter);
+document.getElementById('agBack').addEventListener('click',back);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){back();}});
+})();
+</script>
+
+</body>
+</html>

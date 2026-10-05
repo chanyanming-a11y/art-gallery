@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>狐狸 · The Foxes — 一片 crystalline 的原野</title>
+<meta name="description" content="弗朗茨·马克《狐狸》(Die Füchse, 1913) 动态赏析：棱面分明的三只狐狸，与马克用颜色写下的「动物神学」。含青骑士社、德劳内奥菲主义的影响，以及马克的色彩象征理论。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+
+  /* ===== 灵感配乐 ===== */
+  #bgm {position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn {display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover {border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn {border-color:var(--gold);color:var(--gold-soft)}
+  .bgm-play {display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible {padding:7px 13px;outline:none}
+  .bgm-play:focus-visible {box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave {display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i {display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i {opacity:1}
+  .bgm-txt {border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible {color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt {color:var(--gold);opacity:1}
+  .bgm-panel {position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  #bgm.open .bgm-panel {opacity:1;transform:none;pointer-events:auto}
+  .bgm-row {display:flex;align-items:center;gap:8px}
+  .bgm-t {font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub {font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}
+  .bgm-why {font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol {display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span {font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range] {-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb {-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb {width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr {font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  .bgm-qq {margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h {font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song {display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover {color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span {color:var(--muted);font-size:11px;margin-left:6px}
+
+  :root{
+    --ink:#0e0c0a;
+    --ink2:#1a1410;
+    --panel:#241b14;
+    --line:rgba(216,178,106,.28);
+    --gold:#d9a86a;
+    --gold-soft:#ecca98;
+    --water:#7fae9e;
+    --rose:#d98a5a;
+    --paper:#f2ead8;
+    --muted:#b0a892;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/foxes-main.webp") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.62) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(217,168,106,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0e0c0a 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="狐狸 · The Foxes — 一片 crystalline 的原野">
+<meta property="og:image" content="../covers/foxes.webp">
+<meta property="og:description" content="弗朗茨·马克《狐狸》(Die Füchse, 1913) 动态赏析：棱面分明的三只狐狸，与马克用颜色写下的「动物神学」。含青骑士社、德劳内奥菲主义的影响，以及马克的色彩象征理论。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="狐狸 · The Foxes — 一片 crystalline 的原野">
+<meta name="twitter:image" content="../covers/foxes.webp">
+<meta name="twitter:description" content="弗朗茨·马克《狐狸》(Die Füchse, 1913) 动态赏析：棱面分明的三只狐狸，与马克用颜色写下的「动物神学」。含青骑士社、德劳内奥菲主义的影响，以及马克的色彩象征理论。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">FRANZ MARC · 1913</div>
+    <h1 class="title" id="titleCh">狐狸</h1>
+    <div class="hero-en">DIE FÜCHSE · THE FOXES</div>
+    <div class="hero-meta"><span class="chip">布面油画 · 1913</span><span class="chip">88 × 66 cm</span><span class="chip">青骑士社 · 德国表现主义</span><span class="chip">动物题材</span></div>
+  </div>
+  <div class="scroll-cue">走进这片原野</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">他画动物，<em>是因为人不值得画</em></h2>
+    <p class="lead reveal">1913 年，弗朗茨·马克画了《狐狸》。这位青骑士社的创始人相信，动物比人更接近世界的本真——它们不伪装、不计算，只是纯粹地活着。于是他把狐狸拆成棱面，把原野染成晶体。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>马克与康定斯基共同创立「青骑士」社，主张用颜色与形状直接表达精神，而非描摹眼睛所见。</p><p>他发展出一套私人色彩象征：蓝是精神与男性，黄是欢愉与女性，红是沉重的物质，绿是平静——颜色在他笔下，几乎是一套宗教。</p><p>所以这一页不替你找「像不像狐狸」，只带你走近那片棱面：点开画面上的 ✦ 光点，去看红、看蓝、看三只狐狸如何在一片原野里彼此应和。</p>
+      <p class="src">—— 据马克书信与青骑士社研究的通行叙述</p>
+      <p class="end reveal">在左下角，可以点亮一段为这片原野特别挑选的钢琴前奏。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这片原野</em>的十二处</h2>
+    <p class="lead reveal">从一只狐狸到一片蓝：每一个色块，都是马克在画布上安放的一个「声部」。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/foxes-main.webp" alt="狐狸 · The Foxes — 一片 crystalline 的原野" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一只狐狸的<em>两次转向</em></h2>
+    <p class="lead reveal">从慕尼黑到青骑士，从写实到棱面——马克用几年时间，把动物画成了通往精神的路。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1911 · 慕尼黑 · 起点</p><h3>青骑士的诞生</h3><p>1911 年，马克与康定斯基在慕尼黑创办「青骑士」社，出版同名年鉴。他们反对学院写实，主张以色彩与形式直抵内心——动物，成了马克最钟情的题材。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1912–1913 · 转折</p><h3>遇见德劳内与奥菲主义</h3><p>巴黎画家德劳内的奥菲主义（彩色棱面、纯粹光色）让马克深受震动。他开始把自然切成晶体般的块面，《狐狸》正是这一转向最成熟的成果。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1916 · 凡尔登</p><h3>画布之外的终章</h3><p>1916 年，马克作为骑兵军官战死于凡尔登战役，年仅 36 岁。他留下的动物画，成为表现主义最温柔也最痛切的一页。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">颜色，是他的<em>宗教</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/fx-10.webp" alt="马克的色彩象征理论" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>马克的色彩象征理论</h3><p>马克相信颜色各有「性格」：蓝是精神、男性、遥远；黄是欢愉、女性、柔和；红是物质、沉重、甚至 brutal；绿是平静与满足。</p><p>在《狐狸》里，他让橙红的狐狸（生命力）与蓝色的天空（精神）彼此对照，再用绿黄的大地收束——一组颜色，被排成了一首无声的圣歌。</p><p>他说，动物的眼睛「比人的眼睛更纯净」，能照见世界的本原。画动物，于他而言不是题材选择，而近乎一种信仰。</p><p class="note">※ 马克的色彩象征多见于其书信与笔记（如 1910–1912 年间致友人的信）；具体配对学界略有出入，本页取其通行表述。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">VOCABULARY · 色彩图鉴</div>
+    <h2 class="reveal">一套<em>会说话</em>的颜色</h2>
+    <p class="lead reveal">马克把颜色当作词汇。以下是最常出现的几位「主角」。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/fx-01.webp" alt="橙红狐狸" loading="lazy" decoding="async"></div><div class="fb"><h4>橙红狐狸</h4><div class="fy">RED · 生命的火</div><p>最饱和的红橙，是画面跳动的心脏。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-04.webp" alt="蓝" loading="lazy" decoding="async"></div><div class="fb"><h4>蓝</h4><div class="fy">BLUE · 精神的色</div><p>冷静的蓝，马克眼里最「男性」、最遥远的色。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-07.webp" alt="橙与蓝" loading="lazy" decoding="async"></div><div class="fb"><h4>橙与蓝</h4><div class="fy">PAIR · 互补的对</div><p>一暖一冷彼此咬合，撑起整幅的平衡。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-05.webp" alt="晶体山丘" loading="lazy" decoding="async"></div><div class="fb"><h4>晶体山丘</h4><div class="fy">FACET · 棱面</div><p>自然被切成彩窗般的块面。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-06.webp" alt="绿黄大地" loading="lazy" decoding="async"></div><div class="fb"><h4>绿黄大地</h4><div class="fy">GREEN · 平静</div><p>饱满的绿黄，收束着脚下的原野。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-02.webp" alt="狐狸的头" loading="lazy" decoding="async"></div><div class="fb"><h4>狐狸的头</h4><div class="fy">GAZE · 向内的眼</div><p>几道折线拼出的警觉与专注。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-08.webp" alt="腿与动势" loading="lazy" decoding="async"></div><div class="fb"><h4>腿与动势</h4><div class="fy">MOTION · 张力</div><p>简化的斜线里，藏着奔跑的暗示。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/fx-09.webp" alt="蜷伏的狐狸" loading="lazy" decoding="async"></div><div class="fb"><h4>蜷伏的狐狸</h4><div class="fy">REST · 潜伏</div><p>群体中的个体，各有各的姿态。</p></div></div></div>
+    <div class="flora-note reveal">马克的棱面并非凭空而来——德劳内的「同时对比」、立体主义的解析，都被他收进了对动物的爱里，化成一片会发光的原野。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">青骑士，<em>与一片棱面的原野</em></h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>青骑士社（Der Blaue Reiter）</h4><p>1911 年由马克与康定斯基在慕尼黑创立，成员还包括克利、明特尔等。他们出版年鉴、办展览，主张艺术应表达精神的内在真实，而非外在形似。</p></div><div class="prb-item reveal"><h4>德劳内与奥菲主义</h4><p>法国画家德劳内以纯粹的棱面光色（奥菲主义）闻名。马克 1912 年前后受其启发，从较写实的动物画转向几何化的「晶体」风格，《狐狸》是代表作。</p></div><div class="prb-item reveal"><h4>表现主义中的动物</h4><p>在德国表现主义里，动物常被视为未被文明腐蚀的纯真象征。马克、诺尔德等都反复画动物，把对现代人的失望，转写成对野兽的礼赞。</p></div><div class="prb-item reveal"><h4>战争与未竟的旅程</h4><p>第一次世界大战夺走了许多青骑士社成员。马克 1916 年殁于凡尔登，留下大量未完成的色彩理想——这幅《狐狸》因而更显珍贵。</p></div></div>
+    <div class="prb-quote reveal">动物的眼睛，比人的眼睛更纯净，
+能照见世界的本原。<small>—— 据弗朗茨·马克书信意旨改写</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">尾声 · 一只狐狸的身后事</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1913</span><p>马克创作《狐狸》(Die Füchse)，布面油画 88 × 66 cm，是其晶体化动物风格的代表作。</p></div><div class="legacy-item reveal"><span class="yr">1916</span><p>马克战死于凡尔登战役，年仅 36 岁；青骑士社随之星散，但他以颜色写下的「动物神学」影响深远。</p></div><div class="legacy-item reveal"><span class="yr">2022</span><p>画作经纳粹劫掠审查后，由杜塞尔多夫 Kunstpalast 博物馆归还犹太人收藏家库尔特·格拉维的后人，并于 3 月在佳士得以 4260 万英镑拍出。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>《狐狸》成为马克市场与艺术史双重意义上的标杆，频繁出现于表现主义展览与教材之中。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 弗朗茨·马克《狐狸》(Die Füchse, 1913)，公有领域。<br>内容整理自公开艺术史资料 · 史实细节（含 2022 年归还与拍卖）以主流研究为准 · 仅为艺术赏析用途。
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 48.0, "y": 56.0, "no": "I", "t": "主体狐狸", "img": "assets/fx-01.webp", "txt": "画面中央这只橙红的狐狸，是整幅画跳动的心脏。马克把动物拆成棱面分明的色块——它既是狐狸，又是一束被重新组装的光。在表现主义眼里，动物的鲜活，比人的体面更值得入画。"}, {"x": 44.0, "y": 49.0, "no": "II", "t": "狐狸的头", "img": "assets/fx-02.webp", "txt": "凑近看，狐狸的头部由几道锐利的折线拼成，眼睛是画面里最警觉的一点。马克一生研究动物解剖，但他画的不是皮毛，而是动物那种「向内专注」的神情。"}, {"x": 57.0, "y": 57.0, "no": "III", "t": "红与橙的身体", "img": "assets/fx-03.webp", "txt": "狐狸的身体被涂成最饱和的红与橙。在马克的色彩体系里，红色往往意味着「物质」与「沉重」——可在这片原野上，它偏偏最轻盈、最耀眼，像一段烧着的旋律。"}, {"x": 40.0, "y": 12.0, "no": "IV", "t": "蓝：天空与冷调", "img": "assets/fx-04.webp", "txt": "画面上方大片冷静的蓝，是马克钟爱的「精神之色」。蓝在这里不只是天空，更是一种退远的、冥想的呼吸，把下方喧闹的橙稳稳托住。"}, {"x": 52.0, "y": 24.0, "no": "V", "t": "晶体般的山丘", "img": "assets/fx-05.webp", "txt": "远景的山被切成一块块棱面，像中世纪教堂的彩窗。马克受德劳内的奥菲主义启发，把自然几何化——山不再是山，而是一组在阳光下折射的晶体。"}, {"x": 45.0, "y": 82.0, "no": "VI", "t": "绿与黄的大地", "img": "assets/fx-06.webp", "txt": "脚下的草地与黄土，被绿与黄填得饱满。它们和狐狸的橙、天空的蓝构成一组明亮的应和——马克相信，颜色之间天然地彼此相爱或彼此对立。"}, {"x": 50.0, "y": 44.0, "no": "VII", "t": "互补色：橙 vs 蓝", "img": "assets/fx-07.webp", "txt": "橙与蓝，是马克最爱用的互补对。一暖一冷、一前一后，在画布上彼此「咬」住。正是这对拉扯，让整幅画既鲜艳又平衡，像一段明暗交替的乐句。"}, {"x": 54.0, "y": 66.0, "no": "VIII", "t": "狐狸的腿与动势", "img": "assets/fx-08.webp", "txt": "狐狸的腿被简化为几道斜线，却满是对奔跑与扑跃的暗示。马克要让静止的画布里，也传出动物肌肉的张力——动，是他笔下动物的天性。"}, {"x": 34.0, "y": 66.0, "no": "IX", "t": "一只蜷伏的狐狸", "img": "assets/fx-09.webp", "txt": "画面左下方这只狐狸收着身子，像在潜伏。三只狐狸各有姿态：一只奔、一只立、一只伏——马克把「群体中的个体」画得清清楚楚。"}, {"x": 50.0, "y": 50.0, "no": "X", "t": "整体的构图", "img": "assets/fx-10.webp", "txt": "退远看，橙红的狐狸聚在画面中下部，上方是蓝、下方是绿黄，三者像三个声部叠在一起。马克要的不是一只狐狸，而是一片原野里万物共鸣的秩序。"}, {"x": 24.0, "y": 26.0, "no": "XI", "t": "画面左上的蓝", "img": "assets/fx-11.webp", "txt": "左上角这片蓝，与右下角的暖黄遥相呼应。马克的构图从不做无谓的留白——每一个角落的颜色，都在为整体的和谐出一份力。"}, {"x": 74.0, "y": 74.0, "no": "XII", "t": "画面右下的黄绿", "img": "assets/fx-12.webp", "txt": "右下方黄中带绿的一角，是狐狸脚边最安静的地面。它把视线从中心的喧闹里轻轻引开，让眼睛有处可歇——也是马克「安排」的用心。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(217,138,90,", "rgba(127,174,158,", "rgba(217,168,106,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="foxes" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">原野的私语 · 斯克里亚宾《前奏曲》</div>
+    <div class="bgm-sub">钢琴独奏 ·《前奏曲 Op.67 No.1》· Alexander Scriabin · 1913</div>
+    <div class="bgm-why">马克把三只狐狸拆成棱面，让红与蓝在晶体般的原野里彼此应和——他要画的不是动物，而是万物共鸣的秩序。斯克里亚宾的《前奏曲 Op.67 No.1》也恰是这样：几个悬浮的和声，没有主题，只是让光与暗在琴键上轻轻交换。两位同龄人都相信，艺术可以绕过理智，直接触碰某种更深的「通感」。琴声不叙事，也不描绘，只是让原野里那股安静的张力，在空气里继续震颤。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：斯克里亚宾《前奏曲 Op.67 No.1》· 演奏 Jennifer Castellano（pianosociety.com, 2002）· Public Domain · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002QMqLK1kGGwM?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Prelude, Op. 67 No. 1<span>Alexander Scriabin</span></a></div>
+  </div>
+</div>
+
+<script>
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.back-home');
+  if(b){
+    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+    window.addEventListener('scroll', upd, {passive:true}); upd();
+  }
+})();
+</script>
+</body>
+</html>

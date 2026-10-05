@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吻 · The Kiss — 一片金色的相拥</title>
+<meta name="description" content="克里姆特《吻》(1907–1908) 动态赏析：真金箔、几何与花纹、被藏起的面孔、世纪末维也纳的爱与合一——维也纳分离派最著名的一幅画。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#120e07;--ink2:#171209;--panel:#221a0f;--line:rgba(216,178,106,.28);--gold:#d4af5f;--gold-soft:#f0dda8;--water:#8aa8c4;--rose:#c4534a;--paper:#f2ead8;--muted:#b9a67f;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/the-kiss-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.62) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(240,221,168,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#120e07 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;color:var(--gold);font-size:14px;margin-bottom:14px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="吻 · The Kiss — 一片金色的相拥">
+<meta property="og:image" content="../covers/the-kiss.webp">
+<meta property="og:description" content="克里姆特《吻》(1907–1908) 动态赏析：真金箔、几何与花纹、被藏起的面孔、世纪末维也纳的爱与合一——维也纳分离派最著名的一幅画。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="吻 · The Kiss — 一片金色的相拥">
+<meta name="twitter:image" content="../covers/the-kiss.webp">
+<meta name="twitter:description" content="克里姆特《吻》(1907–1908) 动态赏析：真金箔、几何与花纹、被藏起的面孔、世纪末维也纳的爱与合一——维也纳分离派最著名的一幅画。">
+</head>
+<body>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">GUSTAV KLIMT · 1907–1908</div>
+    <h1 class="title" id="titleCh">吻</h1>
+    <div class="hero-en">THE KISS · DER KUSS</div>
+    <div class="hero-meta"><span class="chip">油彩 · 金箔 · 银 · 铂金 · 画布</span><span class="chip">180 × 180 cm（正方形）</span><span class="chip">维也纳 · 美景宫奥地利美术馆藏</span><span class="chip">维也纳分离派 · 金色时期</span></div>
+  </div>
+  <div class="scroll-cue">在他们相拥之前，先低头看一眼脚下的那片花</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">在金色的夜里，<em>两个人合成一个</em></h2>
+    <p class="lead reveal">「谁想了解我，就该仔细地看我的画。」——古斯塔夫·克里姆特（据德译转译）</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>这句话是克里姆特留下的、少有的关于自己的话。他不写理论、不留日记、几乎不接受解释自己的访谈；想要认识他，只能像他说的那样，去看画。而在他所有的画里，最不需要解释、又最说不清楚的一幅，就是眼前这幅《吻》：1907 至 1908 年，他用油彩在画布上贴了真金箔，画下一对相拥的恋人，尺寸恰好是 180 厘米见方——一个罕见的正方形巨幅。</p><p>特别之处在于，它既简单又暧昧。简单到一句话就能说完：一对男女站在开满花的草地上，被一件金色的袍子包起来，男人俯身吻女人的脸颊。暧昧则在于它什么都不交代——男人的脸被完全藏起，两人的身体在画里合成一个形状，金底抹掉了空间与纵深，你既分不清他们是跪着还是站着，也说不清这是情欲的吻还是神圣的赐福。金箔把一幅世俗的双人像，推到了圣像的高度。</p><p>所以这一页不打算替你回答‘这是什么’。它会带你从左上角的金底出发，经过被藏起的脸、托住脸颊的手、方形与圆形两套纹样，一直走到右下角的签名——把这片看似只有金色的画，拆成十一件可以一件件看清的事。结尾处，还可以点亮一首与它同城同代的音乐。</p>
+      <p class="src">—— 古斯塔夫·克里姆特 · 据其留存的随笔札记（据德译转译）</p>
+      <p class="end reveal">在本页左下角，可以点亮一首与这幅画同代同城的音乐。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开这片金色里的<em>十一处细节</em></h2>
+    <p class="lead reveal">从左上角的金底，到右下角的签名：把一幅‘看起来只有一片金’的画，拆成十一件可验证的事。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/the-kiss-main.webp" alt="吻 · The Kiss — 一片金色的相拥" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">从一对恋人，<em>到一国的金色名片</em></h2>
+    <p class="lead reveal">它诞生在金色时期的高峰，第一次亮相时却还叫另一个名字。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 1907–1908 · 维也纳</p><h3>在金色时期的高峰上，画一对恋人</h3><p>1907 至 1908 年，克里姆特正处在所谓的『金色时期』高峰。前几年游历拉文纳时，拜占庭马赛克的金底彻底改变了他的画法：真金箔上了画布，装饰母题覆盖全身。就在同一时期，他画了《阿黛尔·布洛赫-鲍尔肖像 I》《吻》等一批金箔作品，共用着同一套金色语汇。至于《吻》究竟为谁而作、有没有委托人，至今没有任何同时代文献能够回答。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1908 · 维也纳艺术展</p><h3>以《恋人》之名，第一次亮相</h3><p>1908 年，维也纳艺术展（Kunstschau）开幕，克里姆特是这场展览的核心人物。这幅画在图录里的名称是《恋人》(Liebespaar)——不是《吻》。更罕见的是，展览期间它就被奥地利国家购藏，转入今天的奥地利美术馆（美景宫）。也就是说，这幅后来定义了一个时代的画，在诞生的同一年就进了公共收藏，几乎没有经历过『无人问津』的阶段。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1908 → 今天 · 美景宫</p><h3>从一幅现代画，到一国的金色名片</h3><p>进入美景宫后，《吻》逐渐成为奥地利最著名的画作之一。20 世纪后期以来，它被无数次复制，印上明信片、海报、马克杯与纪念品，『金色』几乎成了克里姆特的商标。与此同时，艺术史对它的评价也几经翻转：曾被嫌『装饰、甜腻』的风格，后来被重新评价为现代装饰艺术与设计的重要源头。一幅画的意义，往往不是画完那一刻就定下的。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画布外的<em>三件真事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/k-couple.webp" alt="关于这幅画，史料确认过的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>关于这幅画，史料确认过的事</h3><p>真事一 · 金箔是真的黄金。技术检测确认，《吻》使用油彩，并贴有真正的金箔，另含银与铂金成分；画布尺寸为 180 × 180 厘米，是一个罕见的正方形巨幅。金不是『金色颜料』，而是把金属锻成薄片直接贴上画面——它会发光，也会随时间氧化、斑驳，因此每张照片里的《吻》都略有不同。</p><p>真事二 · 它最早的名字是《恋人》。据 1908 年维也纳艺术展的图录记载，此画参展时的题名是 Liebespaar（恋人），而非《吻》；同年在展览期间被奥地利国家购入，后入藏美景宫。《吻》这个我们今天熟悉的名字，是后来才固定下来的。</p><p>真事三 · 它是一组『金色作品』之一。文献与作品序列都显示，《吻》与《阿黛尔·布洛赫-鲍尔肖像 I》(1907) 以及同期若干金箔画作共享同一批装饰母题与工艺，是克里姆特『金色时期』集中产出的一部分——它不是一座孤立的杰作，而是一整个创作阶段的高点。</p><p class="note">※ 画中人物身份（是否为克里姆特与艾米莉·弗勒格）系后世主流假说，无同时代文献直接证实；克里姆特引文据德译转译，措辞或因译本而异。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一片金色里的<em>八个母题</em></h2>
+    <p class="lead reveal">把画面放大：方与圆、金与彩、肉身与装饰，各说各话。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/k-kiss.webp" alt="那个吻" loading="lazy" decoding="async"></div><div class="fb"><h4>那个吻</h4><div class="fy">THE KISS · 全画的引力中心</div><p>唇落在脸颊，未被时间取走的一瞬——既像亲吻，也像祝祷。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-manface.webp" alt="藏起的面孔" loading="lazy" decoding="async"></div><div class="fb"><h4>藏起的面孔</h4><div class="fy">THE HIDDEN FACE · 只画被吻的人</div><p>男人的脸埋进她的脸颊侧后，藤冠下没有五官：吻失去了施动者。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-womanface.webp" alt="仰起的脸" loading="lazy" decoding="async"></div><div class="fb"><h4>仰起的脸</h4><div class="fy">HER FACE · 唯一可见的表情</div><p>闭眼、微启的唇、发间的蓝花——全画唯一敞开的一扇情绪之窗。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-hands.webp" alt="托住脸颊的手" loading="lazy" decoding="async"></div><div class="fb"><h4>托住脸颊的手</h4><div class="fy">THE HANDS · 唯一的写实肉身</div><p>指节与指甲清晰可辨；写实留给肌肤，抽象让给衣袍。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-robe.webp" alt="几何长袍" loading="lazy" decoding="async"></div><div class="fb"><h4>几何长袍</h4><div class="fy">THE GEOMETRIC ROBE · 方与黑白</div><p>砌砖般排列的黑白方块，克里姆特语汇里『男性』的那一半。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-dress.webp" alt="圆形花纹" loading="lazy" decoding="async"></div><div class="fb"><h4>圆形花纹</h4><div class="fy">THE CIRCLES · 圆与彩色</div><p>蓝紫红的小圆点铺满裙面，唯一向外扩张的形状——『女性』的一半。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-spiral.webp" alt="金色眼纹" loading="lazy" decoding="async"></div><div class="fb"><h4>金色眼纹</h4><div class="fy">THE GOLDEN EYES · 装饰即内容</div><p>同心圆荡开的金色『眼睛』，与《阿黛尔》肖像共用的母题。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/k-feet.webp" alt="赤足" loading="lazy" decoding="async"></div><div class="fb"><h4>赤足</h4><div class="fy">THE BARE FOOT · 唯一的地面接触</div><p>悬在草与袍的交接处：跪着还是站着？画里不给你答案。</p></div></div></div>
+    <div class="flora-note reveal">黄金、螺旋、花点、方块——在这幅画里，装饰不是陪衬，而是一套可以逐句阅读的语法。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">为什么它成了<em>金色的现代脸</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>贴金：把教堂的光搬进房间</h4><p>金箔与拜占庭马赛克是理解《吻》的钥匙。1903 年克里姆特游历意大利拉文纳，见到圣维塔莱教堂保存的六世纪马赛克——金底上直立的人物、闪光的镶嵌。回到维也纳后，他开始用真金作画，把宗教艺术里的『圣光』用到世俗题材上：《吻》的金底，本质上是把一座教堂的光，搬进了一对恋人的房间。</p></div><div class="prb-item reveal"><h4>世纪末维也纳：一座正在瓦解的城</h4><p>《吻》诞生于 1907–1908 的维也纳——弗洛伊德正在写他的释梦，马勒在写他的交响曲，勋伯格刚刚结束《升华之夜》的调性探索；城市里同时涌动着性、死亡与形式革新。克里姆特是维也纳分离派（Secession）的旗手，他们喊出『给时代以艺术，给艺术以自由』。把金箔与情欲、装饰与身体放进同一张画，本身就是那个时代的精神样本。</p></div><div class="prb-item reveal"><h4>装饰是不是艺术？一场百年的争论</h4><p>《吻》长期面对一种指责：太装饰、太漂亮、太『像设计』。这种评价其实暴露了现代艺术史的一条偏见——它习惯把装饰贬为次等。《吻》恰恰把装饰抬成了主角：图案不再是陪衬，而是构图、是象征、是内容。今天再看，那种把几何与花纹、平面与金光组织进同一画面的能力，正是现代视觉设计的源头之一。</p></div><div class="prb-item reveal"><h4>从一幅画，到一种视觉语言</h4><p>《吻》的影响早已越出美术馆：它的金色、方与圆的对比、螺旋与花点，成为无数海报、时尚与包装设计引用的语汇。21 世纪初围绕克里姆特另一幅金箔画《阿黛尔·布洛赫-鲍尔肖像 I》的归还官司，更把他推上全球头条。『金色』于是不只是一种颜色，而成为一种可被反复调用的文化品牌——这也让原作的分量更加凸显：所有衍生，都指向这 180 厘米见方的一块布。</p></div></div>
+    <div class="prb-quote reveal">两个人走在高高的、明亮的夜里。<small>—— 理查德·德梅尔《升华之夜》(1896) 末句 · 勋伯格同名弦乐六重奏的文本来源（据德译转译）；本页配乐即采用此曲 1924 年历史录音</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">从《恋人》，<em>到一座国家的金色名片</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1907–1908</span><p>于维也纳『金色时期』绘成，油彩与真金箔，180 × 180 厘米正方形画布。</p></div><div class="legacy-item reveal"><span class="yr">1903</span><p>克里姆特游历拉文纳，拜占庭马赛克的金底影响了他此后的金色时期。</p></div><div class="legacy-item reveal"><span class="yr">1908</span><p>以《恋人》(Liebespaar) 之名在维也纳艺术展（Kunstschau）首次展出，同年被奥地利国家购藏。</p></div><div class="legacy-item reveal"><span class="yr">1908 → 今</span><p>藏于维也纳美景宫（奥地利美术馆），成为奥地利最著名的画作之一。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>全球被复制最多的艺术品之一；『金色』成了一种被反复引用的视觉品牌。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 古斯塔夫·克里姆特《吻》约 1907–1908（公有领域）<br>配乐：勋伯格《升华之夜》Op.4（作品公有领域）· Spencer Dyke 弦乐六重奏 1924 年历史录音（NGS，公有领域）<br>内容整理自公开艺术史资料与美景宫公开信息 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 13.0, "y": 33.0, "no": "I", "t": "洒金底 · 背景不是背景", "img": "assets/k-gold.webp", "txt": "退一步看，这幅画的『背景』根本不是背景：整片金箔铺满画布，只在人物轮廓四周留出细密的点刻与斑驳，像一面被时间摩挲过的金墙。金箔不是油彩的底色，而是被当作一种『光』来使用——它把画面从三维错觉里抽离出来，让相拥的两人像圣像一样浮在永恒之上。1903 年克里姆特游历拉文纳，拜占庭马赛克的金底给了他决定性的一击；此后他反复用真金作画，把教堂的圣光搬进了世俗的卧室。"}, {"x": 44.0, "y": 5.0, "no": "II", "t": "被藏起的面孔", "img": "assets/k-manface.webp", "txt": "画面里其实有两个头，你只看得见一个。男人俯身，把脸完全埋进女人的脸颊侧后——只留给观众一头黑色卷发和一圈藤蔓编成的冠。克里姆特有意不画他：整幅画里没有一张正视观众的男性面孔，吻的动作因此失去了『施动者』，只剩下『被吻的人』。这是全画最耐人寻味的一处留白——你永远不知道吻她的那个人此刻是什么表情，正如你也不知道他究竟是谁。"}, {"x": 50.0, "y": 13.0, "no": "III", "t": "落在脸颊上的吻", "img": "assets/k-kiss.webp", "txt": "吻落在女人的脸颊，不偏不倚，是全画的引力中心。所有线条——两人袍服的边缘、金箔上的点刻、她头上的花冠——都朝这里收拢。注意它画的是一个极短暂的瞬间：唇还未离开皮肤，她还没来得及回应。克里姆特把『正在发生』画成了『永远停留』，让这个动作既像一次亲吻，又像一种祝祷。长久以来人们争论：这是情欲的吻，还是神圣的赐福？画里不做解释，两种读法都成立。"}, {"x": 54.0, "y": 17.0, "no": "IV", "t": "她的脸与花冠", "img": "assets/k-womanface.webp", "txt": "女人的脸向上仰起，眼睛闭着，嘴唇微启——这是全画唯一一张完整可见的面孔，也是情绪唯一的出口。她的红发里编进蓝色与白色的花（紫罗兰、勿忘我一类），脖颈绕着一圈由金线勾出的花环。研究者注意到：她闭眼的表情里没有讨好，更像全然的交付与安静。她的身份至今没有定论：主流假说认为是克里姆特的终身伴侣艾米莉·弗勒格，也有学者认为只是匿名模特——没有一份同时代文献能证实。"}, {"x": 59.0, "y": 23.0, "no": "V", "t": "托住脸颊的手", "img": "assets/k-hands.webp", "txt": "全画最写实、最温暖的一块『肉身』：男人的双手从两侧拢住女人的脸，指节、指甲、皮肤的转折都画得具体可辨；她的手则虚虚搭在他的手背上。除此之外，两个人的身体几乎全部被吞进装饰里，只剩这几寸皮肤在提醒你『他们是活人』。克里姆特在这里做了一次精妙的分配——把写实留给肌肤，把抽象让给衣袍；情感因此有了落点，不至于飘散在满纸金箔里。"}, {"x": 36.0, "y": 42.0, "no": "VI", "t": "几何长袍 · 方与黑白", "img": "assets/k-robe.webp", "txt": "男人的长袍是可辨认的『几何』：黑色与白色的方块、长条，夹着金色的方块，以近乎砌砖的方式排列，其间浮出几处螺旋线。这种方正、秩序、边角分明的图案，在克里姆特的图像语汇里通常指向『男性』——与女人的圆形花纹相对。有趣的是，这种装饰几乎与二十世纪初『维也纳工坊』的产品设计同源；克里姆特是把平面设计的几何感搬上画布的第一批画家之一，比后来的现代主义装饰早了整整十年。"}, {"x": 51.0, "y": 48.0, "no": "VII", "t": "圆形花纹裙 · 圆与彩色", "img": "assets/k-dress.webp", "txt": "女人的裙子是另一套语法：圆、椭圆、花、螺旋，色彩用得更大胆——蓝、紫、红、粉的小圆点散布在裙面，像一片被压平的春天。她的裙摆向下、向右铺开，几乎要溢出画框，是画面里唯一『扩张』的形状。男左女右、方对圆、黑白对彩色——克里姆特用最朴素的对比，把一幅双人像写成了两种性情的对位。批评家曾嫌它『太过装饰』，而这恰恰是它现代的地方。"}, {"x": 63.0, "y": 42.0, "no": "VIII", "t": "金色螺旋 · 眼状纹样", "img": "assets/k-spiral.webp", "txt": "在两人身侧的金色袍面上，藏着许多同心圆——一圈圈金色的线由中心向外荡开，中心点处或红或蓝，远看像一只只张开的眼睛。这是克里姆特最著名的『装饰母题』之一，同样出现在同时期的《阿黛尔·布洛赫-鲍尔肖像 I》里。学界常把它读作一种『神性之眼』，或纯粹把它看作画面里的节拍——装饰在这里不再是陪衬，而是内容本身。他自己说得更直白：想了解我，就仔细看我的画。"}, {"x": 33.0, "y": 85.0, "no": "IX", "t": "花毯草地 · 唯一的自然", "img": "assets/k-meadow.webp", "txt": "两人的脚边是一片开满花的地：绿色的草上一层厚厚的小花，蓝的、紫的、白的、红的，密密地铺到画面最下缘。但它并不铺满——花毯恰好在女人赤足处结束，像一块被特意裁到脚边的地毯。花在克里姆特的画里几乎从不是『风景』，而是身体与欲望的隐喻；这片草地把最上方的金箔圣光拉回到地面，让整幅画有了一处人间。"}, {"x": 76.0, "y": 74.0, "no": "X", "t": "女人的赤足", "img": "assets/k-feet.webp", "txt": "画面右下露出女人的一只赤足，脚趾朝向观众，是全画唯一与地面接触的部位。关于两人的姿势，学界争论了很久：他们是跪着的，还是站着的？这幅画里没有可用的透视与地面线，你无法计算他们究竟重多少。正是这只脚提供了一点线索——它悬在草与袍的交接处，既像跪，又像站立。克里姆特取消了空间，也取消了这个问题的答案。"}, {"x": 90.0, "y": 89.0, "no": "XI", "t": "签名 · 一个有作者的作品", "img": "assets/k-sign.webp", "txt": "右下角金底上，是画家的签名：GUSTAV KLIMT。它提醒你这是一件『有作者的现代作品』，而不是中世纪的圣像。1908 年，这幅画在维也纳艺术展（Kunstschau）首次亮相，图录里的名字却不是《吻》，而是《恋人》(Liebespaar)——它是在展出后被奥地利国家买下、进入今天美景宫的。从一张现代画到一国的金色名片，这幅画的『姓名』和『身份』，都曾被重新写过。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(212,175,95,", "rgba(240,221,168,", "rgba(196,83,74,", "rgba(138,168,196,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="kiss" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">金色之吻 · 德彪西《月光》</div>
+    <div class="bgm-sub">钢琴独奏 · 德彪西 Clair de Lune · 公有领域录音</div>
+    <div class="bgm-why">克里姆特的《吻》把一对恋人收进金箔与夜的合一里，暖光静谧，几乎不再分彼此。德彪西的《月光》也写的是同一件事：1900年前后的巴黎，印象派把光从轮廓里解放出来。流动的琶音、朦胧的和声，像金粉在水里化开。它不激烈，也不缠绵过火，只是缓缓发亮——和画里那种被光吞没的静，处在同一温度。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Debussy《Clair de Lune》(piano solo) · 公有领域 Public Domain · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/000U7UBl0gBPXd?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Clair de Lune<span>Eugene Istomin, Achille-Claude Debussy</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+
+</body>
+</html>

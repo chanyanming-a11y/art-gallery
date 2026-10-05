@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>惠斯勒的母亲 · Whistler's Mother — 灰与黑的协奏</title>
+<meta name="description" content="惠斯勒《灰与黑的交响曲第一号》（惠斯勒的母亲，1871）动态赏析：一幅被命名为「安排」的肖像，以及惠斯勒「为艺术而艺术」的信念。含唯美主义、罗斯金诉讼案与这幅画如何成为美国的母亲形象。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+
+  /* ===== 灵感配乐 ===== */
+  #bgm {position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn {display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover {border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn {border-color:var(--gold);color:var(--gold-soft)}
+  .bgm-play {display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible {padding:7px 13px;outline:none}
+  .bgm-play:focus-visible {box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave {display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i {display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i {opacity:1}
+  .bgm-txt {border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible {color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt {color:var(--gold);opacity:1}
+  .bgm-panel {position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  #bgm.open .bgm-panel {opacity:1;transform:none;pointer-events:auto}
+  .bgm-row {display:flex;align-items:center;gap:8px}
+  .bgm-t {font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub {font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}
+  .bgm-why {font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol {display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span {font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range] {-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb {-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb {width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr {font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  .bgm-qq {margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h {font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song {display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover {color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span {color:var(--muted);font-size:11px;margin-left:6px}
+
+  :root{
+    --ink:#0d0c0c;
+    --ink2:#161415;
+    --panel:#221d1c;
+    --line:rgba(216,178,106,.28);
+    --gold:#d9b36a;
+    --gold-soft:#ecd3a0;
+    --water:#9aa7b0;
+    --rose:#b08a6a;
+    --paper:#f2ead8;
+    --muted:#a9a59c;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/whistlers-mother-main.webp") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.66) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(217,179,106,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0d0c0c 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="惠斯勒的母亲 · Whistler's Mother — 灰与黑的协奏">
+<meta property="og:image" content="../covers/whistlers-mother.webp">
+<meta property="og:description" content="惠斯勒《灰与黑的交响曲第一号》（惠斯勒的母亲，1871）动态赏析：一幅被命名为「安排」的肖像，以及惠斯勒「为艺术而艺术」的信念。含唯美主义、罗斯金诉讼案与这幅画如何成为美国的母亲形象。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="惠斯勒的母亲 · Whistler's Mother — 灰与黑的协奏">
+<meta name="twitter:image" content="../covers/whistlers-mother.webp">
+<meta name="twitter:description" content="惠斯勒《灰与黑的交响曲第一号》（惠斯勒的母亲，1871）动态赏析：一幅被命名为「安排」的肖像，以及惠斯勒「为艺术而艺术」的信念。含唯美主义、罗斯金诉讼案与这幅画如何成为美国的母亲形象。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">JAMES McNEILL WHISTLER · 1871</div>
+    <h1 class="title" id="titleCh">惠斯勒的母亲</h1>
+    <div class="hero-en">ARRANGEMENT IN GREY AND BLACK</div>
+    <div class="hero-meta"><span class="chip">布面油画 · 1871</span><span class="chip">144.3 × 162.5 cm</span><span class="chip">巴黎奥赛博物馆</span><span class="chip">肖像画</span></div>
+  </div>
+  <div class="scroll-cue">走近这份沉默</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">他把一幅<em>肖像</em>，命名为<em>交响曲</em></h2>
+    <p class="lead reveal">1871 年的伦敦，詹姆斯·惠斯勒完成了一幅画：一位老妇端坐于灰墙之前。他却没有叫它「肖像」，而是题作《灰与黑的交响曲第一号》——仿佛画画与作曲，本就是同一件事。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>画中人是惠斯勒的母亲安娜·惠斯勒。据说因母亲身体不适，原计划站着的姿势改成了端坐，这一坐，便坐出了一幅传世之作。</p><p>惠斯勒是「为艺术而艺术」的旗手。他拒绝让绘画去讲故事、去说教，只想安排好颜色、形状与节奏——像作曲家安排音符那样。</p><p>所以这一页不替你解读「她是谁」，只带你走近那片灰与黑：点开画面上的 ✦ 光点，去看侧脸、双手、长裙，以及那面会呼吸的墙。</p>
+      <p class="src">—— 据惠斯勒年表与唯美主义研究的通行叙述</p>
+      <p class="end reveal">在左下角，可以点亮一段为这份沉默特别挑选的钢琴摇篮曲。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这片灰与黑</em>的十二处</h2>
+    <p class="lead reveal">从侧脸到裙摆：每一个母题，都是惠斯勒在画布上安放的一个「音符」。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/whistlers-mother-main.webp" alt="惠斯勒的母亲 · Whistler's Mother — 灰与黑的协奏" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一幅画的<em>两次出名</em></h2>
+    <p class="lead reveal">它先在巴黎沙龙被拒，又在伦敦一夜成名；七年后的一场官司，更让它成了艺术史上的名句。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1871 · 伦敦</p><h3>为母亲而坐的模特</h3><p>安娜·惠斯勒因身体不适无法久站，儿子让她端坐入画。原本的站立构图改为坐像，灰墙、黑裙、白帽，在画室里一点点「安排」成型。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1877 · 伦敦</p><h3>沙龙展出，一鸣惊人</h3><p>画作以《灰与黑的交响曲第一号》之名在伦敦展出，独特的「音乐式」命名与极简构图引发热议，迅速成为惠斯勒最具代表性的作品。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1878 · 法庭</p><h3>惠斯勒诉罗斯金</h3><p>批评家罗斯金嘲讽此画「把颜料甩在公众脸上」。惠斯勒愤而起诉诽谤，虽胜诉却只获赔一枚法辛——这场官司却让「为艺术而艺术」的口号家喻户晓。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画，是一次<em>安排</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/wm-10.webp" alt="为什么叫它「交响曲」" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>为什么叫它「交响曲」</h3><p>惠斯勒一生钟爱用音乐术语为画作命名： nocturne（夜曲）、symphony（交响曲）、arrangement（安排）。他相信绘画与音乐一样，可以脱离具体的物象与故事。</p><p>《灰与黑的交响曲第一号》里没有情节，只有一个端坐的人与一片灰墙。颜色被压到最低限度——灰、黑、白，外加脸上一抹极淡的暖。</p><p>他说：「取自然之色，按艺术之需加以安排。」这幅画正是这句话的注脚：重要的不是母亲是谁，而是灰与黑如何被人安静地摆对位置。</p><p class="note">※ 「为艺术而艺术」(art for art's sake) 为惠斯勒友人佩特、王尔德一脉的唯美主义主张；罗斯金诉讼案始末见 1878 年伦敦中央刑事诉讼法院档案与惠斯勒《树敌的优雅》一书。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">VOCABULARY · 母题图鉴</div>
+    <h2 class="reveal">一套<em>几乎没有颜色</em>的词汇</h2>
+    <p class="lead reveal">惠斯勒把调色板收得极狠。以下是最常出现的几位「主角」。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/wm-01.webp" alt="侧脸" loading="lazy" decoding="async"></div><div class="fb"><h4>侧脸</h4><div class="fy">FACE · 唯一的暖</div><p>低垂平静的轮廓，是全画唯一的体温。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-02.webp" alt="白软帽" loading="lazy" decoding="async"></div><div class="fb"><h4>白软帽</h4><div class="fy">WHITE · 最亮的几处</div><p>帽与蕾丝领把视线收拢到面部。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-03.webp" alt="交叠的双手" loading="lazy" decoding="async"></div><div class="fb"><h4>交叠的双手</h4><div class="fy">HANDS · 最静的一拍</div><p>一个没有动作的动作，按下了所有躁动。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-04.webp" alt="黑色长裙" loading="lazy" decoding="async"></div><div class="fb"><h4>黑色长裙</h4><div class="fy">BLACK · 低音区</div><p>大面积沉静的暗，托住上方的脸。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-06.webp" alt="墙上的小画" loading="lazy" decoding="async"></div><div class="fb"><h4>墙上的小画</h4><div class="fy">FRAME · 画中画</div><p>右上方唯一的点缀，墙也在看。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-07.webp" alt="左侧帷幔" loading="lazy" decoding="async"></div><div class="fb"><h4>左侧帷幔</h4><div class="fy">CURTAIN · 舞台侧幕</div><p>压住左边，与右侧留白平衡。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-09.webp" alt="灰墙" loading="lazy" decoding="async"></div><div class="fb"><h4>灰墙</h4><div class="fy">GREY · 会呼吸</div><p>带着细微冷暖的空气，而非死板背景。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/wm-10.webp" alt="整体剪影" loading="lazy" decoding="async"></div><div class="fb"><h4>整体剪影</h4><div class="fy">FORM · 稳的三角</div><p>人、椅、墙合成一个安稳的三角。</p></div></div></div>
+    <div class="flora-note reveal">惠斯勒之后，美国邮政在 1934 年把这幅画印上邮票，使它成为大众心里的「母亲」形象——一幅私人肖像，就这样长成了公共符号。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">唯美主义，<em>与一场官司</em></h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>为艺术而艺术</h4><p>19 世纪末，以佩特、王尔德、惠斯勒为代表的唯美主义主张：艺术的目的就在自身，不必承载道德或教化。这幅画是这一信条最安静的示范。</p></div><div class="prb-item reveal"><h4>夜曲与交响曲</h4><p>惠斯勒以音乐命名画作，不是比喻，而是方法论。他像处理乐句一样处理色块与留白，追求纯视觉的和谐，而非叙事。</p></div><div class="prb-item reveal"><h4>罗斯金诉讼案（1878）</h4><p>权威批评家罗斯金斥此画「向公众脸上甩颜料」。惠斯勒以诽谤罪起诉并胜诉，却几乎破产。官司让「现代艺术该不该被批评家定义」成为公共议题。</p></div><div class="prb-item reveal"><h4>从私人肖像到国家符号</h4><p>20 世纪上半叶，这幅画被多次复制、上邮票、进教科书，逐渐被塑造成「孝顺」「端庄」的美国母亲象征——这恐怕是惠斯勒始料未及的「意义溢出」。</p></div></div>
+    <div class="prb-quote reveal">取自然之色，按艺术之需加以安排。
+画不必讲述，它只需被看见。<small>—— 据惠斯勒《树敌的优雅》(The Gentle Art of Making Enemies) 意旨改写</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">尾声 · 一幅画的旅程</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1871</span><p>惠斯勒于伦敦完成《灰与黑的交响曲第一号》，布面油画 144.3 × 162.5 cm。</p></div><div class="legacy-item reveal"><span class="yr">1878</span><p>惠斯勒诉罗斯金诽谤案胜诉，获赔一枚法辛；「为艺术而艺术」的主张因此广为人知。</p></div><div class="legacy-item reveal"><span class="yr">1934</span><p>画作被印上美国邮票，成为大众文化里「母亲」的视觉符号；后入藏巴黎奥赛博物馆。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>它被视为唯美主义的代表作之一，在全球教科书与展览中反复出现，安静地坐着，已经一百五十余年。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 詹姆斯·惠斯勒《灰与黑的交响曲第一号》（惠斯勒的母亲，1871），巴黎奥赛博物馆藏，公有领域。<br>内容整理自公开艺术史资料 · 仅为艺术赏析用途。
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 40.0, "y": 27.0, "no": "I", "t": "母亲的侧脸", "img": "assets/wm-01.webp", "txt": "她侧身端坐，脸朝向画外左侧，目光平静而疏离。惠斯勒刻意让母亲低垂的轮廓衬在灰墙之上——这不是一张肖像，而是一段被压低了音量的「咏叹调」。皮肤在灰调里泛着暖，是整幅冷灰中唯一的温度。"}, {"x": 40.0, "y": 21.0, "no": "II", "t": "白软帽与蕾丝领", "img": "assets/wm-02.webp", "txt": "头顶的白软帽与颈间的蕾丝领，是画面里最亮的几处。它们把视线轻轻收拢到面部，也把一位维多利亚时代老妇的端庄，安静地钉在了画布上。"}, {"x": 45.0, "y": 72.0, "no": "III", "t": "交叠的双手", "img": "assets/wm-03.webp", "txt": "双手安放在膝上，十指交叠——一个没有动作的动作。惠斯勒曾说，他要画的是「安排」(arrangement) 而非叙事；这双手正是全画最静的那一拍，把所有躁动都按了下去。"}, {"x": 42.0, "y": 52.0, "no": "IV", "t": "黑色长裙", "img": "assets/wm-04.webp", "txt": "一身黑裙几乎占去画面左半，是一片没有褶皱喧哗的暗。正是这道大面积的黑，托住了上方那张苍白的脸——灰与黑的协奏，黑是低音，灰是中音，脸是偶尔浮现的高音。"}, {"x": 40.0, "y": 83.0, "no": "V", "t": "座椅与坐姿", "img": "assets/wm-05.webp", "txt": "她坐在一把直背木椅里，身体微微右转，重心安稳。惠斯勒把一切不必要的家具都请出画面，只留下这把椅子和脚凳，让「坐」本身成为构图的支点。"}, {"x": 80.0, "y": 20.0, "no": "VI", "t": "墙上的小画", "img": "assets/wm-06.webp", "txt": "右上方灰墙上挂着一幅小小的风景画，镶在深色画框里。它是全画唯一「画中画」，也是母亲目光之外另一个安静的注脚——仿佛在说：这间屋子里，连墙也在看。"}, {"x": 7.0, "y": 46.0, "no": "VII", "t": "左侧帷幔", "img": "assets/wm-07.webp", "txt": "画面最左是一道垂下的深色帷幔，像舞台的侧幕。它压住左边，与右侧的留白形成平衡，也把母亲的身形从背景里 quietly 托出来。"}, {"x": 60.0, "y": 90.0, "no": "VIII", "t": "脚凳", "img": "assets/wm-08.webp", "txt": "裙摆之下，一只矮脚凳托着她的双脚。它低到画面底边，却很要紧：没有它，这一坐就少了落地感，整幅画的「稳」会塌掉一角。"}, {"x": 66.0, "y": 46.0, "no": "IX", "t": "灰墙的呼吸", "img": "assets/wm-09.webp", "txt": "母亲身后的灰墙不是死板的背景，而是带着极细微冷暖起伏的「空气」。惠斯勒花了大量精力调配这面墙，让灰色自己会呼吸——这正是他所谓「艺术为艺术」的执拗。"}, {"x": 42.0, "y": 50.0, "no": "X", "t": "整体的剪影", "img": "assets/wm-10.webp", "txt": "把视线拉远，母亲与椅、墙、帷幔合成一个稳稳的三角。没有戏剧，没有风景，只有一个人在灰与黑里坐成一座雕像——这恰是惠斯勒想说的：画，可以只是一次纯粹的视觉安排。"}, {"x": 34.0, "y": 27.0, "no": "XI", "t": "帽檐下的目光", "img": "assets/wm-11.webp", "txt": "凑近看，帽檐的阴影落在眉骨与颧骨之间，眼神并不直视观者，而是停在某处看不见的远处。这份克制，比任何表情都更长久地留在人心里。"}, {"x": 55.0, "y": 95.0, "no": "XII", "t": "裙摆与鞋", "img": "assets/wm-12.webp", "txt": "黑裙垂到脚面，鞋尖在底边若隐若现。惠斯勒连这最不起眼的一截都不马虎——它把人物的重量，最终交给了地面。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(154,167,176,", "rgba(217,179,106,", "rgba(176,138,106,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="whistlers-mother" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">灰与黑的摇篮 · 福雷《摇篮曲》</div>
+    <div class="bgm-sub">钢琴独奏 ·《桃莉组曲》第一首「Berceuse」· Gabriel Fauré · 1874</div>
+    <div class="bgm-why">惠斯勒把这幅画题为《灰与黑的交响曲》，仿佛画画与作曲本是一回事——他要的只是颜色与形状的安静安排，不叙事，不喧哗。福雷的《摇篮曲》也恰是这样：一个反复摇摆的乐句，没有情节，只是把温柔稳稳地递到耳边。老妇端坐的沉默，与摇篮曲里那一下下轻晃的拍子，是同一种呼吸——都在说，有些东西不必言说，只要被安放好，就足够动人。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：福雷《摇篮曲》（Dolly 组曲 Op.56 No.1）· Public Domain · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002eLY2E3MGpy5?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Dolly Suite, Op. 56: I. Berceuse<span>Gabriel Fauré</span></a></div>
+  </div>
+</div>
+
+<script>
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.back-home');
+  if(b){
+    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+    window.addEventListener('scroll', upd, {passive:true}); upd();
+  }
+})();
+</script>
+</body>
+</html>

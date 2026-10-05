@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秋千 · The Swing — 一场被安排好的偶然</title>
+<meta name="description" content="弗拉戈纳尔《秋千》(约1767–68) 动态赏析：一份有目击者证词的委托、被悄悄换成老年绅士的主教、飞向丘比特的粉色拖鞋，以及一场被精确计算过的『幸运意外』。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#0a1410;--ink2:#0e1c15;--panel:#16261d;--line:rgba(216,178,106,.28);--gold:#d3ab5e;--gold-soft:#efdcae;--water:#8fcfc2;--rose:#e0909e;--paper:#f2ead8;--muted:#a3bcac;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/sw-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.56) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(200,220,180,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0a1410 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;color:var(--gold);font-size:14px;margin-bottom:14px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+<style id="artGateCSS">#artGate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(6,5,4,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:24px;opacity:1;transition:opacity .4s ease,visibility .4s}#artGate.hide{opacity:0;visibility:hidden;pointer-events:none}.ag-box{max-width:480px;width:100%;border:1px solid rgba(216,178,106,.4);border-radius:14px;background:linear-gradient(180deg,#16110b,#0e0a06);padding:30px 30px 26px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}.ag-mark{font-family:var(--serif-en,Georgia),serif;letter-spacing:.4em;text-indent:.4em;font-size:11px;color:var(--gold,#d6b070);opacity:.85;text-transform:uppercase}.ag-title{font-size:24px;letter-spacing:.06em;color:var(--gold-soft,#f0e2c0);margin:14px 0 16px;font-family:var(--serif-cn,serif)}.ag-body{color:#d7d2c2;font-size:14.5px;line-height:2;margin:0 0 14px;text-align:left}.ag-body strong{color:var(--gold-soft,#f0e2c2);font-weight:600}.ag-note{color:var(--muted,#a2b2a4);font-size:12.5px;line-height:1.8;margin:0 0 22px;text-align:left;opacity:.85}.ag-btns{display:flex;gap:12px;justify-content:center}.ag-enter,.ag-back{padding:11px 22px;border-radius:999px;font-size:14px;letter-spacing:.08em;cursor:pointer;font-family:var(--serif-cn,serif);transition:all .25s}.ag-enter{background:var(--gold,#d6b070);color:#15110b;border:1px solid var(--gold,#d6b070)}.ag-enter:hover{filter:brightness(1.08)}.ag-back{background:transparent;color:var(--gold-soft,#f0e2c2);border:1px solid rgba(216,178,106,.45)}.ag-back:hover{background:rgba(216,178,106,.12)}body.ag-lock{overflow:hidden}</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="秋千 · The Swing — 一场被安排好的偶然">
+<meta property="og:image" content="../covers/the-swing.webp">
+<meta property="og:description" content="弗拉戈纳尔《秋千》(约1767–68) 动态赏析：一份有目击者证词的委托、被悄悄换成老年绅士的主教、飞向丘比特的粉色拖鞋，以及一场被精确计算过的『幸运意外』。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="秋千 · The Swing — 一场被安排好的偶然">
+<meta name="twitter:image" content="../covers/the-swing.webp">
+<meta name="twitter:description" content="弗拉戈纳尔《秋千》(约1767–68) 动态赏析：一份有目击者证词的委托、被悄悄换成老年绅士的主教、飞向丘比特的粉色拖鞋，以及一场被精确计算过的『幸运意外』。">
+</head>
+<body><div id="artGate" role="dialog" aria-modal="true" aria-label="艺术欣赏提示">
+  <div class="ag-box">
+    <div class="ag-mark">Art Appreciation Notice</div>
+    <h2 class="ag-title">《秋千》</h2>
+    <p class="ag-body">本页面展示的画作包含 <strong>艺术人体 / 裸体</strong> 内容。所录作品均为美术馆级公有领域馆藏，仅作艺术欣赏与学习之用，不含任何低俗或违规意图。</p>
+    <p class="ag-note">若您未满 18 周岁，或对此类内容感到不适，请点击「返回画廊」。点击「进入欣赏」即表示您已知悉上述说明，并同意仅作艺术欣赏之用。</p>
+    <div class="ag-btns">
+      <button type="button" class="ag-enter" id="agEnter">进入欣赏</button>
+      <button type="button" class="ag-back" id="agBack">返回画廊</button>
+    </div>
+  </div>
+</div>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">JEAN-HONORÉ FRAGONARD · c. 1767–68</div>
+    <h1 class="title" id="titleCh">秋千</h1>
+    <div class="hero-en">THE SWING · LES HASARDS HEUREUX DE L'ESCARPOLETTE</div>
+    <div class="hero-meta"><span class="chip">布面油画 81 × 64.2 cm</span><span class="chip">伦敦 · 华莱士收藏馆</span><span class="chip">洛可可 · 法国</span><span class="chip">原名：秋千的幸运意外</span></div>
+  </div>
+  <div class="scroll-cue">先别急着看她——先看她那只飞出去的鞋</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">一只飞出去的鞋，<em>和一个被安排好的偶然</em></h2>
+    <p class="lead reveal">「我要您画一位夫人坐在秋千上，由一位主教推着；再把我放在能看清那位可爱姑娘双腿的位置上——要是您想让画面再刺激一点的话。」</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>这句话出自一次真实的委托。据剧作家夏尔·科莱 1767 年 10 月的日记，一位宫廷男子（通常被认为是时任法国教士总收税官的圣朱利安男爵）想请人画他与情妇的画像，指名要一位主教来推秋千。被找上的历史画家多扬觉得题材太轻浮，拒绝了，把差事转给了比自己年轻、为乐趣而作画的弗拉戈纳尔。弗拉戈纳尔接下了，然后悄悄做了一件事：把主教换成了一个泛指的老年绅士。</p><p>于是有了 18 世纪最著名的一幅画。表面上它轻快得没有重量——绿叶、粉裙、秋千飞起、一只鞋脱脚而出；骨子里却结构严密：谁在推、谁在看、谁被蒙在鼓里，被安排得分毫不差。委托人想要的那点私密刺激，被画家处理成了一场既可解、又可否认的视觉游戏：足够刺激，也足够『无辜』。</p><p>这一页不把它当成一幅情色画来看。我们按弗拉戈纳尔布置的顺序走一圈：从树冠漏下的光，到左下灌木里的那个人，再到最角落那把没人管的耙子。看完你会发现，画题里那个『幸运的意外』，其实一点也不偶然。</p>
+      <p class="src">—— 圣朱利安男爵委托多扬时所说，见夏尔·科莱 1767 年 10 月日记（据英译转译，措辞或因译本而异）</p>
+      <p class="end reveal">在本页左下角，可以点亮一首与这幅画同代的法国羽管键琴曲。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这座花园</em>的十处心机</h2>
+    <p class="lead reveal">从上方漏光到最底部的耙子：每个人（和每座石像）都朝不同的方向看着，而且知道的事各不相同。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/sw-main.webp" alt="秋千 · The Swing — 一场被安排好的偶然" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">从一次被转手的委托，<em>到一张人人都见过的脸</em></h2>
+    <p class="lead reveal">它开头是一场被拒绝的订单，中途经过一次断头台与一场拍卖，最后被挂在伦敦、被全世界复制。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">约 1767 · 巴黎</p><h3>一份被转手的「轻薄」委托</h3><p>据剧作家夏尔·科莱 1767 年 10 月的日记，一位宫廷男子——通常被认为是时任法国教士总收税官的圣朱利安男爵——先找到历史画家多扬，要画他与情妇的秋千像，还指名要一位主教来推。多扬觉得题材太轻浮，拒绝了，把差事转给比自己年轻、『为乐趣而作画』的弗拉戈纳尔。弗拉戈纳尔接下订单，悄悄把主教换成泛指的老年绅士，其余照单完成。委托人想要的那点私密刺激，被画家处理成了一场既可解、又可否认的视觉游戏——于是就有了这幅 18 世纪最著名的画。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1794 → 1865 · 从断头台到拍卖场</p><h3>最确凿的递藏，开头是一桩死刑</h3><p>此画最早的归属不明，可靠的递藏从税务官梅纳日·德·普雷西尼开始——他 1794 年在法国大革命中被送上断头台，画作随之被革命政府查抄。此后它经德·圣马克侯爵（可能）、莫尔尼公爵（确定）之手；莫尔尼 1859 年曾想把它献给卢浮宫而未果。1865 年莫尔尼去世，这幅画在巴黎拍卖（Pillet & Escribe 专场，第 98 号），被英国收藏家、赫特福德侯爵四世以 30,200 法郎买下，从此渡海入英，成为华莱士收藏最重要的底子之一。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1782 → 今天 · 从版画到流行图腾</p><h3>它比大多数人以为的都更「出圈」</h3><p>1782 年，版画家尼古拉·德·洛奈把《秋千》刻成铜版画——此后它的图像开始在上流社会流传，成了洛可可『享乐主义』的招牌。进入 20 世纪，它被反复挪用：美国诗人威廉·卡洛斯·威廉姆斯 1920 年的诗、Little Feat 乐队 1972 年的专辑封面、艺术家因卡·绍尼巴雷 2001 年那件『无头』再创作（获特纳奖提名）、迪士尼《冰雪奇缘》(2013) 中安娜穿过的画廊场景、以及 Red Velvet 2022 年的 MV……一幅 18 世纪的花园秋千，成了当代流行文化取之不尽的取景框。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">画布外的<em>三件真事</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/sw-dress.webp" alt="关于这幅画，史料确认过的事" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>关于这幅画，史料确认过的事</h3><p>真事一 · 它的委托，有同时代人的『目击证词』。与多数来历成谜的名画不同，《秋千》的起点被记了下来：剧作家科莱在 1767 年 10 月的日记里转述了画家多扬的讲述——一位宫廷男子要画他与情妇，指定主教推秋千、自己则要一个『能看清她双腿』的位置；多扬拒绝并转单给弗拉戈纳尔，后者把主教换成了老年绅士。这份证词出自同时代人之手，是这幅画最珍贵也最罕见的一手背景。</p><p>真事二 · 它有一百多年没被清洁过。2021 年 8 月至 11 月，《秋千》在华莱士收藏馆接受了一次谨慎的修复：上一次彻底清理已是一百多年前，画面被严重黄化的清漆蒙住，旧日的补笔也开始显形。因为它太重要、几乎从不下架，这次修复本身成了一件新闻——人们第一次看到洗去积垢后，那身粉裙与玫瑰丛原本的颜色。修复并不激进，只求还原自然老化被遮住的部分。</p><p>真事三 · 它进英国，是从一场法国拍卖会上买走的。1865 年莫尔尼公爵去世，其收藏在巴黎公开拍卖（5 月 31 日至 6 月 12 日，Pillet & Escribe 专场），《秋千》是第 98 号拍品，被第四代赫特福德侯爵以 30,200 法郎竞得。侯爵 1870 年去世后，藏品传给其子理查德·华莱士爵士；1897 年华莱士夫人遵遗愿把整批收藏捐给英国，条件是不拆分、留驻伦敦赫特福德宅。1900 年 6 月华莱士收藏馆开馆，《秋千》自此公开展出至今。</p><p class="note">※ 委托人之身份（圣朱利安男爵说）、年长男子是否为『丈夫』、以及部分象征解读，均为学界通行假说或据文献转述，存在争议；引文据英译转译。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一座花园里的<em>三重视线</em></h2>
+    <p class="lead reveal">把画面拆开看：每个人——和每座石像——都在看别人，但方向不同、知道的事也不同。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/sw-head.webp" alt="贝热尔帽" loading="lazy" decoding="async"></div><div class="fb"><h4>贝热尔帽</h4><div class="fy">BERGÈRE HAT · 牧羊女的伪装</div><p>18 世纪流行的草帽。戴上它，连贵族女子也扮一会儿牧羊女。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-dress.webp" alt="粉白绸裙" loading="lazy" decoding="async"></div><div class="fb"><h4>粉白绸裙</h4><div class="fy">THE PINK DRESS · 被风撑开的花</div><p>裙上的粉与玫瑰丛同色——他用一支颜料，把人和花园缝在一起。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-shoe.webp" alt="飞出的鞋" loading="lazy" decoding="async"></div><div class="fb"><h4>飞出的鞋</h4><div class="fy">THE FLYING SLIPPER · 失贞的暗语</div><p>18 世纪里，掉了鞋的脚即裸露与失贞的委婉说法，他偏画得最细。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-lover.webp" alt="灌木里的仰慕者" loading="lazy" decoding="async"></div><div class="fb"><h4>灌木里的仰慕者</h4><div class="fy">THE HIDDEN LOVER · 被安排的位置</div><p>委托人要的『看清她的位置』，就藏在这丛玫瑰里。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-pusher.webp" alt="拉绳的人" loading="lazy" decoding="async"></div><div class="fb"><h4>拉绳的人</h4><div class="fy">THE MAN AT THE ROPES · 动力与盲区</div><p>他供给动力，却在暗处，看不见真正的交流。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-cupid.webp" alt="捂嘴的丘比特" loading="lazy" decoding="async"></div><div class="fb"><h4>捂嘴的丘比特</h4><div class="fy">CUPID · 请保密</div><p>石像把手抬到唇边，替这场幽会守口如瓶。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-putti.webp" alt="骑海豚的双普蒂" loading="lazy" decoding="async"></div><div class="fb"><h4>骑海豚的双普蒂</h4><div class="fy">THE PUTTI · 担忧的观众</div><p>两个小爱神抬头观望——不是共谋，更像担心。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/sw-tree.webp" alt="漏下的光" loading="lazy" decoding="async"></div><div class="fb"><h4>漏下的光</h4><div class="fy">THE LIGHT · 幸运的缺口</div><p>树冠让开一个口，光恰好落在她荡起的那片裙上。</p></div></div></div>
+    <div class="flora-note reveal">在 18 世纪的图像语汇里：秋千暗示不贞、飞鞋暗示失贞、玫瑰是情欲、绳索是婚姻的羁绊、丘比特的『嘘』是要人保密——当时的观众一眼就能读懂这整套暗语。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">为什么它成了<em>洛可可的临界点</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>洛可可的「视觉游戏」</h4><p>洛可可最擅长的事，是把享乐画成一门需要动脑的游戏。《秋千》表面轻快，骨子里却结构严密：茂密的叶子像舞台幕布收拢视线，光只开给一个人，三组人物的注视方向被精确错开。研究洛可可的学者詹妮弗·米拉姆（Jennifer Milam）把它称作『视觉游戏』——看画的人被鼓励去发现画面里层层叠叠的双关、符号与巧合，像荡秋千一样在细节之间来回。它不要求你感动，只邀请你会心一笑。</p></div><div class="prb-item reveal"><h4>构图即权力：一场被安排的偶然</h4><p>这幅画最锋利的，不是情色，而是它对『看与被看』的安排。委托人要一个能看清情妇的位置，画家就给了他这个位置，同时让另一个人（拉绳的老者）供给动力、却身处盲区。谁看得见、谁被看见、谁蒙在鼓里——不是自然发生，而是被社会位置决定的。画题叫做『秋千的幸运意外』，可整幅画恰恰在告诉你：这场偶然，是被精确计算过的秩序。这也是它两百年后仍被反复解读的原因。</p></div><div class="prb-item reveal"><h4>接受史：启蒙哲人的靶子</h4><p>18 世纪下半叶，这类『轻浮』绘画很快成了启蒙哲人批评的对象——他们主张艺术应当严肃，去呈现人性的崇高与道德的份量，而不是画一群人荡秋千、丢鞋子。正是这种针锋相对，让《秋千》成了洛可可的一个临界点：它是这一趣味最完美的样本，也是它被时代抛弃的证据。被批评，反而把它钉进了艺术史的坐标。</p></div><div class="prb-item reveal"><h4>从私人客厅，到流行图腾</h4><p>《秋千》大半生挂在私人的宅邸与收藏里：先是革命前一位税务官的家，后经侯爵、公爵，最终随赫特福德勋爵渡海入英。1897 年华莱士夫人把它连同整批收藏捐给英国，1900 年华莱士收藏馆开馆，它才真正向公众敞开。此后它的图像开始四处旅行：诗、唱片封面、当代艺术、动画与流行 MV——一个被藏在暗处的私密玩笑，最终成了人人都见过的那张脸。</p></div></div>
+    <div class="prb-quote reveal">Les hasards heureux de l'escarpolette —— 「秋千的幸运意外」。<small>—— 这幅画 18 世纪的原始画题；后世通称《秋千》(The Swing / L'Escarpolette)。</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">从客厅里的玩笑，<em>到一座美术馆的镇馆之宝</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">约 1767</span><p>受一份有记录的委托绘于巴黎；把主教换成老年绅士，其余照单完成。</p></div><div class="legacy-item reveal"><span class="yr">1794</span><p>首任可考的收藏者、税务官梅纳日·德·普雷西尼在法国大革命中被处死，画作遭查抄。</p></div><div class="legacy-item reveal"><span class="yr">1865</span><p>莫尔尼公爵藏画在巴黎拍卖，赫特福德侯爵四世以 30,200 法郎购入，画作渡海入英。</p></div><div class="legacy-item reveal"><span class="yr">1900</span><p>华莱士收藏馆在伦敦赫特福德宅开馆，《秋千》公开展出至今（馆藏编号 P430）。</p></div><div class="legacy-item reveal"><span class="yr">2021</span><p>罕见修复：洗去蒙了一百多年的黄化清漆，粉裙与玫瑰重见本色。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 弗拉戈纳尔《秋千》约 1767–68（公有领域）<br>内容整理自华莱士收藏馆、Smarthistory、Britannica 等公开资料 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 54.0, "y": 53.0, "no": "I", "t": "女子与贝热尔帽 · 被点名的目光", "img": "assets/sw-head.webp", "txt": "秋千上这位年轻女子戴着当时流行的贝热尔帽（bergère，牧羊女式草帽），帽檐下的脸正向下、向左微侧，含着一点笑——她看着的，正是灌木里的那个人。这不是无心的失神，而是一次被安排好的对视：她知道谁在看，也知道什么时候把裙摆荡开。画家把最亮的暖光全给了她——肤色、丝带、颈间的花饰，一处不落。她同时是全画唯一既在动、又完全掌控姿势的人：身体随秋千飞起，目光却精准落点。洛可可最擅长画这种『天真的共谋』，看起来处处偶然，其实人人各就各位。"}, {"x": 55.0, "y": 66.0, "no": "II", "t": "蓬裙与光柱 · 一笔画出的风", "img": "assets/sw-dress.webp", "txt": "她在秋千弧线的最高点荡进一道光柱，粉白的绸裙像被风撑开的花，整片裙裾在光里翻卷、透明、几乎炸开。这是全画用笔最快、最『湿』的地方：弗拉戈纳尔以疾速的宽笔一层层压上绸缎的高光与褶影，让布料真的带着风跑起来。更妙的是配色——她裙上的粉，与左下玫瑰丛的粉出自同一支颜料；他用同一种颜色，把人物和花园缝成一体：她不是站在花园里，她就是花园开出来的一朵。明暗也在这里分工：她置于光中，两位男性退进阴影，谁是主角，光已经说完。"}, {"x": 25.0, "y": 56.0, "no": "III", "t": "扬起的小腿与飞鞋 · 全画的题眼", "img": "assets/sw-shoe.webp", "txt": "她把左腿笔直踢出，一只粉色缎面拖鞋脱脚飞出，正悬在半空，朝左侧丘比特雕像的方向去。这只鞋是全画的『题眼』：在 18 世纪的语境里，秋千本身即『不贞』的委婉象征，而『掉了鞋子的脚』更直接地暗示裸露与失贞。弗拉戈纳尔偏把这小小的鞋放在画面左半部的正中，画得比女子的脸还仔细——就是要你看清它。委托人的原始要求本就是『让我能看清她的腿』，踢腿与飞鞋，正是这份委托最核心的一笔。一个轻巧到几乎俏皮的动作，被画成了整幅画的语法。"}, {"x": 17.0, "y": 80.0, "no": "IV", "t": "玫瑰丛中的仰慕者 · 委托人要的位置", "img": "assets/sw-lover.webp", "txt": "画面左下，一位年轻男子仰卧在玫瑰花丛里：一手撑地、一手把帽子向外递出，头微抬、嘴半张，目光正迎着荡来的裙底。他就是委托人想要的那个位置——『把我放在能看清她的地方』。弗拉戈纳尔给了他仅次于女子的光，又让周围的粉玫瑰与他衣衫的色调彼此呼应，使他和女子在绿叶世界里连成一块暖色。他递帽的手势看似殷勤，实则也在把帽子移开、不挡住视线。这是全画最坦白的一格：所谓『幸运的意外』，其实是一个被精确布置好的视角。"}, {"x": 82.0, "y": 76.0, "no": "V", "t": "拉绳的年长男子 · 供给动力的人", "img": "assets/sw-pusher.webp", "txt": "右侧阴影里，一位年长男子双手拉着两根绳子为秋千送力，脸上带着笑。很久以来他被理所当然地读作『丈夫』，整个故事被讲成『丈夫在身边推着、情人躲在下头』的通奸戏；但画中没有任何细节说明他和女子存在婚姻关系——科莱的记载里，这个位置原本属于一位主教，弗拉戈纳尔把他换成了一个泛指的老年绅士，艺术史网站 Smarthistory 也只谨慎地说他『大概是丈夫』。可以确定的是构图：他供给动力，却在暗处、背对真正的交流，根本看不见灌木里那个人。绳子被学者读作婚姻的羁绊，也被读作缰绳——谁在拉、谁在看、谁不知道，这幅画把一场注视的权力关系排得清清楚楚。"}, {"x": 6.0, "y": 52.0, "no": "VI", "t": "捂嘴的丘比特 · 请保密", "img": "assets/sw-cupid.webp", "txt": "画面最左，一尊带翅膀的丘比特石像倚在台座上，一只手抬到唇边，做出『嘘』的手势。雕像本是花园里的装饰，弗拉戈纳尔却让它活成了第二组『演员』：它在替这场幽会守口如瓶。再看台座侧面，刻着舞蹈的迈那得斯（酒神狂女）浮雕——狂欢的暗示就藏在石头上。整幅画里，象征被分成了两班：活人各怀心事、彼此错开视线，反倒是这些石头做的小神知道得最多。丘比特的手势，是把『请别说出去』直接写进了画面。这也是洛可可视觉游戏的老套路——让没有生命的物，替有心事的人说话。"}, {"x": 62.0, "y": 79.0, "no": "VII", "t": "骑海豚的双普蒂 · 担忧的观众", "img": "assets/sw-putti.webp", "txt": "女子下方偏右，石台上立着两个小爱神（putti）：其中一个正抬头望向荡起的女子，神情不是共谋，倒更像担忧；据 Smarthistory 的描述，他们正骑在一只海豚上。海豚在古典图像里常与维纳斯、与『航行』相关，而爱神正是维纳斯的随从。于是画面出现了一组有趣的对位：左边的丘比特在『嘘』，右边的双普蒂在『看』——一静一动、一保密一观望，两座雕像从两个方向把这场秘密围住。活着的三位各在一处、谁也不看谁，反倒是这些石头做的小神，把所有人都收进了眼里。"}, {"x": 38.0, "y": 91.0, "no": "VIII", "t": "遗落的耙子 · 最会说话的配角", "img": "assets/sw-rake.webp", "txt": "画面最下方，一把耙子斜斜地倒卧在草叶与落花之间，几乎要被观者略过。它是全画最不起眼的『道具』，却也常被读作洛可可式的双关物：农具闯进贵族的花园，本身就是一次优雅的错位。更常见的读法是把它和『被搁下的劳作』联系起来——在一场纵情享乐的画面里放一把没人管的耙子，像在脚注里轻轻提示：有人在此忘了正事。弗拉戈纳尔不解释它，只把它斜插进画面最底部，让细心的人自己会心。一幅画里最会说话的，往往不是人物，而是这样一件被丢下的东西。"}, {"x": 93.0, "y": 58.0, "no": "IX", "t": "岩泉与花架 · 被搭出来的侧幕", "img": "assets/sw-garden.webp", "txt": "画面右侧是一整片堆叠的岩泉、藤蔓与花架，一路垂落下来，把右上角围成一道天然帷幕。它不只是一处园林写生，更像被搭出来的『舞台侧幕』：茂密的枝叶在这里收拢视线，把女子的秋千弧线框在中间，也给那位年长男子留出一块背光的暗部。留意这层看与被看的『舞台感』——在洛可可的语境里，花园并不表示逃出社会，而正是社会规则放松下来、得以游戏的地方。石台、喷泉、藤架，件件都是这场注视戏剧的布景：自然被修剪过，正如这场『偶然』被安排过。"}, {"x": 40.0, "y": 20.0, "no": "X", "t": "树冠与漏光 · 幸运的缺口", "img": "assets/sw-tree.webp", "txt": "画面上方，老树的枝干盘成一道拱，叶丛在左半边让开一个缺口，天光就从这个缺口斜斜漏下，恰好落在女子荡到最高点的那片裙裾上。这是全画的『光闸』：她的秋千从右侧的深荫荡进左侧的亮部，明暗跟着她的弧线走，一道光柱正好把主角托起。弗拉戈纳尔对光的用法很像舞台追光——其余人物都在背光或半影里，只有她是被照亮的那一个。画题所说的『幸运』，一大半就发生在这个缺口里：树让开一点，光落下来一点，整幅画的重心就定了。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(224,144,158,", "rgba(211,171,94,", "rgba(143,207,194,", "rgba(198,222,186,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="the-swing" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">库普兰《神秘栅栏》Les Barricades mystérieuses</div>
+    <div class="bgm-sub">François Couperin · 第6组羽管键琴曲（约1720）· 演奏 Marcelle Meyer, 1954</div>
+    <div class="bgm-why">1767年的巴黎，洛可可把沙龙里的轻佻与优雅说成了同一种语言；弗拉戈纳尔让秋千荡进一束光里，库普兰则用羽管键琴写下同一座城市最俏皮的键盘小品。清亮的颗粒、短促的回响，像叶隙间漏下的光斑在跳动。它不厚重，也不沉郁，只是轻盈地闪着——和画里那只飞脱的鞋、那片被风撑开的粉裙，同一种无忧无虑的嬉戏。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">录音：Marcelle Meyer 演奏（1954，公有领域 / CC-PD-Mark，来源 Wikimedia Commons）。原作：François Couperin《Les Barricades mystérieuses》，约1720。</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/000UGqPB44SlGA?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Les Barricades mystérieuses<span>Raimon Fannelli / François Couperin</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+<script>
+
+(function(){
+var g=document.getElementById('artGate');
+if(!g)return;
+document.body.classList.add('ag-lock');
+function enter(){g.classList.add('hide');document.body.classList.remove('ag-lock');}
+function back(){window.location.href='../index.html';}
+document.getElementById('agEnter').addEventListener('click',enter);
+document.getElementById('agBack').addEventListener('click',back);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){back();}});
+})();
+</script>
+
+</body>
+</html>

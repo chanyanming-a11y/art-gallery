@@ -1,0 +1,9 @@
+# Deploy hygiene: exclude build source, repo metadata, OS junk from Vercel upload
+.git
+.vercelignore
+.DS_Store
+Thumbs.db
+*.py
+*.tar.gz
+*.md
+README.md

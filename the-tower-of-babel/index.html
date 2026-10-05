@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巴别塔 · The Tower of Babel — 一座通向天空、却先通向碎石的塔</title>
+<meta name="description" content="勃鲁盖尔《巴别塔》(约1563) 动态赏析：螺旋巨塔、罗马斗兽场的影子，以及石缝里已经出现的裂缝。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#161009;--ink2:#1f150c;--panel:#2a1d10;--line:rgba(216,178,106,.28);--gold:#d8a85a;--gold-soft:#eccfa0;--water:#9fb8c0;--rose:#d98f6e;--paper:#f2ead8;--muted:#b6a892;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/babel-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.66) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(216,168,90,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#161009 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;color:var(--gold);font-size:14px;margin-bottom:14px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="巴别塔 · The Tower of Babel — 一座通向天空、却先通向碎石的塔">
+<meta property="og:image" content="../covers/the-tower-of-babel.webp">
+<meta property="og:description" content="勃鲁盖尔《巴别塔》(约1563) 动态赏析：螺旋巨塔、罗马斗兽场的影子，以及石缝里已经出现的裂缝。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="巴别塔 · The Tower of Babel — 一座通向天空、却先通向碎石的塔">
+<meta name="twitter:image" content="../covers/the-tower-of-babel.webp">
+<meta name="twitter:description" content="勃鲁盖尔《巴别塔》(约1563) 动态赏析：螺旋巨塔、罗马斗兽场的影子，以及石缝里已经出现的裂缝。">
+</head>
+<body>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">PIETER BRUEGEL THE ELDER · c. 1563</div>
+    <h1 class="title" id="titleCh">巴别塔</h1>
+    <div class="hero-en">THE TOWER OF BABEL</div>
+    <div class="hero-meta"><span class="chip">木板油画 114 × 155 cm</span><span class="chip">维也纳 · 艺术史博物馆</span><span class="chip">尼德兰文艺复兴</span><span class="chip">《创世记》巴别塔与语言变乱</span></div>
+  </div>
+  <div class="scroll-cue">仰望这座未竟之塔</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">他画了一座<em>永远盖不完的塔</em></h2>
+    <p class="lead reveal">《创世记》说：人类曾讲同一种语言，他们向东迁徙，在示拿平原立誓，要建一座塔，『塔顶通天』，好为自己立名、免得分散。上帝下来一看，变乱了他们的语言——人从此再也听不懂彼此，工程也就此烂尾。1563 年前后，老彼得·勃鲁盖尔把这一幕画成了木板上的巨塔。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>勃鲁盖尔没有画『变乱语言』那一瞬间——那太抽象，无法入画。他画的是变乱之前的工地：塔已经盖得高入云霄，却还没有完工，石匠们还在塔身上爬上爬下。</p><p>更耐人寻味的是，他把这座『通天塔』画成了罗马斗兽场的样子：一层层拱廊盘旋上升，像一条巨大的螺旋。仿佛在说——人类的傲慢，不过是在重演古罗马的野心。</p><p>而就在塔身最显眼的地方，勃鲁盖尔留下了一道道裂缝。上帝还没出手，石头自己就已经开始裂了。</p>
+      <p class="src">—— 综合自 Kunsthistorisches Museum、The Met、Smarthistory、Britannica 等公开资料</p>
+      <p class="end reveal">勃鲁盖尔画下的，是一座还没倒下、却已经注定要倒下的塔。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这座巨塔</em>的九处线索</h2>
+    <p class="lead reveal">勃鲁盖尔把整座工程、整座城市和整支施工队都塞进了一个画面——每一处细节，都是一则关于『傲慢』与『劳碌』的注脚。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/babel-main.webp" alt="巴别塔 · The Tower of Babel — 一座通向天空、却先通向碎石的塔" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 查看画面细节 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一座塔的<em>两种命运</em></h2>
+    <p class="lead reveal">勃鲁盖尔一生画过至少三版巴别塔，如今只剩两版存世。它们像同一构想的两个镜头——一个完整，一个残片。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1552–1553 · 罗马</p><h3>远行归来的灵感</h3><p>勃鲁盖尔游历意大利，在罗马亲眼见到斗兽场废墟。这座『古人最大工程』的残骸，后来成了他笔下巴别塔的骨架。最早的巴别塔是一幅画在象牙上的微型画（已佚），正是此行所作。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1563 · 维也纳版</p><h3>现存最完整的巨塔</h3><p>为安特卫普银行家尼可拉斯·容赫林克所作，木板油画 114 × 155 厘米，今藏维也纳艺术史博物馆。塔身螺旋完整、细节最丰，是我们今天最熟悉的那一座。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1563 后 · 鹿特丹版</p><h3>同一构想的『残片』</h3><p>另一版《小巴别塔》现藏鹿特丹博伊曼斯美术馆，尺寸更小（约 60 × 74.5 厘米）。它被认为绘于维也纳版之后，构图更紧凑，塔身甚至可能被裁切过——像同一个梦的另一半。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">签了名、也写了年份的<em>那块石头</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/babel-d2.webp" alt="他把自己藏进了一条题记里" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>他把自己藏进了一条题记里</h3><p>在维也纳版里，国王面前一块石头上，勃鲁盖尔亲手签下了名字与年份：『BRVEGEL. FE. M.CCCCC.LXIII』（『BRVEGEL 作于 1563』）。这是全画极少数明确的文字信息。</p><p>这幅画是受安特卫普银行家尼可拉斯·容赫林克委托所作——此人手中一度握有勃鲁盖尔多达十六幅画，是画家最重要的赞助人之一。</p><p>更有意思的是材质：它不是画在布上，而是画在木板（oak panel）上。16 世纪的尼德兰画家偏爱木板，因为它更利于保存细密的笔触——而勃鲁盖尔恰恰把『无数小人』画到了木纹里去。</p><p>至于『塔为什么会裂』，艺术史家各有解读：有人读成『神对傲慢的预判』，有人读成『工程本身的力学崩溃』。勃鲁盖尔什么都没说，只把裂缝留在了最显眼的地方。</p><p class="note">※ 维也纳版签名为学界公认；容赫林克藏有勃鲁盖尔约十六幅画，据 Kunsthistorisches Museum 等公开资料；关于裂缝的寓意存在多种解读，此处并列呈现。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 细节图鉴</div>
+    <h2 class="reveal">一座塔里的<em>九种劳碌与傲慢</em></h2>
+    <p class="lead reveal">把画面拆开看：从国王到吊车，从石匠到裂缝——勃鲁盖尔把『建造』这件事，拆成了一组互相映照的特写。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/babel-d1.webp" alt="螺旋巨塔" loading="lazy" decoding="async"></div><div class="fb"><h4>螺旋巨塔</h4><div class="fy">THE SPIRAL · 斗兽场的影子</div><p>盘旋上升的拱廊巨塔，轮廓借自罗马斗兽场。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d2.webp" alt="国王与随从" loading="lazy" decoding="async"></div><div class="fb"><h4>国王与随从</h4><div class="fy">THE KING · 发起人</div><p>塔脚华服人马，画面里最小的『甲方』。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d3.webp" alt="塔顶吊车" loading="lazy" decoding="async"></div><div class="fb"><h4>塔顶吊车</h4><div class="fy">THE CRANE · 最先进的机械</div><p>木制吊车高悬塔顶，工程却永远差一步。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d4.webp" alt="微型石匠" loading="lazy" decoding="async"></div><div class="fb"><h4>微型石匠</h4><div class="fy">THE MASONS · 米粒般的众生</div><p>成千上万的剪影，把建造画成集体蠕动。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d5.webp" alt="石身裂缝" loading="lazy" decoding="async"></div><div class="fb"><h4>石身裂缝</h4><div class="fy">THE CRACKS · 神的判语</div><p>石头先裂了，崩坏早于神的干预。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d6.webp" alt="港口与船" loading="lazy" decoding="async"></div><div class="fb"><h4>港口与船</h4><div class="fy">THE HARBOR · 安特卫普</div><p>以家乡港口为原型的圣经工地。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d7.webp" alt="环城" loading="lazy" decoding="async"></div><div class="fb"><h4>环城</h4><div class="fy">THE CITY · 营盘</div><p>城墙环绕的城，供数万施工者起居。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d8.webp" alt="搬运工人" loading="lazy" decoding="async"></div><div class="fb"><h4>搬运工人</h4><div class="fy">THE LABORERS · 沉默的多数</div><p>前景最辛苦的人，最先被困在工地。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/babel-d9.webp" alt="塔尖入云" loading="lazy" decoding="async"></div><div class="fb"><h4>塔尖入云</h4><div class="fy">THE SUMMIT · 看不见顶</div><p>刺破云层的塔尖，最冷的一句旁白。</p></div></div></div>
+    <div class="flora-note reveal">勃鲁盖尔没有把『变乱语言』画出来——那太抽象。他画的是变乱之前热火朝天的工地，让每一块石头、每一个小人，都成为『人想以工程比肩神明』的证据。而裂缝，是证据里最先反水的那一条。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">CONTEXT · 语境</div>
+    <h2 class="reveal">为什么一座『烂尾塔』<em>成了北方的隐喻</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>题材：从《创世记》到民族寓言</h4><p>巴别塔出自《创世记》第 11 章：人类讲同一种语言、立誓建塔通天，上帝变乱其语言，使他们分散各地。在宗教改革与西班牙语统治下的低地，这个『因傲慢而崩解』的故事，天然契合北方尼德兰对『大一统强权』的焦虑——勃鲁盖尔画的不只是圣经，更是他身处的时代。</p></div><div class="prb-item reveal"><h4>技法：尼德兰的细密与全景</h4><p>勃鲁盖尔承袭了尼德兰细密画传统（凡·艾克一脉），擅长把成千上万微小人物铺进宏大的风景。他不依赖理想化的人体，而靠『俯瞰式的全景』与『惊人的细节密度』叙事——这种『世界尽收眼底』的视角，影响了此后两个世纪的风景画。</p></div><div class="prb-item reveal"><h4>原型：罗马斗兽场的转生</h4><p>把通天塔画成斗兽场，是勃鲁盖尔最巧妙的一笔：他让『人类最狂妄的工程』，直接套上『罗马最狂妄的工程』的壳。观者一眼就懂——人类的傲慢，从来都是同一个模样，且终将同一种方式收场。</p></div><div class="prb-item reveal"><h4>接受史：从谚语画家到国宝</h4><p>勃鲁盖尔生前以『谚语画』与风景闻名，巴别塔在他手里从宗教题材升格为『文明寓言』。今天，维也纳版是艺术史博物馆的镇馆级藏品，与丢勒、提香等巨匠并列；它也成为关于『工程狂妄』最常被引用的图像之一。</p></div></div>
+    <div class="prb-quote reveal">「人类讲同一种语言，立誓建一座城和一座塔，塔顶通天，好为自己立名，免得分散在全地上。」<small>—— 《创世记》11:4（和合本，据公开译本）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">从一块签名石头，<em>到一则文明的警告</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1552–1553</span><p>勃鲁盖尔游罗马，见斗兽场废墟；随后绘出最早的（象牙微型）巴别塔，今已佚。</p></div><div class="legacy-item reveal"><span class="yr">1563</span><p>维也纳版《巴别塔》完成，受安特卫普银行家容赫林克委托，画于木板并签名题年。</p></div><div class="legacy-item reveal"><span class="yr">1563 后</span><p>鹿特丹版《小巴别塔》绘成，构图更紧凑，今藏博伊曼斯美术馆。</p></div><div class="legacy-item reveal"><span class="yr">1900s</span><p>维也纳版入藏艺术史博物馆（KHM），成为其尼德兰绘画收藏的核心名作之一。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>它被视为『工程狂妄』与『语言/共同体崩解』的母题，频繁出现在政治漫画、文学与流行文化里。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 老彼得·勃鲁盖尔《巴别塔》(约1563，维也纳版)（公有领域）<br>内容整理自 Kunsthistorisches Museum、The Met、Smarthistory、Britannica 等公开资料 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 66.0, "y": 52.0, "no": "I", "t": "螺旋巨塔 · 斗兽场式的拱廊", "img": "assets/babel-d1.webp", "txt": "画面的绝对主角，是这座盘旋上升的圆柱形巨塔。勃鲁盖尔让它一层层拱廊向外扩张，越往上越宽——整座塔的轮廓，明显借自罗马斗兽场。学者普遍相信，他在 1552–1553 年游罗马时，亲眼见过斗兽场的废墟，于是把『人类最大的工程』画成了『罗马最大工程』的样子。塔身右侧的螺旋坡道，是搬运石料上下的通道。"}, {"x": 23.0, "y": 73.0, "no": "II", "t": "国王宁录与随从 · 塔脚的甲方", "img": "assets/babel-d2.webp", "txt": "画面左下方，一队衣饰华贵的人马正走近工地——带头的是国王（传统上指巴比伦王宁录，即下令建塔之人），他骑在马上，由侍从簇拥。勃鲁盖尔在国王面前一块石头上签了名并写下年份：『BRVEGEL. FE. M.CCCCC.LXIII』。这支队伍既是『甲方』，也是整场劳碌的发起人；他们站在塔脚，显得渺小得可笑。"}, {"x": 79.0, "y": 27.0, "no": "III", "t": "塔顶的巨型吊车 · 最先进的机械", "img": "assets/babel-d3.webp", "txt": "塔顶架着一台巨大的木制吊车，正把石料吊往更高处。它是 16 世纪工地最先进、也最脆弱的机械；勃鲁盖尔特意把它画在画面右上方最显眼处。吊车的存在提醒我们：即便用尽当时最聪明的工程手段，这座塔也远未封顶——它永远差最后一步。"}, {"x": 64.0, "y": 34.0, "no": "IV", "t": "塔身上的微型石匠 · 米粒般的众生", "img": "assets/babel-d4.webp", "txt": "把塔身任意一处放大，你会看到密密麻麻的小人：他们有的在凿石，有的扛料，有的顺着螺旋坡道往上爬。勃鲁盖尔用成千上万个米粒大小的身影，把『建造』这件事画成了一种近乎昆虫般的集体蠕动。人类越是齐心，画面越显出个体的微不足道。"}, {"x": 84.0, "y": 58.0, "no": "V", "t": "石缝里的裂缝 · 神的判语", "img": "assets/babel-d5.webp", "txt": "最意味深长的细节，在塔身外侧——一道道横向的裂缝，已经爬上了石壁。石头还没等上帝变乱语言，自己就先裂开了。这被广泛读成勃鲁盖尔埋下的『判语』：傲慢的工程从内部开始崩坏，崩坏甚至早于神的干预。这也是后世把这幅画读作『对一切宏大工程之虚妄』的关键证据。"}, {"x": 16.0, "y": 65.0, "no": "VI", "t": "港口与船只 · 安特卫普式的海", "img": "assets/babel-d6.webp", "txt": "画面左侧是一片海湾与停泊的帆船，水面上桅杆林立。这个港口普遍被认为以勃鲁盖尔生活的安特卫普为原型——当时欧洲最繁忙的港口之一。把『圣经里的示拿平原』画成『家门口的安特卫普』，是勃鲁盖尔一贯的做法：他把神圣叙事，安放进自己熟悉的低地风景里。"}, {"x": 22.0, "y": 48.0, "no": "VII", "t": "城墙环绕的城 · 营盘", "img": "assets/babel-d7.webp", "txt": "海湾后方，一座带城墙与塔楼的城池铺展开来，房屋鳞次栉比。它是巨塔脚下的『营盘』，供数万施工者起居。勃鲁盖尔把城市画得既真实又微缩，让观者一眼就能读出『这是一个动员了整个文明的大工程』。"}, {"x": 48.0, "y": 81.0, "no": "VIII", "t": "前景搬运石料的工人 · 沉默的多数", "img": "assets/babel-d8.webp", "txt": "画面正下方，工人们正把切割好的巨型石块装上推车、用杠杆撬动、扛在肩上。这是离我们最近的一组人物，也是最辛苦的一组。勃鲁盖尔没有给劳作者一张英雄的脸——他们只是被工程吞没的、沉默的多数。『语言变乱』之后，最先被困在工地上的人，正是他们。"}, {"x": 72.0, "y": 10.0, "no": "IX", "t": "刺破云霄的塔尖 · 看不见顶", "img": "assets/babel-d9.webp", "txt": "塔身一路向上，最终刺穿了画面的云层，消失在顶端之外。勃鲁盖尔用『看不见顶』，制造出一种眩晕的崇高感：人想以工程触及天空，可天空根本不在这张画的边界之内。那道被云遮住的塔尖，是整幅画最冷的一句旁白。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(216,168,90,", "rgba(159,184,196,", "rgba(217,143,110,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="the-tower-of-babel" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">穆索尔斯基《图画展览会·基辅大门》</div>
+    <div class="bgm-sub">Modest Mussorgsky · The Great Gate of Kiev (from Pictures at an Exhibition)</div>
+    <div class="bgm-why">勃鲁盖尔画的是一座还没倒下、却已注定崩塌的塔；穆索尔斯基《图画展览会》的终曲《基辅大门》恰好也是一座从未真正落成的宏伟之门——作曲家本想纪念一座为基辅设计的凯旋门，门却始终没有建成。两者都关于人类以工程比肩神明的野心，以及野心之下那道迟早会裂开的缝。这段钢琴庄严而缓慢地敲出城门般的轰鸣，与画中螺旋巨塔的体量、劳作者的喘息、石壁上的裂缝同频共振；它不喧哗，却让整座塔的沉重与宿命，在耳畔一点点压下来。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">录音：穆索尔斯基《图画展览会·基辅大门》（PD 历史录音 · 音源 Wikimedia Commons）；本页配乐剪辑为约 2 分钟循环。</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/0031TBQQ3ymLgy?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Great Gate At Kiev（基辅大门）<span>Vladimir Horowitz（钢琴）</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+
+</body>
+</html>

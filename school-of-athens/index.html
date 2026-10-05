@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅典学院 · The School of Athens — 一座观念的大厅</title>
+<meta name="description" content="拉斐尔《雅典学院》(1509–1511) 动态赏析：群贤指认、透视密码与两位大师的同框。">
+<style>
+  /* back-to-gallery */
+  .back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+    background:rgba(16,12,8,.42); border:1px solid rgba(217,179,106,.26);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .4s ease, transform .4s ease, visibility .4s, background .25s, border-color .25s}
+  .back-home.show{opacity:.7; visibility:visible; transform:none}
+  .back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.18); border-color:rgba(217,179,106,.7); outline:none}
+  .back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+  .back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+    white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+    background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .25s}
+  .back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+  @media(max-width:640px){ .back-home .t{display:none} }
+.back-home{position:fixed;top:16px;right:16px;z-index:88;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#ecd9ac;font-size:18px;line-height:1;background:rgba(16,12,8,.42);border:1px solid rgba(217,179,106,.26);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease,visibility .4s,background .25s,border-color .25s}.back-home.show{opacity:.7;visibility:visible;transform:none}.back-home:hover,.back-home:focus-visible{opacity:1;background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7);outline:none}.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8);outline-offset:2px}.back-home .t{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;letter-spacing:.06em;color:#ecd9ac;background:rgba(16,12,8,.86);border:1px solid rgba(217,179,106,.22);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s}.back-home:hover .t,.back-home:focus-visible .t{opacity:1}@media(max-width:640px){.back-home .t{display:none}}:root{--ink:#100e09;--ink2:#181309;--panel:#231c10;--line:rgba(216,178,106,.28);--gold:#d9b36a;--gold-soft:#ecd3a0;--water:#a8c4ae;--rose:#e8a0a8;--paper:#f2ead8;--muted:#b3b0a2;--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--ink);color:var(--paper);font-family:var(--serif-cn);overflow-x:hidden;line-height:1.85;-webkit-font-smoothing:antialiased;}::selection{background:rgba(216,178,106,.35)}#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--water),var(--gold));z-index:100;transition:width .1s linear}#petals{position:fixed;inset:0;z-index:1;pointer-events:none}#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:14px}#nav a{width:9px;height:9px;border-radius:50%;background:rgba(242,234,216,.25);display:block;position:relative;transition:all .3s}#nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}#nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);opacity:0;transition:opacity .25s;pointer-events:none}#nav a:hover span{opacity:1}@media(max-width:760px){#nav{display:none}}header{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-bg{position:absolute;inset:-4%;background:url("assets/athens-main.webp") center 32%/cover no-repeat;animation:kenburns 36s ease-in-out infinite alternate;filter:brightness(.55) saturate(1.05);will-change:transform;}@keyframes kenburns{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.12) translateY(-2%)}}header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(217,179,106,.05) 7px 9px);mix-blend-mode:screen;animation:shimmer 7s linear infinite;}@keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#100e09 100%)}.hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}.hero-kicker{font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;font-size:clamp(11px,1.4vw,14px);color:var(--water);opacity:0;animation:rise 1.2s .3s forwards;}h1.title{font-size:clamp(58px,11vw,138px);font-weight:700;letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;text-shadow:0 6px 40px rgba(0,0,0,.55);}h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}@keyframes drop{to{opacity:1;transform:none}}.hero-en{font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);letter-spacing:.4em;text-indent:.4em;color:var(--gold);opacity:0;animation:rise 1.2s 1.5s forwards;}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.hero-meta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 1.2s 1.9s forwards;}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);background:rgba(10,8,6,.4);backdrop-filter:blur(4px);}.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;opacity:0;animation:rise 1s 2.4s forwards;}.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}@keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}section{position:relative;z-index:2;padding:110px 24px}.wrap{max-width:1080px;margin:0 auto}.kicker{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);}.kicker::before{content:"";width:44px;height:1px;background:var(--water)}h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}h2 em{font-style:normal;color:var(--gold)}.lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}.reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}#prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}.speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}.speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);position:absolute;left:-16px;top:34px;opacity:.6}.speech p{font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;opacity:0;transform:translateY(20px);transition:all 1.1s ease;}.speech p.in{opacity:1;transform:none}.speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}.speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}#painting{background:var(--ink2)}.stage{position:relative;margin-top:48px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;background:#000;}.stage img{display:block;width:100%;height:auto;transition:transform 8s ease}.stage:hover img{transform:scale(1.03)}.dot{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(242,234,216,.85);background:rgba(216,178,106,.25);cursor:pointer;padding:0;transition:all .25s;z-index:3;}.dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}.dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}.dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}.dot:hover i,.dot.on i{opacity:1}.stage-hint{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.25em}.stage-hint b{color:var(--gold);font-weight:400}#modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.card{position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.05fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1);}@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}.card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}.card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}.card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}.card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}.card p{color:#d7d2c2;font-size:15px;line-height:2}.card .close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.card .close:hover{opacity:1}@media(max-width:720px){.card{grid-template-columns:1fr;max-height:86vh}.card img{max-height:34vh;min-height:0}}#making{background:linear-gradient(180deg,var(--ink2),#0c120e)}.boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.board{background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;position:relative;transition:transform .4s ease,box-shadow .4s ease;}.board:nth-child(1){transform:rotate(-1.1deg)}.board:nth-child(3){transform:rotate(1.1deg)}.board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);background-size:12px 12px;}.board .bn{font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;background:rgba(10,8,6,.5);position:relative;}.board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}.board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}.board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}.board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}.arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}.board:nth-child(3) .arrow{display:none}@media(max-width:880px){.boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.arrow{display:none}}#secret{background:var(--ink)}.secret-card{margin-top:52px;border:1px solid var(--line);display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);}.secret-card .img{position:relative;min-height:340px}.secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.secret-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:44px 46px}.secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}.secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}.secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}.secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:8px}@media(max-width:780px){.secret-card{grid-template-columns:1fr}.secret-card .img{min-height:240px}.secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}.secret-card .txt{padding:30px 26px}}#flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}.flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.flower{background:var(--panel);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:all .4s ease;position:relative;}.flower:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 22px 50px rgba(0,0,0,.5)}.flower .ph{height:150px;overflow:hidden}.flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}.flower:hover .ph img{transform:scale(1.12)}.flower .fb{padding:16px 16px 20px}.flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}.flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}.flower p{font-size:13px;color:#bfb9aa;line-height:1.8}.flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;background:rgba(216,178,106,.05)}@media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.flora-grid{grid-template-columns:1fr}}#prb{background:var(--ink2)}.prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}.prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}.prb-item p{font-size:14.5px;color:#c8c2b3}.prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);color:var(--water);letter-spacing:.1em;font-style:italic}.prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.2em}@media(max-width:780px){.prb-cols{grid-template-columns:1fr}}#legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}.legacy-list{margin-top:44px;display:grid;gap:0}.legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}.legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}.legacy-item p{color:#cfc9ba;font-size:15px}.legacy-item b{color:var(--paper);font-weight:700}@media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}footer{padding:70px 24px 90px;text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}} #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}.bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;color:var(--paper);font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:all .3s cubic-bezier(.2,.7,.3,1)}.bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5)}#bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)} .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;transition:padding .55s cubic-bezier(.2,.7,.3,1)}.bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}.bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}.bgm-wave{display:flex;align-items:center;gap:2px;height:16px}.bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}#bgm.on .bgm-wave i{opacity:1} .bgm-txt{border:0;background:transparent;cursor:pointer;color:var(--paper);opacity:.6;font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;transition:color .3s,opacity .3s}.bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}#bgm.open .bgm-txt{color:var(--gold);opacity:1}.bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);box-shadow:0 18px 44px rgba(0,0,0,.5)} #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}.bgm-row{display:flex;align-items:center;gap:8px}.bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}.bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;font-family:var(--serif-en)}.bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}.bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}.bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}.bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;border-radius:2px;background:var(--line);outline:none;cursor:pointer}.bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(217,179,106,.18)}.bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--gold);cursor:pointer}.bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}@media (max-width:640px){#bgm{left:14px;bottom:14px}.bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}</style><style>.bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}.bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}.bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}.bgm-qq-song:hover{color:var(--gold-soft);opacity:1}.bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="雅典学院 · The School of Athens — 一座观念的大厅">
+<meta property="og:image" content="../covers/school-of-athens.webp">
+<meta property="og:description" content="拉斐尔《雅典学院》(1509–1511) 动态赏析：群贤指认、透视密码与两位大师的同框。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="雅典学院 · The School of Athens — 一座观念的大厅">
+<meta name="twitter:image" content="../covers/school-of-athens.webp">
+<meta name="twitter:description" content="拉斐尔《雅典学院》(1509–1511) 动态赏析：群贤指认、透视密码与两位大师的同框。">
+</head>
+<body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">RAPHAEL · 1509–1511</div>
+    <h1 class="title" id="titleCh">雅典学院</h1>
+    <div class="hero-en">THE SCHOOL OF ATHENS</div>
+    <div class="hero-meta"><span class="chip">湿壁画</span><span class="chip">底宽约 770 cm</span><span class="chip">梵蒂冈签字厅</span><span class="chip">文艺复兴盛期</span></div>
+  </div>
+  <div class="scroll-cue">走进这场聚会</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">一切始自<em>两个手势</em></h2>
+    <p class="lead reveal">1509 年，26 岁的拉斐尔受教宗尤利乌斯二世之邀装饰梵蒂冈签字厅。这一面墙的主题是「哲学」——他不画任何具体事件，而是让古希腊的哲人们跨越数百年聚在同一座大厅里。画面正中央，两个手势说出了一切。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>柏拉图一手指向天空——真理在永恒的理念世界里，眼前的万物不过是它的影子。</p><p>亚里士多德一手按向大地——真理就在眼前的一草一木、一事一物之中。</p><p>一个向天，一个向地。两千多年的西方哲学，被压缩进这两个手势之间。</p>
+      <p class="src">—— 画面解读 · 通行说法</p>
+      <p class="end reveal">拉斐尔画下的，正是人类精神在「仰望」与「俯察」之间的那个瞬间。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE FRESCO · 画中群贤</div>
+    <h2 class="reveal">点开<em>群贤</em>的秘密</h2>
+    <p class="lead reveal">拉斐尔没有留下任何人物名单。画中五十余位哲人的身份，全靠后世根据典籍与面容逐个「破译」——其中不少面孔，其实来自他的同时代人。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/athens-main.webp" alt="雅典学院 · The School of Athens — 一座观念的大厅" draggable="false" loading="lazy" decoding="async">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 认识每一位哲人 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一面墙的<em>两个年代</em></h2>
+    <p class="lead reveal">这幅湿壁画与西斯廷穹顶几乎同时施工——文艺复兴盛期最耀眼的两个天才，在同一座宫殿里各自忙碌。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1508 · 罗马 梵蒂冈</p><h3>25 岁接下教宗的墙</h3><p>经建筑师布拉曼特举荐，乌尔比诺青年拉斐尔奉召来到罗马。教宗尤利乌斯二世把签字厅四面墙交给他：这一面，画哲学。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1509–1511 · 签字厅</p><h3>湿壁画：落笔无悔</h3><p>湿壁画要在灰泥未干时上色，颜料随墙面干燥永久结合，一天只能完成一天能画的部分，且几乎无法修改——每一笔都必须成竹在胸。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">同期 · 西斯廷小堂</p><h3>与米开朗基罗同框</h3><p>几十米外，米开朗基罗正独自仰头画西斯廷穹顶。据说拉斐尔看过进度后深受震动，随后把赫拉克利特（米开朗基罗的面容）加进了画面前景。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE FRESCO · 幕后</div>
+    <h2 class="reveal">画里藏着<em>他的对手</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/a-heraclitus.webp" alt="那个补画进来的人，是米开朗基罗" loading="lazy" decoding="async"></div>
+      <div class="txt"><h3>那个补画进来的人，是米开朗基罗</h3><p>研究显示，前景倚石的赫拉克利特并非原构图的一部分，而是<span class="hl">后来补画</span>的。</p><p>他的体格、坐姿与面容，被广泛认为就是<span class="hl">米开朗基罗</span>——此刻后者正在同一座宫殿里画西斯廷穹顶，并且不许旁人观看。</p><p>传记记载，拉斐尔透过脚手架的缝隙偷看到了穹顶，随即在画中为对手留出一个位置：孤独、粗粝、与四周的热闹格格不入——像极了米开朗基罗本人。</p><p>两位大师一生几乎不交一言，却在同一座宫殿里各自留下杰作，又在同一面墙上「合作」了五百余年。</p><p class="note">※ 「偷看西斯廷」多出自瓦萨里以降的传记传统，细节真伪难考；但赫拉克利特为补画人物、面容指认为米开朗基罗，是学界主流意见。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">THE PEOPLE · 群像图鉴</div>
+    <h2 class="reveal">一份<em>没有名单</em>的同学录</h2>
+    <p class="lead reveal">拉斐尔没有留下人物名单。五百年间，学者们根据典籍、姿态与「彩蛋」面容逐个指认——以下是最主流的版本。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/a-plato.webp" alt="柏拉图" loading="lazy" decoding="async"></div><div class="fb"><h4>柏拉图</h4><div class="fy">IDEA · 理念世界</div><p>红袍指天，手持《蒂迈欧篇》，面容借自达·芬奇。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-aristotle.webp" alt="亚里士多德" loading="lazy" decoding="async"></div><div class="fb"><h4>亚里士多德</h4><div class="fy">EXPERIENCE · 经验世界</div><p>蓝袍按地，手持《尼各马可伦理学》，全画正中。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-heraclitus.webp" alt="赫拉克利特" loading="lazy" decoding="async"></div><div class="fb"><h4>赫拉克利特</h4><div class="fy">MIKEANGELO · 米开朗基罗的容颜</div><p>后来补画的沉思者，倚石而坐，与热闹格格不入。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-pythagoras.webp" alt="毕达哥拉斯" loading="lazy" decoding="async"></div><div class="fb"><h4>毕达哥拉斯</h4><div class="fy">NUMBER · 万物皆数</div><p>伏案书写音律与比例，少年为他捧着木板。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-diogenes.webp" alt="第欧根尼" loading="lazy" decoding="async"></div><div class="fb"><h4>第欧根尼</h4><div class="fy">CYNIC · 犬儒</div><p>独卧台阶中央，对这座宏伟大厅报以冷眼。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-euclid.webp" alt="欧几里得" loading="lazy" decoding="async"></div><div class="fb"><h4>欧几里得</h4><div class="fy">BRAMANTE · 布拉曼特的容颜</div><p>圆规画几何，四名学生围观，伯乐被画成了几何学家。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-globes.webp" alt="托勒密与琐罗亚斯德" loading="lazy" decoding="async"></div><div class="fb"><h4>托勒密与琐罗亚斯德</h4><div class="fy">GLOBES · 地球仪与天球</div><p>背对观众的天文学家与先知，一个看地，一个看天。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/a-raphael.webp" alt="拉斐尔" loading="lazy" decoding="async"></div><div class="fb"><h4>拉斐尔</h4><div class="fy">SELF-PORTRAIT · 画外一瞥</div><p>黑帽少年直视观众，把自己悄悄编进群贤名录。</p></div></div></div>
+    <div class="flora-note reveal">也有学者在画中认出伊壁鸠鲁、芝诺、伊本·路世德（阿威罗伊）等身影——这场「破译」至今仍未结束。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">HIGH RENAISSANCE · 语境</div>
+    <h2 class="reveal">什么是<em>文艺复兴盛期</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>一座厅，四种学问</h4><p>签字厅四面墙分别对应神学、哲学、诗歌与法学。《雅典学院》代表哲学，与对面的《圣礼之争》一虚一实、彼此呼应。</p></div><div class="prb-item reveal"><h4>湿壁画（buon fresco）</h4><p>在未干的灰泥上作画，颜料随墙面干燥永久结合。不能修改、不能涂改堆叠，必须一次到位——它是勇气与规划的艺术。</p></div><div class="prb-item reveal"><h4>透视的胜利</h4><p>单点透视与宏伟拱厅，是布鲁内莱斯基以来文艺复兴空间观念的集大成。观众的眼睛被精确引导到两位哲人中间。</p></div><div class="prb-item reveal"><h4>26 岁的拉斐尔</h4><p>1483 年生于乌尔比诺，1508 年入罗马，1520 年英年早逝，年仅 37 岁。这幅画让他与达·芬奇、米开朗基罗并称「文艺复兴三杰」。</p></div></div>
+    <div class="prb-quote reveal">拉斐尔在世时，自然害怕被他征服；拉斐尔死去，自然又害怕随他一同死去。<small>—— 本博（Pietro Bembo）为拉斐尔撰写的墓志铭（意译）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">一场<em>没有散场</em>的聚会</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1511</span><p>签字厅落成，教宗尤利乌斯二世大为满意，随即把梵蒂冈更多的厅室交给拉斐尔——他成为罗马最炙手可热的画师。</p></div><div class="legacy-item reveal"><span class="yr">500 年</span><p>画中人物的身份至今仍被反复讨论；它也成为最常被「挪用」与戏仿的艺术品之一，从教科书封面到广告与电影海报无处不在。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>在梵蒂冈博物馆，参观者穿过一室室陈列，最终在签字厅与五十多位哲人相遇——包括角落里那位戴黑帽的 26 岁年轻人。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  图片：Wikimedia Commons · 拉斐尔《雅典学院》（公有领域）<br>内容整理自公开艺术史资料 · 人物指认以主流研究为准 · 仅为赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="" loading="lazy" decoding="async">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const t = document.getElementById("titleCh");
+const chars = [...t.textContent];
+t.textContent = "";
+chars.forEach((c,i)=>{
+const s = document.createElement("span");
+s.className = "ch"; s.textContent = c;
+s.style.animationDelay = (0.6 + i*0.16) + "s";
+t.appendChild(s);
+});
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+const h = document.documentElement;
+const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+progress.style.width = (p*100) + "%";
+if (window.scrollY < window.innerHeight)
+heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+let idx = -1;
+sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+es.forEach(e=>{
+if(e.isIntersecting){
+const ps = e.target.querySelectorAll("p");
+let d = 0;
+ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+speechIO.unobserve(e.target);
+}
+});
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 49.0, "y": 47.5, "no": "I", "t": "柏拉图 · 指向天穹", "img": "assets/a-plato.webp", "txt": "他一手上指：真实存在于永恒的理念世界。他手持《蒂迈欧篇》，面容被认为借自达·芬奇——这是拉斐尔向前辈致敬的方式。"}, {"x": 52.6, "y": 51.0, "no": "II", "t": "亚里士多德 · 手掌向地", "img": "assets/a-aristotle.webp", "txt": "他一手下按：真理就在眼前的经验世界。他手持《尼各马可伦理学》，蓝色披袍与柏拉图的红袍构成全画的视觉中心。"}, {"x": 44.5, "y": 68.0, "no": "III", "t": "赫拉克利特 · 倚石沉思", "img": "assets/a-heraclitus.webp", "txt": "前景中央这位独坐沉思者，是拉斐尔后来补画的人物——面容被认为是米开朗基罗。一位孤独的思考者，被安放在最显眼的位置。"}, {"x": 28.0, "y": 66.0, "no": "IV", "t": "毕达哥拉斯 · 书写数的和谐", "img": "assets/a-pythagoras.webp", "txt": "左下角伏案疾书者正在记录音律与数的比例——「万物皆数」。少年为他捧着写有和声比例的木板。"}, {"x": 32.0, "y": 44.0, "no": "V", "t": "苏格拉底 · 街头论辩", "img": "assets/a-socrates.webp", "txt": "左侧侧身扳着手指数数的橄榄袍老者被认为是苏格拉底，他正与士兵装束的年轻人对谈——一如他在雅典街头随处开讲。"}, {"x": 60.0, "y": 63.0, "no": "VI", "t": "第欧根尼 · 横卧台阶", "img": "assets/a-diogenes.webp", "txt": "犬儒学派代表人物独卧台阶中央，衣衫散乱，与两侧匆匆往来的学者格格不入——他对一切都不屑一顾，包括这座宏伟的大厅。"}, {"x": 83.0, "y": 69.0, "no": "VII", "t": "欧几里得 · 圆规画几何", "img": "assets/a-euclid.webp", "txt": "右下角弯腰用圆规作图者，面容被认为是建筑师布拉曼特——正是他把年仅二十五岁的拉斐尔举荐到罗马。四名学生围拢观看。"}, {"x": 87.0, "y": 54.0, "no": "VIII", "t": "托勒密与琐罗亚斯德 · 天与地", "img": "assets/a-globes.webp", "txt": "右侧背对观众者手持地球仪，被认为是托勒密；对面者捧着天球，被认为是琐罗亚斯德。他们头顶的金冠在后世被反复讨论。"}, {"x": 95.5, "y": 56.5, "no": "IX", "t": "拉斐尔 · 望向画外", "img": "assets/a-raphael.webp", "txt": "最右边缘那位戴黑帽、直视观众的年轻人，是拉斐尔的自画像。他把自己放进群贤的行列，也把目光交给了五百年后的我们。"}, {"x": 22.7, "y": 24.0, "no": "X", "t": "阿波罗 · 诗与艺术", "img": "assets/a-apollo.webp", "txt": "左侧壁龛里持琴的阿波罗，掌管诗歌与艺术，与右侧的雅典娜遥遥相对，共同守护这座「理性的殿堂」。"}, {"x": 79.0, "y": 25.0, "no": "XI", "t": "雅典娜 · 智慧女神", "img": "assets/a-athena.webp", "txt": "右侧壁龛中的雅典娜持矛而立。左边诗神、右边智神，拱卫着正中央那场关于真理的对话。"}, {"x": 50.0, "y": 30.0, "no": "XII", "t": "消失点 · 一座观念的建筑", "img": "assets/a-arch.webp", "txt": "整座拱厅的透视线汇聚于一点——恰好落在柏拉图与亚里士多德之间。这座建筑被认为参考了布拉曼特的新圣彼得大教堂方案：一座从未建成、只存在于观念中的完美大厅。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+const b = document.createElement("button");
+b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+b.setAttribute("aria-label", s.t);
+b.innerHTML = "<i>" + s.t + "</i>";
+b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+document.getElementById("mImg").src = s.img;
+document.getElementById("mNo").textContent = "DETAIL " + s.no;
+document.getElementById("mTitle").textContent = s.t;
+document.getElementById("mText").textContent = s.txt;
+modal.classList.add("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+if(dot) dot.classList.add("on");
+}
+function closeModal(){
+modal.classList.remove("open");
+document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+const cv = document.getElementById("petals");
+const ctx = cv.getContext("2d");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, petals = [];
+const COLORS = ["rgba(232,226,210,", "rgba(217,179,106,", "rgba(168,196,174,"];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+function make(init){
+return {
+x: Math.random()*W, y: init ? Math.random()*H : -20,
+r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+};
+}
+function tick(){
+ctx.clearRect(0,0,W,H);
+petals.forEach(p=>{
+p.ph += .012;
+p.x += p.vx + Math.sin(p.ph)*0.5;
+p.y += p.vy; p.a += p.spin;
+if(p.y > H+24) Object.assign(p, make(false));
+if(p.x < -24) p.x = W+20;
+if(p.x > W+24) p.x = -20;
+ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+ctx.fillStyle = p.c + p.o + ")";
+ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+ctx.restore();
+});
+requestAnimationFrame(tick);
+}
+resize(); addEventListener("resize", resize);
+if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+(function(){
+var b=document.querySelector('.back-home');
+if(b){
+var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
+window.addEventListener('scroll', upd, {passive:true}); upd();
+}
+var modal=document.getElementById('modal');
+if(!modal) return;
+var orig=(typeof openModal==='function')?openModal:null;
+if(orig){ window.openModal=function(s,dot){orig(s,dot);var c=document.getElementById('modalClose');if(c&&c.focus)c.focus();}; }
+})();
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+<script>
+
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="athens" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">理性的秩序 · 亨德尔《D 小调萨拉班德》</div>
+    <div class="bgm-sub">管风琴 · Handel「Sarabande」HWV 437 · Soundtrack Organ 演奏 · CC BY 3.0 录音</div>
+    <div class="bgm-why">拉斐尔在梵蒂冈的签字厅，把古希腊的群贤请进一座大厅：单点透视，拱券层层退去，让整座宇宙变得可以被理解。亨德尔的萨拉班德也做着同一件事——巴洛克音乐对「秩序」最凝练的回答。三拍子一步一步，绝不越界，像画里那些沿着透视线缓缓排开的身影。管风琴的声音不是教堂，却有教堂般的空间与静默，恰好落在那面墙上。它不繁复，也不喧腾，只是端正而克制——和画中那种理性到近乎神圣的秩序，处在同一间屋子。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">配乐：Handel《Keyboard Suite in D minor, HWV 437 — Sarabande》· 管风琴改编 Soundtrack Organ · 录音 CC BY 3.0 · 音源 Wikimedia Commons · 仅供赏析</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002Ag8Gb2RBpph?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">亨德尔 萨拉班德舞曲<span>荣宛真</span></a></div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+var wrap=document.getElementById('bgm'); if(!wrap) return;
+var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+vol=document.getElementById('bgmVol');
+var bars=wrap.querySelectorAll('.bgm-wave i');
+var LS='bgm-off-'+ (wrap.dataset.key||'page');
+var audio=new Audio('assets/bgm.mp3');
+audio.loop=true; audio.preload='metadata';
+var target=0.55, timer=null,  waveTimer=null;
+
+function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+setVol(target);
+
+
+function wave(on){
+if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+if(on){
+var jig=function(){ for(var i=0;i<bars.length;i++){
+bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+jig(); waveTimer=setInterval(jig,100);
+} else {
+for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+}
+}
+wave(false);
+
+function fade(to,ms){
+if(timer) clearInterval(timer);
+var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+timer=setInterval(function(){
+i++;
+setVol(from+(to-from)*(i/steps));
+if(i>=steps){ clearInterval(timer); timer=null;
+if(to===0){ audio.pause(); } }
+},40);
+}
+
+function mark(on){
+wrap.classList.toggle('on',on);
+if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+if(txt) txt.textContent='灵感配乐';
+wave(on);
+}
+
+function play(){
+var p=audio.play();
+if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+try{ localStorage.removeItem(LS); }catch(e){}
+}).catch(function(){ mark(false); }); }
+else { mark(true); fade(target,1200); }
+}
+function stop(){
+fade(0,800); mark(false);
+try{ localStorage.setItem(LS,'1'); }catch(e){}
+}
+function toggle(){ audio.paused ? play() : stop(); }
+
+
+if(playBtn) playBtn.addEventListener('click',function(e){
+e.stopPropagation(); toggle(); });
+
+function panel(open){
+wrap.classList.toggle('open',open);
+if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+}
+if(txt) txt.addEventListener('click',function(e){
+e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+
+document.addEventListener('click',function(e){
+if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+if(txt) txt.focus(); } });
+vol.addEventListener('input',function(){
+target=Math.max(0,Math.min(1,this.value/100));
+if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+});
+vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+
+
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+});
+})();
+
+</script>
+
+</body>
+</html>
