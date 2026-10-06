@@ -24,3 +24,4 @@ npm-debug.log*
 # ===== Python caches (if any tooling added later) =====
 __pycache__/
 *.pyc
+.vercel
