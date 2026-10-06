@@ -145,12 +145,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://art-gallery-pub.vercel.app/olympia/</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://art-gallery-pub.vercel.app/wave/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>

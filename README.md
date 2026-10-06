@@ -85,19 +85,18 @@
 | 21 | [神奈川冲浪里](https://art-gallery-pub.vercel.app/great-wave/) | 葛饰北斋 | c.1831 |
 | 22 | [奥菲利亚](https://art-gallery-pub.vercel.app/ophelia/) | 约翰·埃弗里特·米莱 | 1851–1852 |
 | 23 | [拾穗者](https://art-gallery-pub.vercel.app/the-gleaners/) | 让-弗朗索瓦·米勒 | 1857 |
-| 24 | [奥林匹亚](https://art-gallery-pub.vercel.app/olympia/) | 爱德华·马奈 | 1863 |
-| 25 | [海浪](https://art-gallery-pub.vercel.app/wave/) | 古斯塔夫·库尔贝 | c.1869 |
-| 26 | [惠斯勒的母亲](https://art-gallery-pub.vercel.app/whistlers-mother/) | 詹姆斯·惠斯勒 | 1871 |
-| 27 | [日出·印象](https://art-gallery-pub.vercel.app/impression-sunrise/) | 克劳德·莫奈 | 1872 |
-| 28 | [棉花事务所](https://art-gallery-pub.vercel.app/cotton-office/) | 埃德加·德加 | 1873 |
-| 29 | [X夫人](https://art-gallery-pub.vercel.app/madame-x/) | 约翰·辛格·萨金特 | 1884 |
-| 30 | [大碗岛的星期天下午](https://art-gallery-pub.vercel.app/la-grande-jatte/) | 乔治·修拉 | 1884–1886 |
-| 31 | [星夜](https://art-gallery-pub.vercel.app/starry-night/) | 文森特·梵高 | 1889 |
-| 32 | [呐喊](https://art-gallery-pub.vercel.app/the-scream/) | 爱德华·蒙克 | 1893 |
-| 33 | [吻](https://art-gallery-pub.vercel.app/the-kiss/) | 古斯塔夫·克里姆特 | 1907–1908 |
-| 34 | [狐狸](https://art-gallery-pub.vercel.app/foxes/) | 弗朗茨·马克 | 1913 |
-| 35 | [构成第八号](https://art-gallery-pub.vercel.app/composition-viii/) | 瓦西里·康定斯基 | 1923 |
-| 36 | [格尔尼卡](https://art-gallery-pub.vercel.app/guernica/) | 巴勃罗·毕加索 | 1937 |
+| 24 | [海浪](https://art-gallery-pub.vercel.app/wave/) | 古斯塔夫·库尔贝 | c.1869 |
+| 25 | [惠斯勒的母亲](https://art-gallery-pub.vercel.app/whistlers-mother/) | 詹姆斯·惠斯勒 | 1871 |
+| 26 | [日出·印象](https://art-gallery-pub.vercel.app/impression-sunrise/) | 克劳德·莫奈 | 1872 |
+| 27 | [棉花事务所](https://art-gallery-pub.vercel.app/cotton-office/) | 埃德加·德加 | 1873 |
+| 28 | [X夫人](https://art-gallery-pub.vercel.app/madame-x/) | 约翰·辛格·萨金特 | 1884 |
+| 29 | [大碗岛的星期天下午](https://art-gallery-pub.vercel.app/la-grande-jatte/) | 乔治·修拉 | 1884–1886 |
+| 30 | [星夜](https://art-gallery-pub.vercel.app/starry-night/) | 文森特·梵高 | 1889 |
+| 31 | [呐喊](https://art-gallery-pub.vercel.app/the-scream/) | 爱德华·蒙克 | 1893 |
+| 32 | [吻](https://art-gallery-pub.vercel.app/the-kiss/) | 古斯塔夫·克里姆特 | 1907–1908 |
+| 33 | [狐狸](https://art-gallery-pub.vercel.app/foxes/) | 弗朗茨·马克 | 1913 |
+| 34 | [构成第八号](https://art-gallery-pub.vercel.app/composition-viii/) | 瓦西里·康定斯基 | 1923 |
+| 35 | [格尔尼卡](https://art-gallery-pub.vercel.app/guernica/) | 巴勃罗·毕加索 | 1937 |
 
 > 站内画作均为公有领域馆藏复制品，仅供艺术欣赏与学习之用，非商用。
 > 部分作品包含艺术人体内容，已在对应页面做出提示。
