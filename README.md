@@ -24,11 +24,18 @@
 ## 🌐 在线预览 · Live Demo
 
 **点开即看，无需安装任何东西：**
-👉 **https://art-gallery-pub.vercel.app/**
 
-- 首页：36 幅画按年代排成的可滚动画廊墙
+- 🚀 **Vercel 主站**：**https://art-gallery-pub.vercel.app/**
+- 🐙 **GitHub Pages 镜像**：**https://chanyanming-a11y.github.io/art-gallery/**
+
+<p align="center">
+  <img src="./demo.gif" width="720" alt="演示：卡片墙 → 悬停展开 → 走进画作 → 逐段滚动赏析">
+</p>
+
+- 首页：36 幅画按年代排成的可滚动画廊墙（悬停某幅会放大展开）
 - 单幅赏析页示例：[星夜](https://art-gallery-pub.vercel.app/starry-night/) · [神奈川冲浪里](https://art-gallery-pub.vercel.app/great-wave/) · [格尔尼卡](https://art-gallery-pub.vercel.app/guernica/)
 - 下方「作品清单」中每一幅的**画名均可点击**，直接跳转到该画的线上赏析页。
+- 右下角悬浮工具：**分享 / 复制链接 / 收藏** 与 **浅色 / 深色主题** 一键切换。
 
 > 这是一份私人礼物站（默认 `robots.txt` 禁止搜索引擎索引）。想让自己的版本被收录，fork 后改一行 `robots.txt` 即可，见文末「部署」。
 
@@ -46,6 +53,8 @@
   - 尊重系统「减弱动态」偏好：开启后实时关闭花瓣飘落动画。
 - **性能优化**：全站图片已转为 **WebP**（约 91.7 MB → 64 MB，降幅约 30%）；画作页静态图均启用 `loading="lazy"` 与 `decoding="async"`；仅加载可见画作资源。
 - **社交分享就绪**：每页补全 Open Graph（og:title / og:image / og:description）与 Twitter Card，分享即带封面。
+- **浅色 / 深色主题**：右下角一键切换「纸感」浅色与深色，偏好本地记忆，切换不闪烁。
+- **分享与收藏**：右下角悬浮工具，支持系统分享面板、复制链接与一键收藏提示。
 - **安全响应头**：`vercel.json` 已注入 `X-Frame-Options`、`X-Content-Type-Options`、`Referrer-Policy`、HSTS 与 `Permissions-Policy`。
 
 ---
@@ -126,7 +135,7 @@ python3 -m http.server 8000
 1. 仓库 **Settings → Pages → Build and deployment → Source** 选 `Deploy from a branch`；
 2. Branch 选 `main`、目录选 `/ (root)`；
 3. 保存后访问 **https://chanyanming-a11y.github.io/art-gallery/** 即可。
-（首次发布需等 1–2 分钟；此后每次 push 自动更新。）
+（本站已启用 Pages，镜像地址即 **https://chanyanming-a11y.github.io/art-gallery/**；此后每次 push 自动更新。）
 
 ### 方式四：任意静态空间
 拷贝根目录全部文件到空间根路径即可。
@@ -174,6 +183,7 @@ python3 -m http.server 8000
 ## 🔗 相关 · Links
 
 - 在线演示（Vercel）：<https://art-gallery-pub.vercel.app/>
+- GitHub Pages 镜像：<https://chanyanming-a11y.github.io/art-gallery/>
 - 仓库：<https://github.com/chanyanming-a11y/art-gallery>
 
 ---

@@ -1,0 +1,93 @@
+/* ============================================================
+   名画赏析画廊 · 增强层 (ui-extras.css)
+   1) 浅色 / 深色主题（默认深色，切换持久化到 localStorage）
+   2) 分享 / 复制链接 / 收藏 悬浮工具
+   纯前端、零依赖、同源，不引入任何第三方运行时。
+   ============================================================ */
+
+/* ---------- 浅色主题：翻转设计令牌 ---------- */
+html[data-theme="light"]{
+  color-scheme: light;
+  --ink:#f4ecda; --ink2:#ece2cc; --panel:#fbf7ec;
+  --line:rgba(120,92,34,.30);
+  --gold:#8a6a1c; --gold-soft:#5b4213;
+  --water:#3d6c66; --rose:#a5432f;
+  --paper:#241d12; --muted:#6c6252;
+}
+html[data-theme="light"] body{
+  background:radial-gradient(120% 80% at 50% -10%, #fbf6ea 0%, #f4ecda 60%) !important;
+  color:#241d12 !important;
+}
+/* 页脚（各页硬编码为暗金字） */
+html[data-theme="light"] footer,
+html[data-theme="light"] footer .fc,
+html[data-theme="light"] footer .fe{ color:rgba(120,92,34,.72) !important; }
+/* 弹窗正文 / 关闭按钮（首页硬编码浅灰字） */
+html[data-theme="light"] .panel p{ color:#463f33 !important; }
+html[data-theme="light"] .panel .close{ color:#241d12 !important; }
+/* 返回按钮（各页硬编码为深色胶囊） */
+html[data-theme="light"] .back-home{ color:#5b4213 !important; background:rgba(255,255,255,.72) !important; border-color:rgba(120,92,34,.35) !important; }
+html[data-theme="light"] .back-home .t{ color:#241d12 !important; background:rgba(255,255,255,.95) !important; border-color:rgba(120,92,34,.28) !important; }
+/* 花瓣在浅色下略减 */
+html[data-theme="light"] #petals{ opacity:.5 }
+
+/* 英雄区始终位于深色画作之上：浅色模式下就地恢复深色令牌，保持可读的“画墙”观感 */
+html[data-theme="light"] #hero{
+  --ink:#14110c; --ink2:#1d1810; --panel:#271f14;
+  --line:rgba(216,178,106,.28);
+  --gold:#c9a24a; --gold-soft:#e7d2a0;
+  --water:#5f8e88; --rose:#b85c4a;
+  --muted:#a89a82; --paper:#f2ead8;
+  color:#f2ead8;
+}
+/* 英雄区底部渐隐入浅色页面，衔接更自然 */
+html[data-theme="light"] .hero-shade{
+  background:linear-gradient(180deg, rgba(10,8,6,.55) 0%, rgba(10,8,6,.15) 38%, #14110c 72%, #f4ecda 100%) !important;
+}
+/* 落在浅色区的滚动提示转为深色 */
+html[data-theme="light"] .scroll-cue{ color:#7a6f5d !important; }
+html[data-theme="light"] .scroll-cue::after{ background:linear-gradient(180deg,#8a6a1c,transparent) !important; }
+
+/* 副文本色令牌（原页面用硬编码浅灰字，浅色下需反转为深字） */
+:root{ --t1:#d7d2c2; --t2:#cfc9ba; --t3:#bfb9aa; --t4:#c8c2b3; --t5:#f0e2c2; --t6:#f0e2c0; --t7:#a2b2a4; }
+html[data-theme="light"]{ --t1:#453e31; --t2:#524a3a; --t3:#575040; --t4:#4d4636; --t5:#5a4324; --t6:#5a4324; --t7:#48584a; }
+
+/* 段落区背景（原渐变末端为硬编码深色 #0d1310 / #0c120e）：浅色下改用浅色令牌 */
+html[data-theme="light"] #prologue{ background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%) !important; }
+html[data-theme="light"] #making{ background:linear-gradient(180deg,var(--ink2),var(--ink)) !important; }
+html[data-theme="light"] #flora{ background:linear-gradient(180deg,var(--ink),var(--ink2)) !important; }
+
+/* ---------- 悬浮工具（分享 + 主题） ---------- */
+.ag-tools{position:fixed; right:16px; bottom:16px; z-index:86; display:flex; flex-direction:column; gap:10px; align-items:flex-end}
+.ag-tools button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(217,179,106,.30);
+  background:rgba(16,12,8,.50); color:#ecd9ac; font-size:18px; line-height:1; cursor:pointer;
+  display:grid;place-items:center;padding:0;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:background .25s,border-color .25s,transform .2s}
+.ag-tools button:hover{background:rgba(217,179,106,.18);border-color:rgba(217,179,106,.7)}
+.ag-tools button:focus-visible{outline:2px solid rgba(217,179,106,.85);outline-offset:2px}
+.ag-menu{position:absolute; right:0; bottom:calc(100% + 10px); min-width:200px; padding:6px;
+  border-radius:12px; background:rgba(18,14,9,.96); border:1px solid rgba(217,179,106,.24);
+  box-shadow:0 18px 50px rgba(0,0,0,.5); display:none; flex-direction:column; gap:2px}
+.ag-menu.open{display:flex}
+.ag-menu button{width:100%;height:auto;border-radius:8px;display:flex;gap:10px;align-items:center;
+  padding:10px 12px;font-size:14px;letter-spacing:.04em;background:none;border:none;color:#ecd9ac;cursor:pointer;text-align:left;
+  font-family:inherit}
+.ag-menu button:hover,.ag-menu button:focus-visible{background:rgba(217,179,106,.16);outline:none}
+.ag-menu button .ic{width:1.3em;text-align:center;font-size:15px}
+.ag-toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(12px);
+  background:rgba(18,14,9,.96); color:#ecd9ac; border:1px solid rgba(217,179,106,.3);
+  padding:10px 18px; border-radius:999px; font-size:13px; letter-spacing:.05em; z-index:96;
+  opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; max-width:80vw; text-align:center;
+  font-family:inherit}
+.ag-toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+
+/* 浅色下工具配色的适配 */
+html[data-theme="light"] .ag-tools button{background:rgba(255,255,255,.72);color:#5b4213;border-color:rgba(120,92,34,.35)}
+html[data-theme="light"] .ag-tools button:hover{background:rgba(140,106,28,.16)}
+html[data-theme="light"] .ag-menu{background:rgba(255,255,255,.99);border-color:rgba(120,92,34,.28)}
+html[data-theme="light"] .ag-menu button{color:#241d12}
+html[data-theme="light"] .ag-menu button:hover,html[data-theme="light"] .ag-menu button:focus-visible{background:rgba(140,106,28,.14)}
+html[data-theme="light"] .ag-toast{background:rgba(40,32,20,.95);color:#f4ecda}
+
+@media(max-width:640px){ .ag-tools{right:12px;bottom:12px;gap:8px} }

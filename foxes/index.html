@@ -232,7 +232,7 @@
   .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
   .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
   .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
-  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card p{color:var(--t1);font-size:15px;line-height:2}
   .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
     color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
   .card .close:hover{opacity:1}
@@ -262,7 +262,7 @@
   }
   .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
   .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
-  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board p{font-size:14.5px;color:var(--t2);position:relative;line-height:2}
   .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
     font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
   .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
@@ -283,7 +283,7 @@
     background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
   .secret-card .txt{padding:44px 46px}
   .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
-  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card p{font-size:15.5px;color:var(--t1);margin-bottom:1.1em}
   .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
   .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
     padding-top:16px;margin-top:8px}
@@ -308,7 +308,7 @@
   .flower .fb{padding:16px 16px 20px}
   .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
   .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
-  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flower p{font-size:13px;color:var(--t3);line-height:1.8}
   .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
     color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
     background:rgba(216,178,106,.05)}
@@ -319,7 +319,7 @@
   .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
   .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
   .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
-  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-item p{font-size:14.5px;color:var(--t4)}
   .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
     color:var(--water);letter-spacing:.1em;font-style:italic}
   .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
@@ -331,7 +331,7 @@
   .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
     padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
   .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
-  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item p{color:var(--t2);font-size:15px}
   .legacy-item b{color:var(--paper);font-weight:700}
   @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
 
@@ -352,6 +352,8 @@
 <meta name="twitter:title" content="狐狸 · The Foxes — 一片 crystalline 的原野">
 <meta name="twitter:image" content="../covers/foxes.webp">
 <meta name="twitter:description" content="弗朗茨·马克《狐狸》(Die Füchse, 1913) 动态赏析：棱面分明的三只狐狸，与马克用颜色写下的「动物神学」。含青骑士社、德劳内奥菲主义的影响，以及马克的色彩象征理论。">
+<script>try{if(localStorage.getItem("ag-theme")==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
+<link rel="stylesheet" href="../ui-extras.css">
 </head>
 <body>
 <a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
@@ -700,5 +702,6 @@ else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
   }
 })();
 </script>
+<script src="../ui-extras.js"></script>
 </body>
 </html>
