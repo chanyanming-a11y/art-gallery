@@ -364,8 +364,27 @@
   .bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}
 
   </style>
+<style>
+/* back-home-visible : 返回画廊首页 · 首屏常显 */
+.back-home{position:fixed; top:16px; right:16px; z-index:88; width:42px; height:42px; border-radius:50%;
+  display:grid; place-items:center; text-decoration:none; color:#ecd9ac; font-size:18px; line-height:1;
+  background:rgba(16,12,8,.5); border:1px solid rgba(217,179,106,.34);
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  opacity:.82; visibility:visible;
+  transition:opacity .25s, transform .25s, background .25s, border-color .25s}
+.back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.2);
+  border-color:rgba(217,179,106,.72); outline:none; transform:scale(1.06)}
+.back-home:focus-visible{outline:2px solid rgba(217,179,106,.8); outline-offset:2px}
+.back-home .t{position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%);
+  white-space:nowrap; font-size:12px; letter-spacing:.06em; color:#ecd9ac;
+  background:rgba(16,12,8,.86); border:1px solid rgba(217,179,106,.22); padding:5px 10px; border-radius:8px;
+  opacity:0; pointer-events:none; transition:opacity .25s}
+.back-home:hover .t,.back-home:focus-visible .t{opacity:1}
+@media(max-width:640px){ .back-home .t{display:none} .back-home{top:12px; right:12px; width:40px; height:40px} }
+</style>
 </head>
 <body>
+<a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
 
 <div id="progress"></div>
 <canvas id="petals"></canvas>

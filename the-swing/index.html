@@ -34,6 +34,13 @@
 <meta name="twitter:title" content="秋千 · The Swing — 一场被安排好的偶然">
 <meta name="twitter:image" content="../covers/the-swing.webp">
 <meta name="twitter:description" content="弗拉戈纳尔《秋千》(约1767–68) 动态赏析：一份有目击者证词的委托、被悄悄换成老年绅士的主教、飞向丘比特的粉色拖鞋，以及一场被精确计算过的『幸运意外』。">
+<style>
+/* back-home-visible : 首屏即显示返回首页箭头（覆盖原「滚动过 45% 视口高才显」的门控） */
+.back-home,.back-home.show{opacity:.82; visibility:visible; transform:none;
+  background:rgba(16,12,8,.5); border-color:rgba(217,179,106,.34)}
+.back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.2); border-color:rgba(217,179,106,.72)}
+@media(max-width:640px){ .back-home{top:12px; right:12px; width:40px; height:40px} }
+</style>
 </head>
 <body><div id="artGate" role="dialog" aria-modal="true" aria-label="艺术欣赏提示">
   <div class="ag-box">
@@ -282,8 +289,7 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches) start();
 (function(){
 var b=document.querySelector('.back-home');
 if(b){
-var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
-window.addEventListener('scroll', upd, {passive:true}); upd();
+b.classList.add('show'); /* 首屏即显示，不再随滚动隐藏 */
 }
 })();
 </script>

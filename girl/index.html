@@ -34,6 +34,13 @@
 <meta name="twitter:title" content="戴珍珠耳环的少女 · Girl with a Pearl Earring — 一次回眸，与三百五十年的注视">
 <meta name="twitter:image" content="../covers/girl.webp">
 <meta name="twitter:description" content="维米尔《戴珍珠耳环的少女》(Girl with a Pearl Earring, c.1665) 动态赏析：蓝色头巾、金黄披衣、一道回眸的目光，以及那颗把整个画面点亮的珍珠。含 tronie 体裁、背景由绿帘褪黑、1994 年修复与 2018 年重研究等脉络。">
+<style>
+/* back-home-visible : 首屏即显示返回首页箭头（覆盖原「滚动过 45% 视口高才显」的门控） */
+.back-home,.back-home.show{opacity:.82; visibility:visible; transform:none;
+  background:rgba(16,12,8,.5); border-color:rgba(217,179,106,.34)}
+.back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.2); border-color:rgba(217,179,106,.72)}
+@media(max-width:640px){ .back-home{top:12px; right:12px; width:40px; height:40px} }
+</style>
 </head>
 <body>
 <a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
@@ -271,8 +278,7 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches) start();
 (function(){
 var b=document.querySelector('.back-home');
 if(b){
-var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
-window.addEventListener('scroll', upd, {passive:true}); upd();
+b.classList.add('show'); /* 首屏即显示，不再随滚动隐藏 */
 }
 var modal=document.getElementById('modal');
 if(!modal) return;

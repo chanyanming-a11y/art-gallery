@@ -353,6 +353,13 @@
 <meta name="twitter:title" content="构成第八号 · Composition VIII — 一场没有演员的舞台">
 <meta name="twitter:image" content="../covers/composition-viii.webp">
 <meta name="twitter:description" content="康定斯基《构成第八号》(Composition VIII, 1923) 动态赏析：圆、三角、线在米白底上的几何协奏，以及一座由纯粹元素搭起的平衡。含包豪斯时期、抽象绘画的「语法」与康定斯基的色彩—声音通感。">
+<style>
+/* back-home-visible : 首屏即显示返回首页箭头（覆盖原「滚动过 45% 视口高才显」的门控） */
+.back-home,.back-home.show{opacity:.82; visibility:visible; transform:none;
+  background:rgba(16,12,8,.5); border-color:rgba(217,179,106,.34)}
+.back-home:hover,.back-home:focus-visible{opacity:1; background:rgba(217,179,106,.2); border-color:rgba(217,179,106,.72)}
+@media(max-width:640px){ .back-home{top:12px; right:12px; width:40px; height:40px} }
+</style>
 </head>
 <body>
 <a class="back-home" href="../index.html" aria-label="返回画廊首页" title="返回画廊首页"><span aria-hidden="true">←</span><span class="t">返回画廊首页</span></a>
@@ -719,8 +726,7 @@ if(autoSec){ try{ new IntersectionObserver(function(es){
 (function(){
   var b=document.querySelector('.back-home');
   if(b){
-    var upd=function(){ if(window.scrollY > window.innerHeight*0.45) b.classList.add('show'); else b.classList.remove('show'); };
-    window.addEventListener('scroll', upd, {passive:true}); upd();
+    b.classList.add('show'); /* 首屏即显示，不再随滚动隐藏 */
   }
 })();
 </script>
