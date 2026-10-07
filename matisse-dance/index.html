@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.art-moments.com/matisse-dance/">
+<title>舞蹈 · La Danse — 一圈红色的旋转</title>
+<meta name="description" content="马蒂斯《舞蹈》(1910) 动态赏析：五名舞者的环形构图、野兽派的纯粹色彩与休金委托的往事。">
+<style>
+  :root{
+    --ink:#0a1622;
+    --ink2:#0f2032;
+    --panel:#152a3d;
+    --line:rgba(216,178,106,.28);
+    --gold:#e8a24c;
+    --gold-soft:#f2cfa2;
+    --water:#7fcbbd;
+    --rose:#dd5b3c;
+    --paper:#f2ead8;
+    --muted:#9fb0bd;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/matisse-main.jpg") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.58) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(232,162,76,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0a1622 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+  footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;
+    color:var(--gold);font-size:14px;margin-bottom:14px}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== BGM 配乐组件 ===== */
+  #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;
+    background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:999px;color:var(--paper);
+    font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)}
+  /* —— skiper25 音乐开关（点击播放/暂停，波形律动）—— */
+  .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;
+    padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;
+    transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}
+  .bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave{display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;
+    background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i{opacity:1}
+  /* —— 「灵感配乐」文字：说明面板的唯一开关（收起=浅 / 展开=深）—— */
+  .bgm-txt{border:0;background:transparent;cursor:pointer;
+    color:var(--paper);opacity:.6;
+    font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;
+    transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt{color:var(--gold);opacity:1}
+  .bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);
+    width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;
+    background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);
+    pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);
+    box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  /* 面板仅由文字点击（.open）控制 —— 不再 hover 自动展开 */
+  #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}
+  .bgm-row{display:flex;align-items:center;gap:8px}
+  .bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;
+    font-family:var(--serif-en)}
+  .bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;
+    padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;
+    border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;
+    height:12px;border-radius:50%;background:var(--gold);cursor:pointer;
+    box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;
+    border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  @media (max-width:640px){#bgm{left:14px;bottom:14px}
+    .bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}
+  /* ===== /BGM 配乐组件 ===== */
+
+  </style>
+<style>
+
+  /* ===== QQ音乐 配乐引用 ===== */
+  .bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;
+    text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover{color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}
+
+  </style>
+</head>
+<body>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">HENRI MATISSE · 1910</div>
+    <h1 class="title" id="titleCh">舞蹈</h1>
+    <div class="hero-en">LA DANSE</div>
+    <div class="hero-meta"><span class="chip">布面油画</span><span class="chip">260 × 391 cm</span><span class="chip">圣彼得堡冬宫藏</span><span class="chip">野兽派</span></div>
+  </div>
+  <div class="scroll-cue">走进这个圆环</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">一切始自<em>一个圆</em></h2>
+    <p class="lead reveal">1910 年，马蒂斯为莫斯科收藏家谢尔盖·休金画了一幅三米多宽的画：五个赤红的人体，手拉着手，在蓝与绿之间旋转。它没有故事、没有主角、没有情节——只有一圈还在继续转动的舞。当年的巴黎评论骂它粗野；今天，它被视为现代绘画最重要的转折点之一。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>五个人，手拉着手，围成一个还没有闭合的圈。</p><p>他们的身体是朱红的，脚下的坡地是绿的，四周是铺满的蓝——马蒂斯把颜色用到了最饱和。</p><p>没有人看向画外。他们只看着彼此的手，看着这场还在继续的旋转。</p>
+      <p class="src">—— 画面解读 · 通行说法</p>
+      <p class="end reveal">马蒂斯画下的，是「活着」本身：一圈还在转的、停不下来的舞。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这一圈</em>的秘密</h2>
+    <p class="lead reveal">画面只有五个人和三种颜色，看似简单。但每个姿势、每一次牵手、每一块颜色，都被反复推敲过——马蒂斯为此画了大量习作。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/matisse-main.jpg" alt="舞蹈 · La Danse — 一圈红色的旋转" draggable="false">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 细看每一处 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一幅画的<em>三个时刻</em></h2>
+    <p class="lead reveal">从莫斯科的委托，到巴黎沙龙的争议，再到今天挂在冬宫墙上的经典——这个圆走了很久。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1909–1910 · 莫斯科</p><h3>休金的两幅委托</h3><p>俄国收藏家谢尔盖·休金向马蒂斯订下两幅巨作：《舞蹈》与《音乐》，准备挂在他莫斯科宅邸的楼梯上。1910 年，《舞蹈》在巴黎秋季沙龙首次与公众见面。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1910 · 巴黎 秋季沙龙</p><h3>「粗野」引发的争议</h3><p>评论界一片哗然：没有透视、没有明暗、人体比例夸张，颜色平涂到近乎刺眼。有人斥之为「粗野」——「野兽派」（Fauvisme）这个名称，当初本是嘲笑。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">今天 · 圣彼得堡 冬宫</p><h3>与《音乐》重逢</h3><p>十月革命后，休金的收藏被收归国有。如今《舞蹈》与它的姐妹作《音乐》并挂在冬宫同一面墙上——两幅画，终于在异乡重新聚首。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">马蒂斯<em>忘不了</em>的那支舞</h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/matisse-central.jpg" alt="他先看见的，是一场沙滩上的圆舞"></div>
+      <div class="txt"><h3>他先看见的，是一场沙滩上的圆舞</h3><p>1905 年夏，马蒂斯在西班牙边境小镇科利乌尔（Collioure）度假时，看过渔民在海滩上围成圆圈跳的一种加泰罗尼亚传统舞——<span class="hl">sardana</span>。</p><p>那支舞让他念念不忘：一个圆，一群人手拉手，越转越快。此后多年，他反复画「环形的舞」——<span class="hl">同一个圆，画了不止一次</span>。</p><p>1910 年的这一幅是其中最大的一版。它既是记忆里的沙滩圆舞，也是马蒂斯对「音乐性的绘画」的追求：他要让颜色像音符一样排列，让画面在静止中颤动。</p><p>他曾说，自己梦想的是一种「平衡、纯粹、宁静」的艺术——而这张全画最热闹的作品，恰恰是那句话最早的注脚。</p><p class="note">※ 「科利乌尔沙滩舞会」是马蒂斯本人多次提及的灵感来源（见其晚年访谈）；1910 年版本的具体创作过程，见于他与休金的往来书信。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 图鉴</div>
+    <h2 class="reveal">一圈舞的<em>五种姿势</em></h2>
+    <p class="lead reveal">马蒂斯没有让五个人做同一个动作。俯、仰、伸、转、跃——五种姿态轮流出现，才让静止的画面转了起来。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/matisse-central.jpg" alt="仰首者"></div><div class="fb"><h4>仰首者</h4><div class="fy">HEAD RAISED · 圆环的最高点</div><p>头向后仰、双臂高举，把整个圆环撑到最高处。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-hands.jpg" alt="相扣的手"></div><div class="fb"><h4>相扣的手</h4><div class="fy">THE LINK · 圆环的锁扣</div><p>两只手在最高处相扣，成为整幅画的支点。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-left.jpg" alt="俯首者"></div><div class="fb"><h4>俯首者</h4><div class="fy">HEAD BOWED · 一人俯，一人仰</div><p>低头前倾、伸手拉住同伴，与仰首者构成对照。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-back.jpg" alt="背身者"></div><div class="fb"><h4>背身者</h4><div class="fy">BACK TURNED · 离我们最近的脸</div><p>前景中背对观众的巨大身影，伸手索要支点。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-right.jpg" alt="后仰者"></div><div class="fb"><h4>后仰者</h4><div class="fy">LEANING · 最危险的一跃</div><p>身体后仰、右腿下探，几乎跌出画面之外。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-upperright.jpg" alt="伸展者"></div><div class="fb"><h4>伸展者</h4><div class="fy">STRETCH · 撑出旋转感</div><p>一拉一垂，在蓝底上划出一道斜线。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-green.jpg" alt="绿色的坡地"></div><div class="fb"><h4>绿色的坡地</h4><div class="fy">THE MOUND · 承接所有脚</div><p>一整块不透明的绿，没有细节，只有承托。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/matisse-blue.jpg" alt="蓝色的天空"></div><div class="fb"><h4>蓝色的天空</h4><div class="fy">THE SKY · 一块幕布</div><p>几种色阶的蓝拼成，更像幕布而非天空。</p></div></div></div>
+    <div class="flora-note reveal">马蒂斯把颜色本身当成主角——全画基本只有三块色：朱红的身体、翠绿的坡地、深蓝的四周。他要的从来不是「像」，而是「动」。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">FAUVISM · 语境</div>
+    <h2 class="reveal">什么是<em>野兽派</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>「野兽」之名，本是嘲讽</h4><p>1905 年巴黎秋季沙龙，马蒂斯等人的画作因色彩狂放被评论家讥为「野兽」（fauves）。这个贬义词后来反倒成了现代绘画第一个流派的正式名字。</p></div><div class="prb-item reveal"><h4>颜色不再描述，而是表达</h4><p>野兽派抛开了传统的明暗与透视，把颜色从「描写对象」的职责中解放出来：红色可以画脸，纯色可以直接并置。色彩第一次成了情绪本身。</p></div><div class="prb-item reveal"><h4>休金的委托</h4><p>俄国商人谢尔盖·休金是马蒂斯最重要的赞助人之一。他订下《舞蹈》与《音乐》两幅巨作，把巴黎最前卫的画带进莫斯科——这批收藏后来成了冬宫现代艺术部分的基石。</p></div><div class="prb-item reveal"><h4>不止一版的《舞蹈》</h4><p>马蒂斯一生反复画「环形的舞」：1909 年的习作《舞蹈（一）》今藏纽约现代艺术博物馆，1910 年这一版在冬宫，1930 年代他还为美国巴恩斯基金会创作了大型壁画版本。</p></div></div>
+    <div class="prb-quote reveal">我所梦想的，是一种平衡、纯粹、宁静的艺术。<small>—— 马蒂斯《画家笔记》（1908）· 意译</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">一个<em>停不下来</em>的圆</h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1910</span><p>《舞蹈》在巴黎秋季沙龙展出，与《音乐》同为休金宅邸楼梯的装饰。争议声中，它成为野兽派最著名的宣言之一。</p></div><div class="legacy-item reveal"><span class="yr">1917</span><p>十月革命爆发。休金的收藏被收归国有，两幅画一同进入国立博物馆体系。</p></div><div class="legacy-item reveal"><span class="yr">1930s</span><p>马蒂斯应美国巴恩斯基金会之邀，以同一「环形舞」主题创作大型壁画——这个圆，他又画了一遍，更大、更完整。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>《舞蹈》与《音乐》并挂在圣彼得堡冬宫博物馆，是整条参观动线上最著名的一站。每年数百万人从这一圈红色前走过。</p></div><div class="legacy-item reveal"><span class="yr">影响</span><p>从舞蹈、时装到广告，这个「手拉手的圆」被无数次引用与再创作——它成了「欢乐」与「共同体」最简洁的视觉原型之一。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fin">F I N</div>
+  图片：Wikimedia Commons · 亨利·马蒂斯《舞蹈》（1910，冬宫博物馆，公有领域）<br>内容整理自公开艺术史资料 · 史事以主流研究为准 · 仅供赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 38.0, "y": 22.0, "no": "I", "t": "仰首的舞者", "img": "assets/matisse-central.jpg", "txt": "画面正中偏左的舞者，头向后仰，双臂高举——整个圆环的最高点。她的身体几乎一笔画成：没有肌肉、没有明暗，只有一条朱红的弧线。"}, {"x": 21.0, "y": 7.0, "no": "II", "t": "相扣的手", "img": "assets/matisse-hands.jpg", "txt": "两只手在最高处相扣，成为整个圆环的「锁扣」。马蒂斯把手指画得近乎笨拙——正因为不写实，那股用力才格外真切。"}, {"x": 13.0, "y": 50.0, "no": "III", "t": "俯首的舞者", "img": "assets/matisse-left.jpg", "txt": "最左边的舞者低着头，躯干前倾，一只手伸向同伴。她与中央仰首者一俯一仰，把画面的张力向两端拉开。"}, {"x": 54.0, "y": 64.0, "no": "IV", "t": "背身的舞者", "img": "assets/matisse-back.jpg", "txt": "前景中央背对观众的巨大身影，是画面里离我们最近的人。她的背脊用一条线带过，手臂却伸得很长——像是在向同伴索要一个支点。"}, {"x": 87.0, "y": 55.0, "no": "V", "t": "后仰的舞者", "img": "assets/matisse-right.jpg", "txt": "最右侧的舞者身体后仰，右腿下探，几乎要跌出画面。她是这一圈里最危险、也最有动势的一位。"}, {"x": 69.0, "y": 20.0, "no": "VI", "t": "伸展的舞者", "img": "assets/matisse-upperright.jpg", "txt": "右上方的舞者一手拉向左、一手垂向右，身体在蓝底上划出一道斜线——圆环的旋转感，很大程度由她这一「撑」完成。"}, {"x": 30.0, "y": 30.0, "no": "VII", "t": "朱红的身体", "img": "assets/matisse-flesh.jpg", "txt": "马蒂斯把人物的肤色全部画成一种饱和的朱红。他没有调制「皮肤的颜色」，而是选了一种最跳、最像火焰的颜色——颜色在这里不负责写实，只负责情绪。"}, {"x": 20.0, "y": 83.0, "no": "VIII", "t": "绿色的坡地", "img": "assets/matisse-green.jpg", "txt": "脚下的坡地是一整块不透明的绿，没有草的细节，也没有投影。它承接所有向下坠的脚，也把朱红与深蓝干净地隔开。"}, {"x": 76.0, "y": 8.0, "no": "IX", "t": "铺满的蓝色", "img": "assets/matisse-blue.jpg", "txt": "天空由几种色阶的蓝拼成，几乎没有渐变——它更像一块幕布，而不是真实的天空。留给舞者的，只剩最纯粹的旋转。"}, {"x": 45.0, "y": 50.0, "no": "X", "t": "还在转动的圆", "img": "assets/matisse-ring.jpg", "txt": "抓住彼此的手，这一圈就成了一个整体。马蒂斯故意留了一道没有合上的缺口：若它闭合，画面就停了；正因为没合上，它才像永远在转。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(221,91,60,", "rgba(127,203,189,", "rgba(242,215,180,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="matisse-dance" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">波莱罗</div>
+    <div class="bgm-sub">莫里斯·拉威尔 · 1935 年拉威尔亲自指挥录音（公有领域）</div>
+    <div class="bgm-why">马蒂斯《舞蹈》让五名舞者在蓝绿天地间连成永不休止的红环，灵感源自法国南部的西班牙萨达纳圈舞。拉威尔《波莱罗》以同一西班牙舞曲动机无尽渐强、层层叠加，与画中旋转的人链同频共振；铜管与木管交错的纯色织体，恰如野兽派毫不调和的朱红、湖蓝与草绿。一段音乐，让静止的画面听见循环的呼吸。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">音乐：Ravel《Boléro》1935 Lamoureux Orchestra（公有领域，Wikimedia Commons）。本页所用为历史录音片段，非商业录音。</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002V74FZ0mLHX6?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">Bolero<span>Lamoureux Concert Association Orchestra, Maurice Ravel</span></a></div>
+  </div>
+</div>
+
+<script>
+  /* ===== BGM 配乐组件 ===== */
+  (function(){
+    var wrap=document.getElementById('bgm'); if(!wrap) return;
+    var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+        vol=document.getElementById('bgmVol');
+    var bars=wrap.querySelectorAll('.bgm-wave i');
+    var LS='bgm-off-'+ (wrap.dataset.key||'page');
+    var audio=new Audio('assets/bgm.mp3');
+    audio.loop=true; audio.preload='auto';
+    var target=0.55, timer=null, autoArmed=false, waveTimer=null;
+
+    function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+    setVol(target);
+
+    /* skiper25 波形律动：播放时每 100ms 随机跳动（4–14px），暂停时归位 4px */
+    function wave(on){
+      if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+      if(on){
+        var jig=function(){ for(var i=0;i<bars.length;i++){
+          bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+        jig(); waveTimer=setInterval(jig,100);
+      } else {
+        for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+      }
+    }
+    wave(false);
+
+    function fade(to,ms){
+      if(timer) clearInterval(timer);
+      var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+      timer=setInterval(function(){
+        i++;
+        setVol(from+(to-from)*(i/steps));
+        if(i>=steps){ clearInterval(timer); timer=null;
+          if(to===0){ audio.pause(); } }
+      },40);
+    }
+
+    function mark(on){
+      wrap.classList.toggle('on',on);
+      if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+      if(txt) txt.textContent='灵感配乐';
+      wave(on);
+    }
+
+    function play(){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+          try{ localStorage.removeItem(LS); }catch(e){}
+        }).catch(function(){ mark(false); }); }
+      else { mark(true); fade(target,1200); }
+    }
+    function stop(){
+      fade(0,800); mark(false);
+      try{ localStorage.setItem(LS,'1'); }catch(e){}
+    }
+    function toggle(){ audio.paused ? play() : stop(); }
+
+    /* skiper25 波形按钮 → 播放/暂停 */
+    if(playBtn) playBtn.addEventListener('click',function(e){
+      e.stopPropagation(); toggle(); });
+    /* 「灵感配乐」文字 → 说明面板的唯一开关（单击切换） */
+    function panel(open){
+      wrap.classList.toggle('open',open);
+      if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+    }
+    if(txt) txt.addEventListener('click',function(e){
+      e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+    /* 点击面板外部 / 按 Esc 关闭 */
+    document.addEventListener('click',function(e){
+      if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+        if(txt) txt.focus(); } });
+    vol.addEventListener('input',function(){
+      target=Math.max(0,Math.min(1,this.value/100));
+      if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+    });
+    vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+    // 自动播放：未被浏览器策略阻止则直接开始；否则等首次交互
+    var off=false; try{ off=localStorage.getItem(LS)==='1'; }catch(e){}
+    if(!off){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200); })
+        .catch(function(){ autoArmed=true; }); }
+      if(!autoArmed && !p){ mark(true); fade(target,1200); }
+      if(autoArmed){
+        var kick=function(){ play(); document.removeEventListener('pointerdown',kick);
+          document.removeEventListener('keydown',kick);
+          document.removeEventListener('wheel',kick);
+          document.removeEventListener('touchstart',kick); };
+        document.addEventListener('pointerdown',kick,{once:true});
+        document.addEventListener('keydown',kick,{once:true});
+        document.addEventListener('wheel',kick,{once:true,passive:true});
+        document.addEventListener('touchstart',kick,{once:true});
+      }
+    }
+    // 切到后台时暂停，回到前台恢复（仅在用户开启过的情况下）
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+      else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+    });
+  })();
+
+</script>
+</body>
+</html>

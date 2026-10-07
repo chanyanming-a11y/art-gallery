@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.art-moments.com/franz-marc-blue-horses/">
+<title>蓝色大马 · The Large Blue Horses — 三匹安静的蓝色灵魂</title>
+<meta name="description" content="弗兰茨·马尔克《蓝色大马》(1911) 动态赏析：蓝骑士的精神色彩、动物的纯粹，与被一战截断的梦。">
+<style>
+  :root{
+    --ink:#0a1726;
+    --ink2:#0e2236;
+    --panel:#122a40;
+    --line:rgba(216,178,106,.28);
+    --gold:#d98a3a;
+    --gold-soft:#f0c893;
+    --water:#4fa8c9;
+    --rose:#c64a3a;
+    --paper:#f2ead8;
+    --muted:#9bb0c0;
+    --serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;
+    --serif-en:"Didot","Bodoni MT","Georgia",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--serif-cn);
+    overflow-x:hidden;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(216,178,106,.35)}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--water),var(--gold));
+    z-index:100;transition:width .1s linear}
+
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+  #nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:90;display:flex;flex-direction:column;gap:14px}
+  #nav a{width:9px;height:9px;border-radius:50%;
+    background:rgba(242,234,216,.25);display:block;position:relative;
+    transition:all .3s}
+  #nav a:hover,#nav a.on{background:var(--gold);transform:scale(1.35)}
+  #nav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:12px;letter-spacing:.15em;white-space:nowrap;color:var(--gold-soft);
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  #nav a:hover span{opacity:1}
+  @media(max-width:760px){#nav{display:none}}
+
+  header{
+    position:relative;height:100vh;min-height:640px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-bg{
+    position:absolute;inset:-4%;
+    background:url("assets/marc-main.jpg") center 32%/cover no-repeat;
+    animation:kenburns 36s ease-in-out infinite alternate;
+    filter:brightness(.55) saturate(1.05);
+    will-change:transform;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translateY(0)}
+    100%{transform:scale(1.12) translateY(-2%)}
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(0deg,
+      transparent 0 7px, rgba(79,168,201,.05) 7px 9px);
+    mix-blend-mode:screen;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{from{transform:translateY(0)}to{transform:translateY(9px)}}
+  .hero-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,.15) 38%,#0a1726 100%)}
+  .hero-inner{position:relative;z-index:5;text-align:center;padding:0 24px;max-width:1000px}
+  .hero-kicker{
+    font-family:var(--serif-en);letter-spacing:.55em;text-indent:.55em;
+    font-size:clamp(11px,1.4vw,14px);color:var(--water);
+    opacity:0;animation:rise 1.2s .3s forwards;
+  }
+  h1.title{
+    font-size:clamp(58px,11vw,138px);font-weight:700;
+    letter-spacing:.12em;margin:14px 0 6px;line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,.55);
+  }
+  h1.title .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(4deg);
+    animation:drop .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes drop{to{opacity:1;transform:none}}
+  .hero-en{
+    font-family:var(--serif-en);font-size:clamp(16px,2.6vw,26px);
+    letter-spacing:.4em;text-indent:.4em;color:var(--gold);
+    opacity:0;animation:rise 1.2s 1.5s forwards;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-meta{
+    margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:rise 1.2s 1.9s forwards;
+  }
+  .chip{
+    border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:13px;letter-spacing:.12em;color:var(--muted);
+    background:rgba(10,8,6,.4);backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    z-index:6;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.3em;
+    opacity:0;animation:rise 1s 2.4s forwards;
+  }
+  .scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}
+    56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  section{position:relative;z-index:2;padding:110px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{
+    display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.45em;color:var(--water);
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--water)}
+  h2{font-size:clamp(30px,4.6vw,50px);letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  h2 em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,17.5px);max-width:720px}
+
+  .reveal{opacity:0;transform:translateY(46px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  #prologue{background:linear-gradient(180deg,var(--ink) 0%,#0d1310 100%)}
+  .speech{margin-top:48px;position:relative;padding-left:34px;border-left:1px solid var(--line)}
+  .speech .q{font-family:var(--serif-en);font-size:120px;line-height:0;color:var(--gold);
+    position:absolute;left:-16px;top:34px;opacity:.6}
+  .speech p{
+    font-size:clamp(17px,2.3vw,22px);line-height:2.3;margin-bottom:1.4em;
+    opacity:0;transform:translateY(20px);transition:all 1.1s ease;
+  }
+  .speech p.in{opacity:1;transform:none}
+  .speech .src{color:var(--muted);font-size:13.5px;letter-spacing:.1em;margin-top:26px}
+  .speech .end{color:var(--gold-soft);font-size:clamp(17px,2.2vw,21px)}
+
+  #painting{background:var(--ink2)}
+  .stage{
+    position:relative;margin-top:48px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;cursor:crosshair;
+    background:#000;
+  }
+  .stage img{display:block;width:100%;height:auto;transition:transform 8s ease}
+  .stage:hover img{transform:scale(1.03)}
+  .dot{
+    position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px solid rgba(242,234,216,.85);
+    background:rgba(216,178,106,.25);cursor:pointer;padding:0;
+    transition:all .25s;z-index:3;
+  }
+  .dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;
+    border:1px solid rgba(216,178,106,.6);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dot:hover,.dot.on{background:var(--gold);box-shadow:0 0 24px rgba(216,178,106,.7)}
+  .dot i{font-style:normal;position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.1em;color:var(--paper);white-space:nowrap;
+    background:rgba(10,8,6,.75);padding:2px 10px;border-radius:4px;
+    opacity:0;transition:opacity .25s;pointer-events:none}
+  .dot:hover i,.dot.on i{opacity:1}
+  .stage-hint{margin-top:16px;text-align:center;color:var(--muted);
+    font-size:13px;letter-spacing:.25em}
+  .stage-hint b{color:var(--gold);font-weight:400}
+
+  #modal{position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(5,8,6,.78);backdrop-filter:blur(6px)}
+  #modal.open{display:flex;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    position:relative;max-width:860px;width:100%;max-height:88vh;overflow:auto;
+    background:var(--panel);border:1px solid var(--line);
+    display:grid;grid-template-columns:1.05fr 1fr;
+    animation:cardIn .45s cubic-bezier(.2,.9,.25,1);
+  }
+  @keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+  .card img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+  .card .txt{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+  .card .no{font-family:var(--serif-en);color:var(--water);letter-spacing:.3em;font-size:12px}
+  .card h3{font-size:25px;letter-spacing:.08em;margin:10px 0 14px;color:var(--gold-soft)}
+  .card p{color:#d7d2c2;font-size:15px;line-height:2}
+  .card .close{position:absolute;top:14px;right:18px;background:none;border:none;
+    color:var(--paper);font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}
+  .card .close:hover{opacity:1}
+  @media(max-width:720px){
+    .card{grid-template-columns:1fr;max-height:86vh}
+    .card img{max-height:34vh;min-height:0}
+  }
+
+  #making{background:linear-gradient(180deg,var(--ink2),#0c120e)}
+  .boards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .board{
+    background:var(--panel);border:1px solid var(--line);padding:26px 26px 30px;
+    position:relative;transition:transform .4s ease,box-shadow .4s ease;
+  }
+  .board:nth-child(1){transform:rotate(-1.1deg)}
+  .board:nth-child(3){transform:rotate(1.1deg)}
+  .board:hover{transform:rotate(0) translateY(-8px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .board::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(rgba(216,178,106,.14) 1px,transparent 1.6px);
+    background-size:12px 12px;
+  }
+  .board .bn{
+    font-family:var(--serif-en);font-size:13px;letter-spacing:.35em;color:var(--water);
+    display:inline-block;border:1px solid rgba(143,216,198,.4);padding:3px 12px;
+    background:rgba(10,8,6,.5);position:relative;
+  }
+  .board .bt{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:16px 0 6px;position:relative}
+  .board h3{font-size:22px;color:var(--gold-soft);letter-spacing:.06em;margin-bottom:12px;position:relative}
+  .board p{font-size:14.5px;color:#cfc9ba;position:relative;line-height:2}
+  .board .num{position:absolute;right:14px;top:8px;font-family:var(--serif-en);
+    font-size:64px;color:rgba(216,178,106,.1);line-height:1;pointer-events:none}
+  .arrow{position:absolute;top:50%;right:-22px;z-index:5;color:var(--gold);font-size:22px;opacity:.7}
+  .board:nth-child(3) .arrow{display:none}
+  @media(max-width:880px){
+    .boards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+    .arrow{display:none}
+  }
+
+  #secret{background:var(--ink)}
+  .secret-card{
+    margin-top:52px;border:1px solid var(--line);display:grid;
+    grid-template-columns:.9fr 1.1fr;overflow:hidden;background:var(--panel);
+  }
+  .secret-card .img{position:relative;min-height:340px}
+  .secret-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secret-card .img::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,var(--panel) 100%)}
+  .secret-card .txt{padding:44px 46px}
+  .secret-card h3{font-size:clamp(22px,3vw,30px);color:var(--gold-soft);letter-spacing:.06em;margin-bottom:18px}
+  .secret-card p{font-size:15.5px;color:#d7d2c2;margin-bottom:1.1em}
+  .secret-card .hl{color:var(--gold);border-bottom:1px dashed rgba(216,178,106,.5)}
+  .secret-card .note{font-size:13px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);
+    padding-top:16px;margin-top:8px}
+  @media(max-width:780px){
+    .secret-card{grid-template-columns:1fr}
+    .secret-card .img{min-height:240px}
+    .secret-card .img::after{background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+    .secret-card .txt{padding:30px 26px}
+  }
+
+  #flora{background:linear-gradient(180deg,#0c120e,var(--ink2))}
+  .flora-grid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .flower{
+    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    overflow:hidden;transition:all .4s ease;position:relative;
+  }
+  .flower:hover{transform:translateY(-8px);border-color:var(--line);
+    box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .flower .ph{height:150px;overflow:hidden}
+  .flower .ph img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+  .flower:hover .ph img{transform:scale(1.12)}
+  .flower .fb{padding:16px 16px 20px}
+  .flower h4{font-size:17.5px;color:var(--gold-soft);letter-spacing:.08em}
+  .flower .fy{font-size:12px;color:var(--water);letter-spacing:.15em;margin:5px 0 8px}
+  .flower p{font-size:13px;color:#bfb9aa;line-height:1.8}
+  .flora-note{margin-top:34px;border:1px dashed rgba(216,178,106,.4);padding:22px 28px;
+    color:var(--gold-soft);font-size:15px;letter-spacing:.05em;text-align:center;
+    background:rgba(216,178,106,.05)}
+  @media(max-width:960px){.flora-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flora-grid{grid-template-columns:1fr}}
+
+  #prb{background:var(--ink2)}
+  .prb-cols{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .prb-item{border-left:2px solid var(--gold);padding:6px 0 6px 26px}
+  .prb-item h4{font-size:19px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.06em}
+  .prb-item p{font-size:14.5px;color:#c8c2b3}
+  .prb-quote{margin-top:44px;text-align:center;font-size:clamp(16px,2.4vw,20px);
+    color:var(--water);letter-spacing:.1em;font-style:italic}
+  .prb-quote small{display:block;margin-top:10px;font-style:normal;font-size:12.5px;
+    color:var(--muted);letter-spacing:.2em}
+  @media(max-width:780px){.prb-cols{grid-template-columns:1fr}}
+
+  #legacy{background:linear-gradient(180deg,var(--ink2),var(--ink) 60%)}
+  .legacy-list{margin-top:44px;display:grid;gap:0}
+  .legacy-item{display:grid;grid-template-columns:120px 1fr;gap:26px;
+    padding:26px 8px;border-bottom:1px solid rgba(255,255,255,.07);align-items:baseline}
+  .legacy-item .yr{font-family:var(--serif-en);color:var(--gold);font-size:clamp(20px,2.6vw,26px)}
+  .legacy-item p{color:#cfc9ba;font-size:15px}
+  .legacy-item b{color:var(--paper);font-weight:700}
+  @media(max-width:640px){.legacy-item{grid-template-columns:1fr;gap:4px}}
+
+  footer{padding:70px 24px 90px;text-align:center;color:var(--muted);
+    font-size:12.5px;letter-spacing:.12em;line-height:2.2;border-top:1px solid rgba(255,255,255,.06)}
+  footer .fin{font-family:var(--serif-en);letter-spacing:.6em;text-indent:.6em;
+    color:var(--gold);font-size:14px;margin-bottom:14px}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== BGM 配乐组件 ===== */
+  #bgm{position:fixed;left:22px;bottom:22px;z-index:120;font-family:var(--serif-cn)}
+  .bgm-btn{display:flex;align-items:center;gap:2px;padding:5px 15px 5px 6px;
+    background:rgba(8,14,12,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:999px;color:var(--paper);
+    font-size:13px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:all .3s cubic-bezier(.2,.7,.3,1)}
+  .bgm-btn:hover{border-color:var(--gold);transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  #bgm.on .bgm-btn{border-color:var(--gold);color:var(--gold-soft)}
+  /* —— skiper25 音乐开关（点击播放/暂停，波形律动）—— */
+  .bgm-play{display:flex;align-items:center;justify-content:center;flex:none;
+    padding:7px 8px;border:0;background:transparent;border-radius:999px;cursor:pointer;
+    transition:padding .55s cubic-bezier(.2,.7,.3,1)}
+  .bgm-play:hover,.bgm-play:focus-visible{padding:7px 13px;outline:none}
+  .bgm-play:focus-visible{box-shadow:0 0 0 2px var(--gold) inset}
+  .bgm-wave{display:flex;align-items:center;gap:2px;height:16px}
+  .bgm-wave i{display:block;width:2px;height:4px;border-radius:2px;
+    background:var(--gold);opacity:.8;transition:height .16s cubic-bezier(.3,.7,.3,1)}
+  #bgm.on .bgm-wave i{opacity:1}
+  /* —— 「灵感配乐」文字：说明面板的唯一开关（收起=浅 / 展开=深）—— */
+  .bgm-txt{border:0;background:transparent;cursor:pointer;
+    color:var(--paper);opacity:.6;
+    font:inherit;letter-spacing:.08em;padding:5px 3px 5px 0;user-select:none;
+    transition:color .3s,opacity .3s}
+  .bgm-txt:hover,.bgm-txt:focus-visible{color:var(--gold-soft);opacity:.85;outline:none}
+  #bgm.open .bgm-txt{color:var(--gold);opacity:1}
+  .bgm-panel{position:absolute;left:0;bottom:calc(100% + 12px);
+    width:min(330px,calc(100vw - 44px));padding:16px 18px 14px;
+    background:rgba(8,12,10,.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--line);border-radius:14px;opacity:0;transform:translateY(10px);
+    pointer-events:none;transition:all .32s cubic-bezier(.2,.7,.3,1);
+    box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  /* 面板仅由文字点击（.open）控制 —— 不再 hover 自动展开 */
+  #bgm.open .bgm-panel{opacity:1;transform:none;pointer-events:auto}
+  .bgm-row{display:flex;align-items:center;gap:8px}
+  .bgm-t{font-size:15px;color:var(--gold-soft);letter-spacing:.04em;line-height:1.5}
+  .bgm-sub{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:3px;
+    font-family:var(--serif-en)}
+  .bgm-why{font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.8;margin-top:11px;
+    padding-top:11px;border-top:1px solid var(--line)}
+  .bgm-vol{display:flex;align-items:center;gap:10px;margin-top:13px}
+  .bgm-vol span{font-size:11px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+  .bgm-vol input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:3px;
+    border-radius:2px;background:var(--line);outline:none;cursor:pointer}
+  .bgm-vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;
+    height:12px;border-radius:50%;background:var(--gold);cursor:pointer;
+    box-shadow:0 0 0 3px rgba(217,179,106,.18)}
+  .bgm-vol input[type=range]::-moz-range-thumb{width:12px;height:12px;border:none;
+    border-radius:50%;background:var(--gold);cursor:pointer}
+  .bgm-cr{font-size:10.5px;color:var(--muted);opacity:.7;line-height:1.7;margin-top:11px}
+  @media (max-width:640px){#bgm{left:14px;bottom:14px}
+    .bgm-btn{font-size:12px;padding:4px 13px 4px 5px}}
+  /* ===== /BGM 配乐组件 ===== */
+
+  </style>
+<style>
+
+  /* ===== QQ音乐 配乐引用 ===== */
+  .bgm-qq{margin-top:12px;border-top:1px solid rgba(217,179,106,.22);padding-top:10px}
+  .bgm-qq-h{font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-bottom:7px}
+  .bgm-qq-song{display:block;font-size:12.5px;color:var(--paper);opacity:.85;line-height:1.7;
+    text-decoration:none;padding:2px 0;transition:color .25s,opacity .25s}
+  .bgm-qq-song:hover{color:var(--gold-soft);opacity:1}
+  .bgm-qq-song span{color:var(--muted);font-size:11px;margin-left:6px}
+
+  </style>
+</head>
+<body>
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+
+<nav id="nav"><a href="#prologue"><span>序章</span></a>
+<a href="#painting"><span>画中细节</span></a>
+<a href="#making"><span>分镜</span></a>
+<a href="#secret"><span>幕后</span></a>
+<a href="#flora"><span>图鉴</span></a>
+<a href="#prb"><span>语境</span></a>
+<a href="#legacy"><span>尾声</span></a></nav>
+
+<header id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">FRANZ MARC · 1911</div>
+    <h1 class="title" id="titleCh">蓝色大马</h1>
+    <div class="hero-en">THE LARGE BLUE HORSES</div>
+    <div class="hero-meta"><span class="chip">布面油画</span><span class="chip">105.7 × 181.2 cm</span><span class="chip">明尼阿波利斯 沃克艺术中心</span><span class="chip">表现主义 · 蓝骑士</span></div>
+  </div>
+  <div class="scroll-cue">走进这片蓝</div>
+</header>
+
+<section id="prologue">
+  <div class="wrap">
+    <div class="kicker reveal">PROLOGUE · 序章</div>
+    <h2 class="reveal">它们比人<em>更接近神</em></h2>
+    <p class="lead reveal">1911 年，弗兰茨·马尔克画了三匹巨大的蓝马，低头站在一片起伏的红色山丘前。没有地平线的叙事，没有人的身影——只有动物、色彩，和一种近乎祈祷的安静。对马尔克来说，动物比人更纯粹、更接近神；而蓝色，是他用来表达「精神」的颜色。</p>
+    <div class="speech">
+      <span class="q">&ldquo;</span>
+      <p>三匹马，被涂成一种不属于任何真实马匹的蓝。</p><p>它们站在红与绿的山丘之间，轮廓被简化成饱满的圆弧。</p><p>马尔克说，他想画的是动物世界里「和谐、和平与平衡」——一个没有被人类打扰的、精神纯净的伊甸。</p>
+      <p class="src">—— 画面解读 · 通行说法</p>
+      <p class="end reveal">马尔克画下的，是他对一个「比人类更诚实」的世界的信仰。</p>
+    </div>
+  </div>
+</section>
+
+<section id="painting">
+  <div class="wrap">
+    <div class="kicker reveal">THE PAINTING · 画中细节</div>
+    <h2 class="reveal">点开<em>这一片蓝</em>的秘密</h2>
+    <p class="lead reveal">画面只有三个动物和几块原色，却极尽推敲：每一道弧线、每一种颜色，都被马尔克赋予了情绪与意义。</p>
+    <div class="stage reveal" id="stage">
+      <img src="assets/marc-main.jpg" alt="蓝色大马 · The Large Blue Horses — 三匹安静的蓝色灵魂" draggable="false">
+    </div>
+    <p class="stage-hint reveal">点击画面中的 <b>✦ 光点</b> 细看每一处 · 图片来源：Wikimedia Commons（公有领域）</p>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="kicker reveal">STORYBOARDS · 分镜</div>
+    <h2 class="reveal">一匹蓝马的<em>前世今生</em></h2>
+    <p class="lead reveal">从慕尼黑一间画室，到一战战壕，再到今天明尼阿波利斯的墙上——这匹蓝马，走过了德国表现主义最炽热也最短暂的一段岁月。</p>
+    <div class="boards"><div class="board reveal"><span class="num">01</span><span class="bn">分镜 一</span><p class="bt">1903–1910 · 慕尼黑</p><h3>从神学走向动物</h3><p>马尔克早年在慕尼黑学神学，后来转向绘画。他越来越相信：动物比人更接近神，而艺术应当「动物化」——把人的喧嚣，还原成自然的纯粹。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">02</span><span class="bn">分镜 二</span><p class="bt">1911 · 慕尼黑</p><h3>蓝骑士的诞生</h3><p>1911 年，马尔克与康定斯基共同创立「蓝骑士」（Der Blaue Reiter）社，成员包括好友奥古斯特·马克。蓝色，从此成为他精神世界的图腾色。</p><span class="arrow">➤</span></div><div class="board reveal"><span class="num">03</span><span class="bn">分镜 三</span><p class="bt">1916 · 凡尔登</p><h3>一个被战争截断的梦</h3><p>1916 年，马尔克在凡尔登战役中阵亡，年仅 36 岁。他笔下那个「和谐、和平、平衡」的动物世界，最终没能逃过人类的战争。</p></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="wrap">
+    <div class="kicker reveal">BEHIND THE CANVAS · 幕后</div>
+    <h2 class="reveal">马尔克的<em>颜色密码</em></h2>
+    <div class="secret-card reveal">
+      <div class="img"><img src="assets/marc-body.jpg" alt="他给每一种颜色都分配了灵魂"></div>
+      <div class="txt"><h3>他给每一种颜色都分配了灵魂</h3><p>马尔克有一套私人「颜色象征」：<span class="hl">蓝</span>代表男性气概与精神，<span class="hl">黄</span>代表女性的温柔与欢愉，<span class="hl">红</span>则包裹着暴力与物质世界的声响。</p><p>所以他笔下的马是蓝的——蓝色意味着「精神性」，意味着一种不被肉体与世俗污染的纯粹。三匹蓝马，就是三个安放在自然里的灵魂。</p><p>画家让·布洛埃·尼斯特莱（Jean Bloé Niestlé）曾劝他「抓住动物的本质」；马尔克终其一生，都在用颜色做这件事。</p><p>他还相信艺术应当「避开物质世界、唤起精神」——这让他成为表现主义里最安静、也最虔诚的一支。</p><p class="note">※ 颜色象征说见于马尔克 1910–1912 年间的书信与笔记；本页配色解读以此为准。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="flora">
+  <div class="wrap">
+    <div class="kicker reveal">DETAILS · 图鉴</div>
+    <h2 class="reveal">三匹蓝马的<em>三种姿态</em></h2>
+    <p class="lead reveal">马尔克没有把三匹马画成一模一样。静立、俯首、扬起——三种姿态轮流出现，才让静止的画面有了呼吸。</p>
+    <div class="flora-grid"><div class="flower reveal"><div class="ph"><img src="assets/marc-rear.jpg" alt="扬起的蓝马"></div><div class="fb"><h4>扬起的蓝马</h4><div class="fy">REARING · 最具动势</div><p>右侧大马身体后扬，几乎离地。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-left-horses.jpg" alt="静立的双马"></div><div class="fb"><h4>静立的双马</h4><div class="fy">STANDING · 一静一动</div><p>左侧两匹并肩低头，与扬马对照。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-body.jpg" alt="蓝色的躯体"></div><div class="fb"><h4>蓝色的躯体</h4><div class="fy">THE BLUE · 精神的颜色</div><p>饱和钴蓝，不写实只表情。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-head.jpg" alt="平静的眼"></div><div class="fb"><h4>平静的眼</h4><div class="fy">THE EYE · 人的反衬</div><p>安宁的目光，映出人的失去。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-mane.jpg" alt="红色的鬃"></div><div class="fb"><h4>红色的鬃</h4><div class="fy">THE RED · 一点重量</div><p>红鬃点醒蓝的沉静。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-hills.jpg" alt="红色山丘"></div><div class="fb"><h4>红色山丘</h4><div class="fy">THE HILLS · 原色对撞</div><p>弧线呼应马背。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-trees.jpg" alt="绿色树丛"></div><div class="fb"><h4>绿色树丛</h4><div class="fy">THE GREEN · 大地的安静</div><p>红蓝之间的呼吸。</p></div></div><div class="flower reveal"><div class="ph"><img src="assets/marc-cow.jpg" alt="黄色小兽"></div><div class="fb"><h4>黄色小兽</h4><div class="fy">THE YELLOW · 一点暖意</div><p>黄代表温柔与欢愉。</p></div></div></div>
+    <div class="flora-note reveal">马尔克用最简的原色，把「动物比人更接近神」这一信念，画成了三匹永不褪色的蓝马。</div>
+  </div>
+</section>
+
+<section id="prb">
+  <div class="wrap">
+    <div class="kicker reveal">EXPRESSIONISM · 语境</div>
+    <h2 class="reveal">什么是<em>蓝骑士</em>？</h2>
+    <div class="prb-cols"><div class="prb-item reveal"><h4>「蓝骑士」不是流派，是一群人</h4><p>1911 年，马尔克与康定斯基在德国创办「蓝骑士」社，成员还有奥古斯特·马克等。他们不追求统一风格，只共享一个信念：用色彩与形式，抵达精神的世界。</p></div><div class="prb-item reveal"><h4>颜色开始代替写实</h4><p>与传统油画不同，表现主义把颜色从「描写对象」里解放出来。马尔克的蓝马、康定斯基的抽象，都在证明：色彩本身就是意义。</p></div><div class="prb-item reveal"><h4>一场被战争腰斩的青春</h4><p>马尔克（1916 殁）、马克（1914 殁）都在第一次世界大战中阵亡，年仅三十余岁。蓝骑士最灿烂的一瞬，被战争永远截断。</p></div><div class="prb-item reveal"><h4>从「堕落艺术」到国宝</h4><p>纳粹时期，马尔克约 130 件作品被当作「堕落艺术」清除；今天，他已是德国表现主义不可绕过的人物，明尼阿波利斯、慕尼黑等地都为他设专厅。</p></div></div>
+    <div class="prb-quote reveal">艺术应当避开物质世界，去唤起精神。<small>—— 弗兰茨·马尔克（意译自其笔记）</small></div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <div class="kicker reveal">LEGACY · 尾声</div>
+    <h2 class="reveal">一匹蓝马的<em>百年回响</em></h2>
+    <div class="legacy-list"><div class="legacy-item reveal"><span class="yr">1911</span><p>《蓝色大马》完成，同年「蓝骑士」社在慕尼黑诞生。三匹蓝马，成为马尔克精神信仰最响亮的宣言。</p></div><div class="legacy-item reveal"><span class="yr">1916</span><p>马尔克于凡尔登战役阵亡，年仅 36 岁。他笔下的「和平动物世界」，成了被战争碾碎的梦。</p></div><div class="legacy-item reveal"><span class="yr">1937</span><p>纳粹「堕落艺术」展中，马尔克约 130 件作品被清除、变卖或销毁——艺术被政治判定为「不纯」。</p></div><div class="legacy-item reveal"><span class="yr">1942</span><p>《蓝色大马》由沃克艺术中心（明尼阿波利斯）收藏至今，成为美国观众最熟悉的马尔克作品。</p></div><div class="legacy-item reveal"><span class="yr">今天</span><p>从明尼阿波利斯的墙面到无数印刷品，这匹蓝马仍在提醒我们：有一种美，安静地站在人类的喧嚣之外。</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fin">F I N</div>
+  图片：Wikimedia Commons · 弗兰茨·马尔克《蓝色大马》（1911，沃克艺术中心，公有领域）<br>内容整理自公开艺术史资料 · 史事以主流研究为准 · 仅供赏析用途
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="close" id="modalClose" aria-label="关闭">&times;</button>
+    <img id="mImg" src="" alt="">
+    <div class="txt">
+      <span class="no" id="mNo"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mText"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const t = document.getElementById("titleCh");
+  const chars = [...t.textContent];
+  t.textContent = "";
+  chars.forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "ch"; s.textContent = c;
+    s.style.animationDelay = (0.6 + i*0.16) + "s";
+    t.appendChild(s);
+  });
+})();
+
+const progress = document.getElementById("progress");
+const heroBg = document.getElementById("heroBg");
+const navLinks = [...document.querySelectorAll("#nav a")];
+const sections = navLinks.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (p*100) + "%";
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  let idx = -1;
+  sections.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < window.innerHeight*0.45) idx = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle("on", i===idx));
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const speechIO = new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const ps = e.target.querySelectorAll("p");
+      let d = 0;
+      ps.forEach(p=>{ setTimeout(()=>p.classList.add("in"), d); d += 900; });
+      speechIO.unobserve(e.target);
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll(".speech").forEach(el=>speechIO.observe(el));
+
+const SPOTS = [{"x": 58.0, "y": 35.0, "no": "I", "t": "仰首的蓝马", "img": "assets/marc-rear.jpg", "txt": "画面右侧那匹最大的蓝马，身体向后扬起，几乎要离开地面。它是整幅画里最具动势的一匹，蓝色的肌肉被简化成几道饱满的弧线。"}, {"x": 30.0, "y": 62.0, "no": "II", "t": "静立的双马", "img": "assets/marc-left-horses.jpg", "txt": "画面左中，两匹马并肩而立、低头吃草。它们与右侧扬起的马一静一动，把整个画面撑成一张拉满的弓。"}, {"x": 72.0, "y": 52.0, "no": "III", "t": "蓝色的躯体", "img": "assets/marc-body.jpg", "txt": "马尔克把马身涂成一种饱和的钴蓝，没有鬃毛的写实、没有皮毛的质感——颜色在这里不负责「像」，只负责「精神」。"}, {"x": 77.0, "y": 38.0, "no": "IV", "t": "平静的眼", "img": "assets/marc-head.jpg", "txt": "放大的马头与眼睛：眼神平静、没有任何戏剧性。马尔克想让观者从动物安宁的目光里，看见一种人已经失去的纯净。"}, {"x": 70.0, "y": 58.0, "no": "V", "t": "红色的鬃", "img": "assets/marc-mane.jpg", "txt": "鬃毛与蹄部被点上红与白。在马尔克的颜色词典里，红代表「物质的声响与暴力」——一点点红，就让蓝的宁静有了重量。"}, {"x": 50.0, "y": 16.0, "no": "VI", "t": "红色的山丘", "img": "assets/marc-hills.jpg", "txt": "背景是几道起伏的红山，与蓝马形成原色对撞。山丘的弧线呼应着马背的曲线，让动物与风景合成一个有机的整体。"}, {"x": 32.0, "y": 40.0, "no": "VII", "t": "绿色的树丛", "img": "assets/marc-trees.jpg", "txt": "红山之间嵌着几团绿色的树，像呼吸的间隙。绿在马尔克笔下是「大地的安静」，把刺眼的红蓝温柔地接住。"}, {"x": 50.0, "y": 10.0, "no": "VIII", "t": "留白的天空", "img": "assets/marc-sky.jpg", "txt": "天空几乎被省略，只余几道浅色。马尔克不让天空抢戏——他要的，是一片只属于马的、纯净的蓝。"}, {"x": 15.0, "y": 87.0, "no": "IX", "t": "黄色的小兽", "img": "assets/marc-cow.jpg", "txt": "左下角，一只黄色的小兽（牛或鹿）安静地伏着。黄在马尔克体系里代表「女性的温柔与欢愉」，是蓝的沉默里一点暖意。"}, {"x": 50.0, "y": 88.0, "no": "X", "t": "滚动的草甸", "img": "assets/marc-meadow.jpg", "txt": "最下方一抹倾斜的草甸，把三匹马稳稳托住。整幅画没有「上」也没有「下」，只有一块被色彩重新组织的土地。"}];
+const stage = document.getElementById("stage");
+SPOTS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "dot"; b.style.left = s.x + "%"; b.style.top = s.y + "%";
+  b.setAttribute("aria-label", s.t);
+  b.innerHTML = "<i>" + s.t + "</i>";
+  b.addEventListener("click", ev=>{ ev.stopPropagation(); openModal(s, b); });
+  stage.appendChild(b);
+});
+
+const modal = document.getElementById("modal");
+function openModal(s, dot){
+  document.getElementById("mImg").src = s.img;
+  document.getElementById("mNo").textContent = "DETAIL " + s.no;
+  document.getElementById("mTitle").textContent = s.t;
+  document.getElementById("mText").textContent = s.txt;
+  modal.classList.add("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+  if(dot) dot.classList.add("on");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("on"));
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target === modal) closeModal(); });
+window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
+
+(function(){
+  const cv = document.getElementById("petals");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, petals = [];
+  const COLORS = ["rgba(79,168,201,", "rgba(198,74,58,", "rgba(120,180,90,"];
+  function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function make(init){
+    return {
+      x: Math.random()*W, y: init ? Math.random()*H : -20,
+      r: 2.5 + Math.random()*4, vy: .35 + Math.random()*.8, vx: -.2 + Math.random()*.4,
+      ph: Math.random()*Math.PI*2, spin: (Math.random()-.5)*.03, a: Math.random()*Math.PI,
+      c: COLORS[Math.random()*COLORS.length|0], o: .25 + Math.random()*.4
+    };
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.ph += .012;
+      p.x += p.vx + Math.sin(p.ph)*0.5;
+      p.y += p.vy; p.a += p.spin;
+      if(p.y > H+24) Object.assign(p, make(false));
+      if(p.x < -24) p.x = W+20;
+      if(p.x > W+24) p.x = -20;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = p.c + p.o + ")";
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r*0.55, 0, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener("resize", resize);
+  if(!reduced){ petals = Array.from({length:30}, ()=>make(true)); tick(); }
+})();
+</script>
+
+<!-- ===== BGM 配乐组件 ===== -->
+<div id="bgm" data-key="franz-marc-blue-horses" aria-live="polite">
+  <div class="bgm-row">
+    <div class="bgm-btn">
+      <button class="bgm-play" id="bgmPlay" type="button" aria-pressed="false"
+              aria-label="播放或暂停配乐">
+        <span class="bgm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="bgm-txt" id="bgmTxt" type="button"
+              aria-label="展开或收起配乐说明" aria-expanded="false">灵感配乐</button>
+    </div>
+  </div>
+  <div class="bgm-panel">
+    <div class="bgm-t">田园交响曲（第一乐章）</div>
+    <div class="bgm-sub">路德维希·范·贝多芬 · 第六交响曲「田园」Op.68（公有领域）</div>
+    <div class="bgm-why">马尔克把三匹马涂成不属于人间的蓝，相信动物比人更接近神；蓝色在他笔下即是「精神」。贝多芬《田园》也写「人抵达乡野时快活的觉醒」——弦乐以最明亮的原色织体铺开一片和谐、和平的蓝色自然，与画中那三个安放在红绿山丘间的灵魂同频。一段音乐，让静止的蓝马重新呼吸。</div>
+    <div class="bgm-vol">
+      <span>音量</span>
+      <input type="range" id="bgmVol" min="0" max="100" value="55" aria-label="配乐音量">
+    </div>
+    <div class="bgm-cr">音乐：Beethoven《Symphony No.6 "Pastoral"》Op.68 I.（公有领域，Wikimedia Commons）。本页所用为历史录音片段，非商业录音。</div><div class="bgm-qq"><div class="bgm-qq-h">🎵 同曲完整版 · 在 QQ音乐 收听</div><a class="bgm-qq-song" href="https://i2.y.qq.com/a/song/002xawsq1YAuPK?ADTAG=yy_gnyy_ai_toc" target="_blank" rel="noopener">田园交响曲<span>Ludwig van Beethoven</span></a></div>
+  </div>
+</div>
+
+<script>
+  /* ===== BGM 配乐组件 ===== */
+  (function(){
+    var wrap=document.getElementById('bgm'); if(!wrap) return;
+    var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
+        vol=document.getElementById('bgmVol');
+    var bars=wrap.querySelectorAll('.bgm-wave i');
+    var LS='bgm-off-'+ (wrap.dataset.key||'page');
+    var audio=new Audio('assets/bgm.mp3');
+    audio.loop=true; audio.preload='auto';
+    var target=0.55, timer=null, autoArmed=false, waveTimer=null;
+
+    function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
+    setVol(target);
+
+    /* skiper25 波形律动：播放时每 100ms 随机跳动（4–14px），暂停时归位 4px */
+    function wave(on){
+      if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
+      if(on){
+        var jig=function(){ for(var i=0;i<bars.length;i++){
+          bars[i].style.height=(4+Math.random()*10).toFixed(1)+'px'; } };
+        jig(); waveTimer=setInterval(jig,100);
+      } else {
+        for(var k=0;k<bars.length;k++){ bars[k].style.height='4px'; }
+      }
+    }
+    wave(false);
+
+    function fade(to,ms){
+      if(timer) clearInterval(timer);
+      var from=audio.volume, steps=Math.max(1,Math.round(ms/40)), i=0;
+      timer=setInterval(function(){
+        i++;
+        setVol(from+(to-from)*(i/steps));
+        if(i>=steps){ clearInterval(timer); timer=null;
+          if(to===0){ audio.pause(); } }
+      },40);
+    }
+
+    function mark(on){
+      wrap.classList.toggle('on',on);
+      if(playBtn) playBtn.setAttribute('aria-pressed',on?'true':'false');
+      if(txt) txt.textContent='灵感配乐';
+      wave(on);
+    }
+
+    function play(){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200);
+          try{ localStorage.removeItem(LS); }catch(e){}
+        }).catch(function(){ mark(false); }); }
+      else { mark(true); fade(target,1200); }
+    }
+    function stop(){
+      fade(0,800); mark(false);
+      try{ localStorage.setItem(LS,'1'); }catch(e){}
+    }
+    function toggle(){ audio.paused ? play() : stop(); }
+
+    /* skiper25 波形按钮 → 播放/暂停 */
+    if(playBtn) playBtn.addEventListener('click',function(e){
+      e.stopPropagation(); toggle(); });
+    /* 「灵感配乐」文字 → 说明面板的唯一开关（单击切换） */
+    function panel(open){
+      wrap.classList.toggle('open',open);
+      if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
+    }
+    if(txt) txt.addEventListener('click',function(e){
+      e.stopPropagation(); panel(!wrap.classList.contains('open')); });
+    /* 点击面板外部 / 按 Esc 关闭 */
+    document.addEventListener('click',function(e){
+      if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && wrap.classList.contains('open')){ panel(false);
+        if(txt) txt.focus(); } });
+    vol.addEventListener('input',function(){
+      target=Math.max(0,Math.min(1,this.value/100));
+      if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
+    });
+    vol.addEventListener('click',function(e){ e.stopPropagation(); });
+
+    // 自动播放：未被浏览器策略阻止则直接开始；否则等首次交互
+    var off=false; try{ off=localStorage.getItem(LS)==='1'; }catch(e){}
+    if(!off){
+      var p=audio.play();
+      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200); })
+        .catch(function(){ autoArmed=true; }); }
+      if(!autoArmed && !p){ mark(true); fade(target,1200); }
+      if(autoArmed){
+        var kick=function(){ play(); document.removeEventListener('pointerdown',kick);
+          document.removeEventListener('keydown',kick);
+          document.removeEventListener('wheel',kick);
+          document.removeEventListener('touchstart',kick); };
+        document.addEventListener('pointerdown',kick,{once:true});
+        document.addEventListener('keydown',kick,{once:true});
+        document.addEventListener('wheel',kick,{once:true,passive:true});
+        document.addEventListener('touchstart',kick,{once:true});
+      }
+    }
+    // 切到后台时暂停，回到前台恢复（仅在用户开启过的情况下）
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){ if(!audio.paused){ audio.pause(); } }
+      else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
+    });
+  })();
+
+</script>
+</body>
+</html>
