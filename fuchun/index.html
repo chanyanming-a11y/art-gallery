@@ -652,12 +652,11 @@ window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
     var LS='bgm-off-'+ (wrap.dataset.key||'page');
     var audio=new Audio('assets/bgm.mp3');
     audio.loop=true; audio.preload='auto';
-    var target=0.55, timer=null, autoArmed=false, waveTimer=null;
+    var target=0.55, timer=null, waveTimer=null;
 
     function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
     setVol(target);
 
-    /* skiper25 波形律动：播放时每 100ms 随机跳动（4–14px），暂停时归位 4px */
     function wave(on){
       if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
       if(on){
@@ -701,17 +700,14 @@ window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
     }
     function toggle(){ audio.paused ? play() : stop(); }
 
-    /* skiper25 波形按钮 → 播放/暂停 */
     if(playBtn) playBtn.addEventListener('click',function(e){
       e.stopPropagation(); toggle(); });
-    /* 「灵感配乐」文字 → 说明面板的唯一开关（单击切换） */
     function panel(open){
       wrap.classList.toggle('open',open);
       if(txt) txt.setAttribute('aria-expanded',open?'true':'false');
     }
     if(txt) txt.addEventListener('click',function(e){
       e.stopPropagation(); panel(!wrap.classList.contains('open')); });
-    /* 点击面板外部 / 按 Esc 关闭 */
     document.addEventListener('click',function(e){
       if(wrap.classList.contains('open') && !wrap.contains(e.target)) panel(false); });
     document.addEventListener('keydown',function(e){
@@ -723,31 +719,33 @@ window.addEventListener("keydown", e=>{ if(e.key === "Escape") closeModal(); });
     });
     vol.addEventListener('click',function(e){ e.stopPropagation(); });
 
-    // 自动播放：未被浏览器策略阻止则直接开始；否则等首次交互
-    var off=false; try{ off=localStorage.getItem(LS)==='1'; }catch(e){}
-    if(!off){
-      var p=audio.play();
-      if(p&&p.then){ p.then(function(){ mark(true); fade(target,1200); })
-        .catch(function(){ autoArmed=true; }); }
-      if(!autoArmed && !p){ mark(true); fade(target,1200); }
-      if(autoArmed){
-        var kick=function(){ play(); document.removeEventListener('pointerdown',kick);
-          document.removeEventListener('keydown',kick);
-          document.removeEventListener('wheel',kick);
-          document.removeEventListener('touchstart',kick); };
-        document.addEventListener('pointerdown',kick,{once:true});
-        document.addEventListener('keydown',kick,{once:true});
-        document.addEventListener('wheel',kick,{once:true,passive:true});
-        document.addEventListener('touchstart',kick,{once:true});
-      }
-    }
-    // 切到后台时暂停，回到前台恢复（仅在用户开启过的情况下）
     document.addEventListener('visibilitychange',function(){
       if(document.hidden){ if(!audio.paused){ audio.pause(); } }
       else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
     });
-  })();
 
+    /* 滑到正文后一次性自动播放：开页不播，用户滚动/滚轮进入「序章」才启动 */
+    var triedAuto=false, autoInteracted=false;
+    var autoSec=document.getElementById('prologue');
+    function bgmAutoTry(){
+      if(triedAuto) return;
+      if(!audio.paused){ triedAuto=true; return; }
+      try{ if(localStorage.getItem(LS)==='1'){ triedAuto=true; return; } }catch(e){}
+      if(!autoInteracted) return;
+      var inView = autoSec ? (autoSec.getBoundingClientRect().top <= window.innerHeight*0.9) : true;
+      if(inView){ triedAuto=true; play(); }
+    }
+    function bgmInteract(){ autoInteracted=true; bgmAutoTry(); }
+    window.addEventListener('scroll', bgmInteract, {passive:true});
+    window.addEventListener('wheel', bgmInteract, {passive:true});
+    window.addEventListener('touchmove', bgmInteract, {passive:true});
+    window.addEventListener('keydown', function(e){
+      if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '||e.key==='Spacebar'){ bgmInteract(); }
+    });
+    if(autoSec){ try{ new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) bgmAutoTry(); });
+    },{threshold:0.05}).observe(autoSec); }catch(e){} }
+  })();
 </script>
 
 <script>

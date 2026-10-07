@@ -477,7 +477,6 @@ if(orig){ window.openModal=function(s,dot){orig(s,dot);var c=document.getElement
 </div>
 
 <script>
-
 (function(){
 var wrap=document.getElementById('bgm'); if(!wrap) return;
 var playBtn=document.getElementById('bgmPlay'), txt=document.getElementById('bgmTxt'),
@@ -490,7 +489,6 @@ var target=0.55, timer=null,  waveTimer=null;
 
 function setVol(v){ try{ audio.volume=Math.max(0,Math.min(1,v)); }catch(e){} }
 setVol(target);
-
 
 function wave(on){
 if(waveTimer){ clearInterval(waveTimer); waveTimer=null; }
@@ -535,7 +533,6 @@ try{ localStorage.setItem(LS,'1'); }catch(e){}
 }
 function toggle(){ audio.paused ? play() : stop(); }
 
-
 if(playBtn) playBtn.addEventListener('click',function(e){
 e.stopPropagation(); toggle(); });
 
@@ -557,14 +554,34 @@ if(!audio.paused){ if(timer) clearInterval(timer); setVol(target); }
 });
 vol.addEventListener('click',function(e){ e.stopPropagation(); });
 
-
-
 document.addEventListener('visibilitychange',function(){
 if(document.hidden){ if(!audio.paused){ audio.pause(); } }
 else if(wrap.classList.contains('on')){ audio.play().catch(function(){}); }
 });
-})();
 
+/* 滑到正文后一次性自动播放：开页不播，用户滚动/滚轮进入「序章」才启动 */
+var triedAuto=false, autoInteracted=false;
+var autoSec=document.getElementById('prologue');
+function bgmAutoTry(){
+  if(triedAuto) return;                                  // 已尝试过，不再触发
+  if(!audio.paused){ triedAuto=true; return; }            // 用户已手动播放
+  try{ if(localStorage.getItem(LS)==='1'){ triedAuto=true; return; } }catch(e){}  // 用户曾关闭
+  if(!autoInteracted) return;                            // 必须先有滚动/滚轮交互
+  var inView = autoSec ? (autoSec.getBoundingClientRect().top <= window.innerHeight*0.9) : true;
+  if(inView){ triedAuto=true; play(); }                  // 序章入视野即自动播放
+}
+function bgmInteract(){ autoInteracted=true; bgmAutoTry(); }
+window.addEventListener('scroll', bgmInteract, {passive:true});
+window.addEventListener('wheel', bgmInteract, {passive:true});
+window.addEventListener('touchmove', bgmInteract, {passive:true});
+window.addEventListener('keydown', function(e){
+  if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '||e.key==='Spacebar'){ bgmInteract(); }
+});
+if(autoSec){ try{ new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting) bgmAutoTry(); });
+},{threshold:0.05}).observe(autoSec); }catch(e){} }
+
+})();
 </script>
 
 </body>
