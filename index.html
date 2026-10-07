@@ -140,12 +140,23 @@ let curIdx = 0, lastFocus = null;
    《格尔尼卡》著作权在美国/欧盟仍在保护期（毕加索卒于 1973），
    而本站唯一合法辖区为中国香港（COS 源站，当地保护期已届满）。
    故该专页只在香港站（art-moments.com）呈现；GitHub Pages / Vercel
-   等非香港镜像会自动隐藏其入口。详见 LICENSE「《格尔尼卡》权利例外」。 */
+   等非香港镜像会自动隐藏其入口。详见 LICENSE「《格尔尼卡》权利例外」。
+
+   《呐喊》（蒙克，1893）方向恰好相反：依香港站当地政策下架，仅在美国
+   镜像（GitHub Pages / Vercel）保留。故在香港站隐藏其入口、且不在 COS
+   发布其页面与封面；美国镜像与其他作品不受影响。 */
 const HK_ONLY = "guernica";
+const US_ONLY = "the-scream";   // 仅美国镜像可见；香港站（COS）下架
 const IS_HK = /(^|\.)art-moments\.com$/i.test(location.hostname)
   || location.protocol === "file:"
   || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-const SHOWN = WORKS.filter(w => IS_HK || w.key !== HK_ONLY);
+/* 真实香港站域名（不含本地预览 / file:），用于「仅美国镜像」作品的下架判定 */
+const IS_REAL_HK = /(^|\.)art-moments\.com$/i.test(location.hostname);
+const SHOWN = WORKS.filter(w => {
+  if (w.key === HK_ONLY && !IS_HK) return false;      // 格尔尼卡：仅香港站
+  if (w.key === US_ONLY && IS_REAL_HK) return false;  // 呐喊：香港站下架
+  return true;
+});
 
 const wc = document.getElementById("wcount");
 if (wc) wc.textContent = SHOWN.length;
