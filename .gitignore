@@ -25,3 +25,11 @@ npm-debug.log*
 __pycache__/
 *.pyc
 .vercel
+
+# ===== 版权法域收口（勿移除）=====
+# 《格尔尼卡》著作权在美国/欧盟仍在保护期（毕加索卒于 1973）。
+# 本站唯一合法辖区为中国香港（COS 源站），故该专页与封面
+# 仅随香港源站发布，不进入 GitHub 仓库 / GitHub Pages / Vercel。
+# 本地文件仍保留，供 cos_deploy.sh 上传与本地预览。
+guernica/
+covers/guernica.webp

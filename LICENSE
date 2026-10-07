@@ -1,6 +1,28 @@
+本站点版权与素材说明
+Copyright, Licensing & Credits
+====================================================================
+站点：一眼千年 · 名画漫游指南   https://www.art-moments.com
+性质：公开的、非商业的艺术欣赏与个人作品集站点
+更新：2026-10-07
+
+一、站点性质 / Nature of the Site
+--------------------------------------------------------------------
+本网站是一个公开的、非商业的艺术欣赏与个人作品集站点，面向所有
+访问者开放浏览，并允许搜索引擎正常收录其内容。本站不含任何广告、
+付费墙或商业性利用。
+
+This is a public, non-commercial art-appreciation and personal
+portfolio site. It is open to all visitors and is intended to be
+indexed by search engines. It carries no advertising, paywall, or
+commercial exploitation.
+
+二、代码与版面设计 / Code and Design
+--------------------------------------------------------------------
+本网站的 HTML / CSS / JavaScript 代码及版面设计，以 MIT 许可证授权：
+
 MIT License
 
-Copyright (c) 2026 chanyanming-a11y
+Copyright (c) 2026 本站作者 (Site Author)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,9 +42,48 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
+三、画作图像 / Artwork Images
+--------------------------------------------------------------------
+本站展示的画作图像，绝大多数为已进入公有领域（Public Domain）之美术
+作品的数字复制品，取自维基共享资源（Wikimedia Commons）等公共数字馆藏
+档案。上述作品的著作权已因作者逝世超过法定保护期而消灭，或由原收藏机构
+以公有领域方式公开提供。本站对上述图像不主张任何权利，亦不作商业使用。
 
-注 / Note:
-- 本仓库的「代码与设计」以上述 MIT 协议开源。
-- 画作图像为公有领域（Public Domain）美术馆馆藏复制品，其权利归属于原收藏机构或已进入公有领域。
-- 灵感配乐为知识共享（CC）授权录音，逐页署名于各画作页的 `bgm-cr` 区块，商业使用须遵循各自许可条款。
+All artwork images on this site are, with one exception noted below,
+digital reproductions of works in the Public Domain, sourced from
+public digital archives such as Wikimedia Commons. No rights are
+claimed over these images, and they are not used commercially.
+
+【例外说明 / Exception】《格尔尼卡》Guernica（巴勃罗·毕加索，1937）
+------------------------------------------------------------------
+该作品仍在著作权保护期内（作者卒于 1973 年）。本站仅以极低分辨率、
+在「艺术史评述与教育参考」的语境下展示该图，并配有大段原创评论性文字，
+不作任何商业性利用，且已对该页面单独标注 noindex、不列入站点地图，
+以限制其传播范围。若权利人提出异议，本站将立即移除相关内容。
+
+Guernica (Pablo Picasso, 1937) remains under copyright (the artist
+died in 1973). It is reproduced here only at low resolution, in a
+commentary/educational context with substantial original critical
+text, without any commercial use, and the page is marked noindex and
+excluded from the sitemap. It will be removed immediately upon a
+rights holder's request.
+
+四、灵感配乐 / Background Music
+--------------------------------------------------------------------
+各画作页面的配乐，均为已进入公有领域的录音，或采用知识共享
+（Creative Commons）许可的录音。逐页署名见各画作页面的配乐信息区块
+（bgm-cr）。如需商业性利用，须分别遵循各自的许可条款。
+
+Background music on each artwork page is either a Public Domain
+recording or a Creative Commons licensed recording, credited
+individually in the credit block (bgm-cr) of that page.
+
+五、异议处理 / Takedown
+--------------------------------------------------------------------
+若权利人认为本站内容侵犯其合法权益，欢迎通过站点所有者的私域渠道
+联系，我们将在核实后及时删除或调整相关内容。
+
+If you believe any content on this site infringes your rights, please
+contact the site owner directly; we will promptly remove or adjust the
+content after verification.
+====================================================================

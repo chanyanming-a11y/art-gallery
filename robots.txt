@@ -1,6 +1,11 @@
+# 一眼千年 · 名画漫游指南 —— 公开作品集 / Public Art Portfolio
+# https://www.art-moments.com
+#
+# 全站开放抓取与索引；站点地图见下方 Sitemap 指令。
+# 附注：本站中《格尔尼卡》一幅仍在版权保护期，该页已单独标注 noindex，
+#       因而未列入 sitemap。
+
 User-agent: *
-Disallow: /
-# This is a private gift site; do not index its content.
-# The sitemap below is provided for reference only and is explicitly allowed.
-Allow: /sitemap.xml
-Sitemap: https://art-gallery-pub.vercel.app/sitemap.xml
+Allow: /
+
+Sitemap: https://www.art-moments.com/sitemap.xml

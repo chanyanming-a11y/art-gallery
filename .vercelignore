@@ -7,3 +7,11 @@ Thumbs.db
 *.tar.gz
 *.md
 README.md
+# README 演示动图属仓库资产，站点页面并不引用，不随站发布
+demo.gif
+# 注意：sitemap.xml 为公开作品集所需，不再排除（由 robots.txt 的 Sitemap 指令引用）
+
+# 版权法域收口：《格尔尼卡》著作权在美国/欧盟仍在保护期（毕加索卒于 1973）。
+# 该专页与封面仅在合法辖区（中国香港 COS 源站）发布，不进入 Vercel 托管。
+guernica/
+covers/guernica.webp

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.art-moments.com/">
 <title>一眼千年 · 名画漫游指南</title>
 <style>:root{--ink:#0d0b08;--ink2:#15110b;--panel:#1d170f;--gold:#d6b070;--gold-soft:#ecd3a0;--muted:#b6a98f;--line:rgba(217,179,106,.28);--serif-cn:"Songti SC","Noto Serif SC","STSong","SimSun",serif;--serif-en:"Didot","Bodoni MT","Georgia",serif;}*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}body{background:radial-gradient(120% 80% at 50% -10%,#1a140c 0%,var(--ink) 60%);color:#f2ead8;font-family:var(--serif-cn);line-height:1.8;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden;}::selection{background:rgba(217,179,106,.32)}header{text-align:center;padding:40px 24px 14px;flex:none}.kick{font-family:var(--serif-en);letter-spacing:.5em;text-indent:.5em;color:var(--gold);font-size:13px;opacity:.9}h1{font-size:clamp(30px,5vw,56px);letter-spacing:.08em;margin:12px 0 8px;text-shadow:0 6px 30px rgba(0,0,0,.5)}.sub{color:var(--muted);font-size:14px;letter-spacing:.16em} .row{flex:1 1 auto;display:flex;gap:6px;padding:6px 14px 14px;min-height:64vh;align-items:stretch;}.card{flex:1 1 0;min-width:0;position:relative;overflow:hidden;cursor:pointer;background:#000;border:1px solid rgba(217,179,106,.14);transition:flex-grow .65s cubic-bezier(.2,.8,.2,1),border-color .45s,box-shadow .45s;}.row:hover .card{flex-grow:.72}.row:hover .card:hover{flex-grow:4}.card:hover{border-color:var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.6)}.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease;filter:brightness(.86)}.card:hover img{transform:scale(1.06);filter:brightness(1)}.card .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(8,6,4,.82) 100%)}.card .vlabel{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;writing-mode:vertical-rl;letter-spacing:.34em;color:var(--gold-soft);font-size:15px;opacity:.94;text-shadow:0 2px 8px rgba(0,0,0,.7);pointer-events:none;transition:opacity .35s} .card .vlabel > span{display:block}.card:hover .vlabel{opacity:0}.card .meta{position:absolute;left:18px;right:18px;bottom:18px;opacity:0;transform:translateY(16px);transition:.5s;pointer-events:none}.card:hover .meta{opacity:1;transform:none}.card .meta .t{font-size:23px;letter-spacing:.05em;color:#f4ecda;text-shadow:0 2px 12px rgba(0,0,0,.6)}.card .meta .a{font-size:13px;color:var(--muted);margin-top:4px;letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} #modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,4,3,.82);backdrop-filter:blur(8px)}#modal.open{display:flex;animation:fade .3s ease}@keyframes fade{from{opacity:0}to{opacity:1}}.panel{position:relative;max-width:1000px;width:100%;max-height:90vh;overflow:auto;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:1.15fr 1fr;animation:cardIn .45s cubic-bezier(.2,.9,.25,1)}@keyframes cardIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}.panel .ph{position:relative;min-height:300px;background:#0b0906;overflow:hidden}
 .panel .ph .ph-amb{position:absolute;inset:-22%;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(64px) saturate(1.05) brightness(.58);transform:scale(1.08);pointer-events:none}
@@ -11,16 +12,16 @@
 /* 竖构图/近方形封面：与横向一致用 cover 铺满弹窗，四周留白由同图模糊底衬填满（绝不展示文案） */
 .panel .txt{padding:34px 34px;display:flex;flex-direction:column;justify-content:center}.panel .no{font-family:var(--serif-en);color:var(--gold);letter-spacing:.3em;font-size:12px}.panel h2{font-size:30px;letter-spacing:.06em;margin:10px 0 4px;color:var(--gold-soft)}.panel .en{font-family:var(--serif-en);color:var(--muted);letter-spacing:.15em;font-size:13px}.panel .a{color:var(--gold);font-size:14px;letter-spacing:.08em;margin:14px 0 16px}.panel p{color:var(--t1);font-size:15px;line-height:2}.panel .go{margin-top:24px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;padding:12px 22px;border:1px solid var(--gold);border-radius:999px;color:var(--gold-soft);letter-spacing:.1em;font-size:14px;cursor:pointer;background:rgba(217,179,106,.06);transition:all .3s}.panel .go:hover{background:var(--gold);color:#15110b}.panel .close{position:absolute;top:14px;right:18px;background:none;border:none;color:#f2ead8;font-size:30px;cursor:pointer;line-height:1;opacity:.7;z-index:2}.panel .close:hover{opacity:1} @media(max-width:960px){.panel{grid-template-columns:1fr;max-height:92vh}.panel .ph{min-height:240px;aspect-ratio:1.25}} footer{flex:none;text-align:center;padding:18px 16px 26px;line-height:1.9}footer .fc{display:block;color:rgba(212,175,55,.4);font-size:11px;letter-spacing:.2em;text-indent:.2em}footer .fe{display:block;margin-top:3px;color:rgba(212,175,55,.4);font-family:var(--serif-en);font-size:9px;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase} footer .fe .nw{white-space:nowrap} @media(max-width:820px){.row{overflow-x:auto;min-height:0;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.card{flex:0 0 64vw;height:60vh;scroll-snap-align:center}.row:hover .card,.row:hover .card:hover{flex-grow:0}.card .vlabel{display:none}.card .meta{opacity:1;transform:none}} .card{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}.card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.panel .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.panel .chips span{font-size:12px;letter-spacing:.06em;color:var(--gold-soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px}#modal .panel .close:focus-visible{outline:2px solid var(--gold);outline-offset:2px}@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}</style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230d0b08%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228.5%22%20fill%3D%22none%22%20stroke%3D%22%23d6b070%22%20stroke-width%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%222.2%22%20fill%3D%22%23d6b070%22%2F%3E%3C%2Fsvg%3E">
-<meta name="description" content="跨越千年的名画漫游：36 幅世界名画的动态赏析，仅供艺术欣赏。">
+<meta name="description" content="跨越千年的名画漫游：三十余幅世界名画的动态赏析，仅供艺术欣赏。">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="一眼千年 · 名画漫游指南">
 <meta property="og:image" content="covers/qmsht.webp">
-<meta property="og:description" content="跨越千年的名画漫游：36 幅世界名画的动态赏析，仅供艺术欣赏。">
+<meta property="og:description" content="跨越千年的名画漫游：三十余幅世界名画的动态赏析，仅供艺术欣赏。">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="一眼千年 · 名画漫游指南">
 <meta name="twitter:image" content="covers/qmsht.webp">
-<meta name="twitter:description" content="跨越千年的名画漫游：36 幅世界名画的动态赏析，仅供艺术欣赏。">
+<meta name="twitter:description" content="跨越千年的名画漫游：三十余幅世界名画的动态赏析，仅供艺术欣赏。">
 </head>
 <body>
 <header>
@@ -96,6 +97,8 @@ blurb:"维米尔一次未署名的回眸，三百年后被称为「北方的蒙�
 blurb:"弗拉戈纳尔把一场贵族花园里的偷窥与嬉戏，画成 18 世纪最轻盈、也最精密的视觉游戏。"},
 {key:"coronation", title:"拿破仑一世加冕大典", en:"The Coronation of Napoleon", artist:"雅克-路易·大卫 · 1805–1807", period:"新古典主义 · 1805–1807", genre:"新古典主义", museum:"巴黎卢浮宫",
 blurb:"大卫为拿破仑画的「导演式」纪录，三处修改写满权力的叙事。"},
+{key:"goya-third-of-may", title:"1808年5月3日", en:"The Third of May 1808", artist:"弗朗西斯科·戈雅 · 1814", period:"浪漫主义 · 1814", genre:"浪漫主义 · 反战", museum:"马德里普拉多博物馆",
+blurb:"戈雅把行刑画成一盏灯笼下的现场：一群没有脸的士兵、一排收拢的枪口，和一个举起双臂的马德里人。"},
 {key:"liberty", title:"自由引导人民", en:"Liberty Leading the People", artist:"欧仁·德拉克洛瓦 · 1830", period:"浪漫主义 · 1830", genre:"浪漫主义", museum:"巴黎卢浮宫",
 blurb:"德拉克洛瓦以一位挥旗的女子，把 1830 年七月革命画成自由的化身。"},
 {key:"great-wave", title:"神奈川冲浪里", en:"The Great Wave off Kanagawa", artist:"葛饰北斋 · c.1831", period:"江户时代 · c.1831", genre:"日本浮世绘", museum:"多馆藏本（大都会艺术博物馆等）",
@@ -132,8 +135,20 @@ blurb:"毕加索以黑白灰的碎片，为 1937 年被炸毁的小镇发出无�
 
 const row = document.getElementById("row");
 let curIdx = 0, lastFocus = null;
+
+/* ── 法域收口 ──────────────────────────────────────────────
+   《格尔尼卡》著作权在美国/欧盟仍在保护期（毕加索卒于 1973），
+   而本站唯一合法辖区为中国香港（COS 源站，当地保护期已届满）。
+   故该专页只在香港站（art-moments.com）呈现；GitHub Pages / Vercel
+   等非香港镜像会自动隐藏其入口。详见 LICENSE「《格尔尼卡》权利例外」。 */
+const HK_ONLY = "guernica";
+const IS_HK = /(^|\.)art-moments\.com$/i.test(location.hostname)
+  || location.protocol === "file:"
+  || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+const SHOWN = WORKS.filter(w => IS_HK || w.key !== HK_ONLY);
+
 const wc = document.getElementById("wcount");
-if (wc) wc.textContent = WORKS.length;
+if (wc) wc.textContent = SHOWN.length;
 
 
 
@@ -141,7 +156,7 @@ if (wc) wc.textContent = WORKS.length;
 
 let pressIdx = -1, pressSeq = 0, confirmedSeq = -1, pressAt = 0, pressX = 0, pressY = 0;
 
-WORKS.forEach((w, i) => {
+SHOWN.forEach((w, i) => {
 w.code = "#" + String(i + 1).padStart(2, "0");
 w.dir = w.key + "/index.html";
 const c = document.createElement("a");
@@ -174,7 +189,7 @@ function activate(i, card){
 try {
 openModal(i, card);
 } catch (err) {
-window.location.href = WORKS[i].dir; 
+window.location.href = SHOWN[i].dir; 
 }
 }
 
@@ -205,7 +220,7 @@ if(window.ResizeObserver){ new ResizeObserver(function(){ layoutPh(); }).observe
 
 function openModal(i, src){
 curIdx = i;
-const w = WORKS[i];
+const w = SHOWN[i];
 const go = () => { window.location.href = w.dir; };
 if (src) lastFocus = src;
 document.getElementById("mImg").src = "covers/" + w.key + ".webp";
